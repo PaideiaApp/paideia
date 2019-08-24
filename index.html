@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Paideia</title>
+	<meta name="description" content="Gamify the process of learning">
+	<meta name="keywords" content="paideia, paideia app, пайдея, пайдейя, приложение пайдейя">
+	<!-- Favicon -->
+	<link rel="icon" href="/assets/pwa/img/icon.png" type="image/x-icon">
+	<link rel="shortcut icon" href="/assets/pwa/img/icon.png" type="image/x-icon">
+	<!--PWA-->
+	<link rel="manifest" href="/manifest.json">
+	<script>document.write(`<link rel="apple-touch-icon" sizes="128x128" href="/assets/pwa/img/theicon.png?v=${new Date().getDate()}${new Date().getHours()}${new Date().getSeconds()}">`);</script>
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<!-- OG Tags -->
+	<meta property="og:title" content="Paideia">
+	<meta property="og:description" content="Gamify the process of learning">
+	<meta property="og:type" content="article">
+	<meta property="og:image" content="assets/front/img/handholder3.png">
+	<meta property="og:site_name" content="Paideia">
+	<!-- CSS Styles -->
+	<link rel="stylesheet" href="assets/front/css/preloader.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap&subset=cyrillic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,900&display=swap&subset=cyrillic" rel="stylesheet">
+	<link rel="stylesheet" href="assets/front/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="assets/front/css/jquery.arcticmodal-0.3_simple.css">
+	<link rel="stylesheet" href="assets/front/css/main.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+	<!-- ReCaptcha -->
+	<script type="text/javascript">
+		var onloadCallback = function () {
+			grecaptcha.render('reCaptcha', {
+				'sitekey': '6LcCwa8UAAAAACVO6KalURAStl-BqaBIGSsCU4SX'
+			});
+		};
+	</script>
+</head>
+
+<body id="body">
+
+	<div id="preloader">
+		<img src="assets/front/img/preloader_2.svg" alt="">
+	</div>
+
+	<header id="header">
+		<div class="container">
+			<nav>
+				<div class="row row_z_index d-flex align-items-center">
+					<div class="d-none d-sm-block col-sm-4 col-md-3 col-lg-2">
+						<div class="logo">
+							<!-- <img src="img/logo.png" alt="logo"> -->
+							<span>Paideia</span>
+						</div>
+					</div>
+					<div class="col-12 col-sm-8 col-md-9 offset-lg-3 offset-xl-4 col-lg-7 col-xl-6">
+						<div class="menu_bars">
+							<div class="logo logo_mobile">
+								<!-- <img src="" alt="logo"> -->
+								<span></span>
+							</div>
+							<div class="bars_wrap">
+								<span class="bars_1"></span>
+								<span class="bars_2"></span>
+								<span class="bars_3"></span>
+							</div>
+						</div>
+						<div class="navigation">
+							<ul class="main_menu">
+								<li class="with_sub_menu">
+									<a href="#">
+										<!-- Product -->
+										Продукт
+									</a>
+									<div class="sub_menu">
+										<a href="#info" class="sub_link scrolling">
+											<div class="logo_image">
+												<img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/exchange-512.png" style="background: lightcyan;" alt="">
+											</div>
+											<div class="sub_text">
+												<p class="sub_title">
+													Подход
+												</p>
+												<p class="sub_desc">
+													О нашем подходе
+												</p>
+											</div>
+										</a>
+										<a href="#info_second" class="sub_link scrolling">
+											<div class="logo_image">
+												<img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/info-512.png" style="background: lightyellow;" alt="">
+											</div>
+											<div class="sub_text">
+												<p class="sub_title">
+													Детали
+												</p>
+												<p class="sub_desc">
+													О нашей платформе
+												</p>
+											</div>
+										</a>
+										<a href="#features" class="sub_link scrolling">
+											<div class="logo_image">
+												<img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/rocket-512.png" style="background: lightpink;" alt="">
+											</div>
+											<div class="sub_text">
+												<p class="sub_title">
+													Возможности
+												</p>
+												<p class="sub_desc">
+													Список наших возможностей
+												</p>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li class="with_sub_menu">
+									<a href="#">
+										<!-- Add-Ons -->
+										Прочее
+									</a>
+									<div class="sub_menu">
+										<a href="#" id="downloadApp" onclick="window.location = '/app';" class="sub_link downloadAppLink">
+											<div class="logo_image">
+												<img src="/assets/pwa/img/icon.png" alt="">
+											</div>
+											<div class="sub_text">
+												<p class="sub_title">
+													Скачать Приложение
+												</p>
+												<p class="sub_desc">
+													Всегда рядом с вами
+												</p>
+											</div>
+										</a>
+										<!-- <a href="#" class="sub_link">
+											<div class="logo_image">
+												<img src="assets/front/img/logo.png" alt="">
+											</div>
+											<div class="sub_text">
+												<p class="sub_title">
+													Контакты
+												</p>
+												<p class="sub_desc">
+													Связаться с нами
+												</p>
+											</div>
+										</a> -->
+										<a href="/help" onclick="window.location = '/help';" class="sub_link">
+											<div class="logo_image">
+												<img src="assets/front/img/logo.png" alt="">
+											</div>
+											<div class="sub_text">
+												<p class="sub_title">
+													Помощь
+												</p>
+												<p class="sub_desc">
+													Хотите задать вопрос?
+												</p>
+											</div>
+										</a>
+									</div>
+								</li>
+								<li>
+									<a href="#pricing" class="scrolling">
+										<!-- Pricing -->
+										Цены
+									</a>
+								</li>
+								<li>
+									<a href="#examples" class="scrolling">
+										<!-- Showcase -->
+										Демо
+									</a>
+								</li>
+							</ul>
+							<div class="reg_buttons" id="regButtons">
+								<a href="#" class="login">
+									Войти
+									<img src="assets/front/img/arrow-right-blue.svg" alt="">
+								</a>
+								<a href="#" class="get_started">
+									<!-- Get Started -->
+									Создать аккаунт
+									<img src="assets/front/img/arrow-right-blue.svg" alt="">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<div class="main_offer">
+				<div class="offer_left" style="margin-right: 160px;">
+					<div class="offer_img_wrap">
+						<!-- <img src="assets/front/img/offer-bg.jpg" alt=""> -->
+						<img src="assets/front/img/handholder3.png" alt="">
+					</div>
+				</div>
+				<div class="offer_right">
+					<h1>
+						<span style="font-size: 57px;">Учи языки</span>
+						<br>по-новому
+					</h1>
+					<p>
+						Время для перемен в подходе к обучению.
+						<br>Где процесс не ощущается как занятие.
+					</p>
+					<div class="offer_buttons">
+						<a href="#examples" class="try_it">
+							Попробовать
+							<img src="assets/front/img/arrow-right.svg" alt="">
+						</a>
+						<a href="#info" class="learn_more scrolling">
+							Узнать больше
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section id="info">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-6">
+					<div class="left_info">
+						<h2>
+							Подход
+						</h2>
+						<p class="info_main_desc info_main_desc_1">
+							Используя нашу платформу, вы сможете учить английский
+							<br> с удовольствием, не выходя из дома.
+						</p>
+						<div class="info_first_items">
+							<div class="info_item info_item_1">
+								<div class="logo_image">
+									<div class="logo_image">
+										<img src="assets/front/img/logo.png" alt="">
+									</div>
+								</div>
+								<div class="info_text info_text_1">
+									<p class="info_title info_title_1">
+										Эффективно
+									</p>
+									<p class="info_desc info_desc_1">
+										Используйте средства визуализации платформы, тренируйте чтение и грамматику, учите новые слова...
+									</p>
+								</div>
+							</div>
+							<div class="info_item info_item_1">
+								<div class="logo_image">
+									<img src="assets/front/img/logo.png" alt="">
+								</div>
+								<div class="info_text info_text_1">
+									<p class="info_title info_title_1">
+										Доступно
+									</p>
+									<p class="info_desc info_desc_1">
+										<!-- Поможем преодолеть языковой барьер -->
+										Изучайте любимые видео и песни, интересные статьи и переводы, игры и еще столько всего...
+									</p>
+								</div>
+							</div>
+							<div class="info_item info_item_1">
+								<div class="logo_image">
+									<img src="assets/front/img/logo.png" alt="">
+								</div>
+								<div class="info_text info_text_1">
+									<p class="info_title info_title_1">
+										Без стресса
+									</p>
+									<p class="info_desc info_desc_1">
+										Становитесь лучше каждый день, занимаясь в привычном для вас темпе, где и когда вам удобно.
+									</p>
+									<a href="#info_second" class="more_about more_about_1 scrolling">
+										Подробней о Платформе
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-6">
+					<div class="right_info">
+						<img src="assets/front/img/skyscraper.jpg" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="info_second">
+		<div class="info_second_left">
+			<!-- <img src="assets/front/img/graph.jpg" alt=""> -->
+			<!-- <video style="width: 100%; height: 100%;" autoplay muted playsinline loop> -->
+			<!-- <video style="width: 100%; height: 70vh;" autoplay muted playsinline loop> -->
+			<!-- <source src="/assets/front/img/trailer.mp4" type="video/mp4"> Your browser does not support the video tag. -->
+			<!-- <source src="https://media.giphy.com/media/61hBU3ADrlLZUbvMVT/giphy.mp4" type="video/mp4"> -->
+			<!-- <source src="https://media.giphy.com/media/W69SmBIi6lyBeQ2yq9/giphy.mp4" type="video/mp4"> -->
+			<!-- </video> -->
+			<img style="width: 45%; margin: 0 auto; box-shadow: 0 5px 20px #CCCCCC; border-radius: 26px;" src="/assets/front/img/preview.gif">
+		</div>
+		<div class="info_second_right_wrap">
+			<div class="info_second_right">
+				<h2>
+					Обучение
+				</h2>
+				<p class="info_main_desc info_main_desc_2">
+					<!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					Ut enim ad minim veniam, quis nostrud exercitation. -->
+					<!-- При помощи нашей платформы вы сможете выучить английский читая статьи с Википедии, просматривая видео с YouTube, тренировать грамматику 
+					в реальных предложениях, и изучать контент отобранный учителями английского языка. -->
+					<!-- Поможем преодолеть языковой барьер. Развивайте все навыки владения языком.  -->
+					Английский для ваших целей: путешествия, работа, учеба, просмотр фильмов, чтение книг, саморазвитие, переезд в другую страну
+
+				</p>
+				<div class="info_second_items">
+					<div class="info_item _info_item_2">
+						<div class="logo_image">
+							<img src="assets/front/img/logo.png" alt="">
+						</div>
+						<div class="info_text info_text_2">
+							<p class="info_title info_title_2">
+								Персонализировано
+							</p>
+							<p class="info_desc info_desc_2">
+								<!-- Landen's smart layout engine will adapt to your content automatically. If you'd like to adjust something, just drag a slider! -->
+								Наша платформа постоянно подстраивается под ваши интересы
+							</p>
+						</div>
+					</div>
+					<div class="info_item info_item_2">
+						<div class="logo_image">
+							<img src="assets/front/img/logo.png" alt="">
+						</div>
+						<div class="info_text info_text_2">
+							<p class="info_title info_title_2">
+								Для любого уровня
+							</p>
+							<p class="info_desc info_desc_2">
+								<!-- You can keep things simple or fine-tune the appreance of many aspects of our site. -->
+								Отлично подойдет как для полных новичков, так и для продвинутых носителей языка
+							</p>
+						</div>
+					</div>
+					<div class="info_item info_item_2">
+						<div class="logo_image">
+							<img src="assets/front/img/logo.png" alt="">
+						</div>
+						<div class="info_text info_text_2">
+							<p class="info_title info_title_2">
+								Поможем преодолеть языковой барьер
+							</p>
+							<p class="info_desc info_desc_2">
+								Развивайте навыки владения языком, занимаясь в игровой форме
+							</p>
+							<a href="#info_third" class="more_about more_about_2 scrolling">
+								Узнать больше
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="info_third">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-6">
+					<div class="info_third_left">
+						<h2>
+							Подробнее
+						</h2>
+						<p class="info_main_desc info_main_desc_3">
+							<!-- При помощи нашей платформы вы сможете учить новые слова и предложения, читать и переводить статьи из Википедии, просматривать и переводить видео с YouTube, тренеровать грамматику 
+							в реальных предложениях, заниматься на специальных тренажерах и изучать контент отобранный учителями английского языка. -->
+							С помощью нашей платформы вы сможете учить новые предложения с примерами, читать статьи из Википедии, смотреть и переводить
+							видео с YouTube, тренировать грамматику в реальных предложениях, заниматься на специальных тренажерах и изучать контент,
+							отобранный учителями английского языка. Когда вы переводите что-либо на нашей платформе, мы добавляем переведенное
+							слово к вам в раздел "Тренировки", где вы можете выбрать подходящий для вас формат игры и тренировать слова которые
+							вы не знали в реальных ситуациях.
+						</p>
+					</div>
+				</div>
+				<div class="col-12 col-lg-6">
+					<div class="info_third_right">
+						<img src="assets/front/img/world-map.png" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="info_forth">
+		<div class="container">
+			<h3>
+				Не просто занятия
+			</h3>
+			<p class="info_forth_desc">
+				Пора перестать откладывать английский на потом!
+				<br>
+			</p>
+			<div class="row">
+				<div class="col-12 col-sm-4">
+					<div class="info_forth_item">
+						<div class="logo_image">
+							<img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f0b1-512.png" alt="">
+						</div>
+						<h4>
+							Зарплата
+						</h4>
+						<p>
+							Знание английского может увеличить заработную плату на 30%
+							<a class="more_about more_about_4 scrolling" href="#info_fifth">
+								Узнать Еще
+							</a>
+						</p>
+					</div>
+				</div>
+				<div class="col-12 col-sm-4">
+					<div class="info_forth_item">
+						<div class="logo_image">
+							<img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/graduation-cap-512.png" alt="">
+						</div>
+						<h4>
+							Больше возможностей
+						</h4>
+						<p>
+							Английский является основным языком в международном бизнесе
+							<a class="more_about more_about_4 scrolling" href="#info_fifth">
+								Узнать Еще
+							</a>
+						</p>
+					</div>
+				</div>
+				<div class="col-12 col-sm-4">
+					<div class="info_forth_item">
+						<div class="logo_image">
+							<img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/send-512.png" alt="">
+						</div>
+						<h4>
+							Путешествия
+						</h4>
+						<p>
+							Знание английского откроет для вас путешествия с новой стороны
+							<a class="more_about more_about_4 scrolling" href="#info_fifth">
+								Узнать Еще
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="info_fifth">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-7 order-1 order-lg-0">
+					<div class="element_image">
+						<img src="assets/front/img/mockup.svg" alt="">
+					</div>
+				</div>
+				<div class="col-12 col-lg-5">
+					<div class="info_fifth_text">
+						<h4>
+							Всегда
+							<br> Рядом с вами
+						</h4>
+						Доступно как с компьютера, так и через приложение для телефона. Доступно для
+						<a style="color: #8e8e8e;" href="/app"
+						 class="downloadAppLink">IOS</a> и
+						<a style="color: #8e8e8e;" href="/app" class="downloadAppLink">Android</a>.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="pricing">
+		<div class="pricing_wrap">
+			<div class="container style_container">
+				<h2>
+					Цены
+				</h2>
+				<p class="pricing_desc">
+					Выберите план, который подойдет для вас.
+				</p>
+				<div class="row">
+					<div class="col-12 col-sm-6 col-lg-3">
+						<div class="pricing_item pricing_item_1">
+							<h3>
+								1 месяц
+							</h3>
+							<span>
+								Подписка
+							</span>
+							<hr>
+							<p>
+								Неограниченный доступ к приложению.
+							</p>
+							<hr>
+							<div class="price">
+								15$/мес.
+							</div>
+							<a href="#" class="get_started" onclick="choosePlan(1)">
+								Выбрать План
+							</a>
+						</div>
+					</div>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<div class="pricing_item pricing_item_2">
+							<h3>
+								3 месяца
+							</h3>
+							<span>
+								Подписка
+							</span>
+							<hr>
+							<p>
+								Неограниченный доступ к приложению.
+							</p>
+							<hr>
+							<div class="price">
+								12$/мес.
+							</div>
+							<a href="#" class="get_started" onclick="choosePlan(3)">
+								Выбрать План
+							</a>
+						</div>
+					</div>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<div class="pricing_item pricing_item_3">
+							<h3>
+								6 месяцев
+							</h3>
+							<span>
+								Подписка
+							</span>
+							<hr>
+							<p>
+								Неограниченный доступ к приложению.
+							</p>
+							<hr>
+							<div class="price">
+								10$/мес.
+							</div>
+							<a href="#" class="get_started" onclick="choosePlan(6)">
+								Выбрать План
+							</a>
+						</div>
+					</div>
+					<div class="col-12 col-sm-6 col-lg-3">
+						<div class="pricing_item pricing_item_4">
+							<h3>
+								12 месяцев
+							</h3>
+							<span>
+								Подписка
+							</span>
+							<hr>
+							<p>
+								Неограниченный доступ к приложению.
+							</p>
+							<hr>
+							<div class="price">
+								8$/мес.
+							</div>
+							<a href="#" class="get_started" onclick="choosePlan(12)">
+								Выбрать План
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="features">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-12 col-sm-6 col-md-4">
+					<div class="features_item">
+						<div class="logo_image">
+							<img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f037-512.png" alt="">
+						</div>
+						<h4>
+							Грамматика
+						</h4>
+						<p>
+							Выбирайте правильные грамматические варианты на основе контекста
+						</p>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4">
+					<div class="features_item">
+						<div class="logo_image">
+							<img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/clone-512.png" alt="">
+						</div>
+						<h4>
+							Новые предложения
+						</h4>
+						<p>
+							Учите новые предложения в сопровождении видео и звука
+						</p>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4">
+					<div class="features_item">
+						<div class="logo_image">
+							<img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f16a-512.png" alt="">
+						</div>
+						<h4>
+							Просмотр Видео
+						</h4>
+						<p>
+							Проигрывайте видео с любого момента и переводите субтитры
+						</p>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4">
+					<div class="features_item">
+						<div class="logo_image">
+							<img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/language-512.png" alt="">
+						</div>
+						<h4>
+							Переводы
+						</h4>
+						<p>
+							Перевод слова при клике с озвучкой и изображением
+						</p>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4">
+					<div class="features_item">
+						<div class="logo_image">
+							<img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f11b-512.png" alt="">
+						</div>
+						<h4>
+							Тренажеры
+						</h4>
+						<p>
+							Каталог игр для тренировки новых слов и предложений
+						</p>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4">
+					<div class="features_item">
+						<div class="logo_image">
+							<img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f097-512.png" alt="">
+						</div>
+						<h4>
+							Чтение
+						</h4>
+						<p>
+							Читайте и переводите тексты для новичков, статьи из Wikipedia, свой текст
+						</p>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4">
+					<div class="features_item">
+						<div class="logo_image">
+							<img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/pencil-square-o-512.png" alt="">
+						</div>
+						<h4>
+							Заметки
+						</h4>
+						<p>
+							Делайте конспекты и отслеживайте свой прогресс с помощью аналитики
+						</p>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4">
+					<div class="features_item">
+						<div class="logo_image">
+							<img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/graduation-cap-512.png" alt="">
+						</div>
+						<h4>
+							Уроки
+						</h4>
+						<p>
+							Проходите структуризированные уроки от учителей английского
+						</p>
+					</div>
+				</div>
+				<div class="col-12 col-sm-6 col-md-4">
+					<div class="features_item">
+						<div class="logo_image">
+							<img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f0e6-512.png" alt="">
+						</div>
+						<h4>
+							Роботы
+						</h4>
+						<p>
+							Практикуйте реальные разговоры со специальными ботами (скоро)
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<hr class="hr">
+	<section id="examples">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-12 col-lg-6 col-xl-5">
+					<div class="example_text">
+						<h3>
+							Хотите попробовать?
+						</h3>
+						<p>
+							Создайте пробный аккаунт бесплатно!
+						</p>
+					</div>
+				</div>
+				<div class="col-12 offset-lg-1 col-lg-5 offset-xl-3 col-xl-4">
+					<div class="examples_buttons">
+						<a href="#" class="examples_btn get_started">
+							Создать аккаунт
+							<img src="assets/front/img/arrow-right.svg" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer id="footer">
+		<div class="container">
+			<div class="row justify-content-between justify-content-md-center">
+				<div class="col-6 col-sm-3 col-md-2">
+					<div class="footer_item">
+						<h4 class="footer_title">
+							Продукт
+						</h4>
+						<ul class="footer_links">
+							<li>
+								<a href="#info" class="scrolling">
+									Подход
+								</a>
+							</li>
+							<li>
+								<a href="#info_second" class="scrolling">
+									Детали
+								</a>
+							</li>
+							<li>
+								<a href="#features" class="scrolling">
+									Возможности
+								</a>
+							</li>
+							<li>
+								<a href="/app" class="downloadAppLink">
+									Приложение
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-6 col-sm-3 col-md-2">
+					<div class="footer_item">
+						<h4 class="footer_title">
+							Социальные сети
+						</h4>
+						<ul class="footer_links">
+							<li>
+								<a target="_blank" href="https://www.facebook.com/PaideiaApp/">
+									Facebook
+								</a>
+							</li>
+							<li>
+								<a target="_blank"  href="https://www.instagram.com/paideiaapp/">
+									Instagram
+								</a>
+							</li>
+							<li>
+								<a target="_blank"  href="https://t.me/PaideiaApp">
+									Telegram
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-6 col-sm-3 col-md-2">
+					<div class="footer_item">
+						<h4 class="footer_title">
+							Компания
+						</h4>
+						<ul class="footer_links">
+							<li>
+								<a target="_blank"  href="#">
+									Блог
+								</a>
+							</li>
+							<li>
+								<a target="_blank" href="#">
+									Контакты
+								</a>
+							</li>
+							<!-- <li>
+								<a target="_blank" href="#">
+									Статус
+								</a>
+							</li> -->
+							<li>
+								<a target="_blank" href="/CHANGELOG.md">
+									Changelog
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-6 col-sm-3 col-md-2 order-1">
+					<div class="footer_item">
+						<div class="footer_item">
+							<h4 class="footer_title">
+								Остальное
+							</h4>
+							<ul class="footer_links">
+								<li>
+									<a target="_blank" href="/help/privacy-policy/">
+										Политика Конфиденциальности
+									</a>
+								</li>
+								<li>
+									<a target="_blank"  href="/help/terms/">
+										Условия Использования
+									</a>
+								</li>
+								<li>
+									<a href="#" onclick="window.location.reload(true)">
+										Обновить кэш
+									</a>
+								</li>
+								<li>
+									<a target="_blank"  href="/help/">
+										Помощь
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 col-sm-3 col-md-2">
+					<div class="footer_item">
+						<div class="footer_item">
+							<h4 class="footer_title">
+								Авторство
+							</h4>
+							<ul class="footer_links">
+								<li>
+									<a href="https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL" title="https://www.iconfinder.com/iconsets/font-awesome"
+									 target="_blank">
+										Иконки Iconfinder (SIL Open Font License)
+									</a>
+								</li>
+								<li>
+									<a href="https://unsplash.com" target="_blank">
+										Изображения - Unsplash.com
+									</a>
+								</li>
+								<li>
+									<a href="https://ru.wikipedia.org/wiki/Cookie" target="_blank">
+										Мы используем Cookies (куки)
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center">
+				<div class="col-12 col-sm-7 col-md-5 col-lg-4">
+					<p class="copyright">
+						© 2019 "Paideia" LLC
+					</p>
+				</div>
+				<div class="offset-0 col-12 offset-sm-3 offset-md-5 offset-lg-7 col-sm-2 col-md-1">
+					<div class="link_footer">
+						<a href="#">
+							<img src="assets/pwa/img/icon.png" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<div style="display: none;">
+		<div class="box-modal" id="login_modal">
+			<div class="box-modal_close arcticmodal-close">×</div>
+			<div id="message"></div>
+			<div id="auth">
+				<input type="email" name="email" id="email" placeholder="Email" required>
+				<br>
+				<input type="password" name="pass" id="pass" placeholder="Пароль" required>
+				<br>
+				<button onclick="auth()" class="main center">Войти</button>
+				<br>
+				<br>
+				<br>
+				<span style="font-size: 13px;">Забыли пароль?
+					<a href="restore/" style="color: #0067ed;">Восстановить аккаунт</a>
+				</span>
+				<br>
+			</div>
+		</div>
+	</div>
+
+	<div style="display: none;">
+		<div class="box-modal" id="get_started_modal">
+			<div class="box-modal_close arcticmodal-close">×</div>
+			<div id="message2"></div>
+			<div id="auth">
+				<form id="registration" action="/api/auth/register">
+					Создать аккаунт
+					<br>
+					<input type="text" name="name" id="nameR" placeholder="Ваше Имя и Фамилия" required>
+					<br>
+					<select name="level" required>
+						<option value="" disabled selected>Выберите ваш уровень английского</option>
+						<option value="0">Новичок</option>
+						<option value="1">Средний и выше</option>
+					</select>
+					<br>
+					<select name="country" required>
+						<option value="" disabled selected>Выберите вашу страну</option>
+						<option value="AU">Австралия</option>
+						<option value="AT">Австрия</option>
+						<option value="AZ">Азербайджан</option>
+						<option value="AX">Аландские о-ва</option>
+						<option value="AL">Албания</option>
+						<option value="DZ">Алжир</option>
+						<option value="AS">Американское Самоа</option>
+						<option value="AI">Ангилья</option>
+						<option value="AO">Ангола</option>
+						<option value="AD">Андорра</option>
+						<option value="AQ">Антарктида</option>
+						<option value="AG">Антигуа и Барбуда</option>
+						<option value="AR">Аргентина</option>
+						<option value="AM">Армения</option>
+						<option value="AW">Аруба</option>
+						<option value="AF">Афганистан</option>
+						<option value="BS">Багамы</option>
+						<option value="BD">Бангладеш</option>
+						<option value="BB">Барбадос</option>
+						<option value="BH">Бахрейн</option>
+						<option value="BY">Беларусь</option>
+						<option value="BZ">Белиз</option>
+						<option value="BE">Бельгия</option>
+						<option value="BJ">Бенин</option>
+						<option value="BM">Бермудские о-ва</option>
+						<option value="BG">Болгария</option>
+						<option value="BO">Боливия</option>
+						<option value="BQ">Бонэйр, Синт-Эстатиус и Саба</option>
+						<option value="BA">Босния и Герцеговина</option>
+						<option value="BW">Ботсвана</option>
+						<option value="BR">Бразилия</option>
+						<option value="IO">Британская территория в Индийском океане</option>
+						<option value="BN">Бруней-Даруссалам</option>
+						<option value="BF">Буркина-Фасо</option>
+						<option value="BI">Бурунди</option>
+						<option value="BT">Бутан</option>
+						<option value="VU">Вануату</option>
+						<option value="VA">Ватикан</option>
+						<option value="GB">Великобритания</option>
+						<option value="HU">Венгрия</option>
+						<option value="VE">Венесуэла</option>
+						<option value="VG">Виргинские о-ва (Великобритания)</option>
+						<option value="VI">Виргинские о-ва (США)</option>
+						<option value="UM">Внешние малые о-ва (США)</option>
+						<option value="TL">Восточный Тимор</option>
+						<option value="VN">Вьетнам</option>
+						<option value="GA">Габон</option>
+						<option value="HT">Гаити</option>
+						<option value="GY">Гайана</option>
+						<option value="GM">Гамбия</option>
+						<option value="GH">Гана</option>
+						<option value="GP">Гваделупа</option>
+						<option value="GT">Гватемала</option>
+						<option value="GN">Гвинея</option>
+						<option value="GW">Гвинея-Бисау</option>
+						<option value="DE">Германия</option>
+						<option value="GG">Гернси</option>
+						<option value="GI">Гибралтар</option>
+						<option value="HN">Гондурас</option>
+						<option value="HK">Гонконг (САР)</option>
+						<option value="GD">Гренада</option>
+						<option value="GL">Гренландия</option>
+						<option value="GR">Греция</option>
+						<option value="GE">Грузия</option>
+						<option value="GU">Гуам</option>
+						<option value="DK">Дания</option>
+						<option value="JE">Джерси</option>
+						<option value="DJ">Джибути</option>
+						<option value="DG">Диего-Гарсия</option>
+						<option value="DM">Доминика</option>
+						<option value="DO">Доминиканская Республика</option>
+						<option value="EG">Египет</option>
+						<option value="ZM">Замбия</option>
+						<option value="EH">Западная Сахара</option>
+						<option value="ZW">Зимбабве</option>
+						<option value="IL">Израиль</option>
+						<option value="IN">Индия</option>
+						<option value="ID">Индонезия</option>
+						<option value="JO">Иордания</option>
+						<option value="IQ">Ирак</option>
+						<option value="IR">Иран</option>
+						<option value="IE">Ирландия</option>
+						<option value="IS">Исландия</option>
+						<option value="ES">Испания</option>
+						<option value="IT">Италия</option>
+						<option value="YE">Йемен</option>
+						<option value="CV">Кабо-Верде</option>
+						<option value="KZ">Казахстан</option>
+						<option value="KH">Камбоджа</option>
+						<option value="CM">Камерун</option>
+						<option value="CA">Канада</option>
+						<option value="IC">Канарские о-ва</option>
+						<option value="QA">Катар</option>
+						<option value="KE">Кения</option>
+						<option value="CY">Кипр</option>
+						<option value="KG">Киргизия</option>
+						<option value="KI">Кирибати</option>
+						<option value="CN">Китай</option>
+						<option value="KP">КНДР</option>
+						<option value="CC">Кокосовые о-ва</option>
+						<option value="CO">Колумбия</option>
+						<option value="KM">Коморы</option>
+						<option value="CG">Конго - Браззавиль</option>
+						<option value="CD">Конго - Киншаса</option>
+						<option value="XK">Косово</option>
+						<option value="CR">Коста-Рика</option>
+						<option value="CI">Кот-д&rsquo;Ивуар</option>
+						<option value="CU">Куба</option>
+						<option value="KW">Кувейт</option>
+						<option value="CW">Кюрасао</option>
+						<option value="LA">Лаос</option>
+						<option value="LV">Латвия</option>
+						<option value="LS">Лесото</option>
+						<option value="LR">Либерия</option>
+						<option value="LB">Ливан</option>
+						<option value="LY">Ливия</option>
+						<option value="LT">Литва</option>
+						<option value="LI">Лихтенштейн</option>
+						<option value="LU">Люксембург</option>
+						<option value="MU">Маврикий</option>
+						<option value="MR">Мавритания</option>
+						<option value="MG">Мадагаскар</option>
+						<option value="YT">Майотта</option>
+						<option value="MO">Макао (САР)</option>
+						<option value="MW">Малави</option>
+						<option value="MY">Малайзия</option>
+						<option value="ML">Мали</option>
+						<option value="MV">Мальдивы</option>
+						<option value="MT">Мальта</option>
+						<option value="MA">Марокко</option>
+						<option value="MQ">Мартиника</option>
+						<option value="MH">Маршалловы Острова</option>
+						<option value="MX">Мексика</option>
+						<option value="MZ">Мозамбик</option>
+						<option value="MD">Молдова</option>
+						<option value="MC">Монако</option>
+						<option value="MN">Монголия</option>
+						<option value="MS">Монтсеррат</option>
+						<option value="MM">Мьянма (Бирма)</option>
+						<option value="NA">Намибия</option>
+						<option value="NR">Науру</option>
+						<option value="NP">Непал</option>
+						<option value="NE">Нигер</option>
+						<option value="NG">Нигерия</option>
+						<option value="NL">Нидерланды</option>
+						<option value="NI">Никарагуа</option>
+						<option value="NU">Ниуэ</option>
+						<option value="NZ">Новая Зеландия</option>
+						<option value="NC">Новая Каледония</option>
+						<option value="NO">Норвегия</option>
+						<option value="AC">о-в Вознесения</option>
+						<option value="IM">о-в Мэн</option>
+						<option value="NF">о-в Норфолк</option>
+						<option value="CX">о-в Рождества</option>
+						<option value="SH">о-в Св. Елены</option>
+						<option value="PN">о-ва Питкэрн</option>
+						<option value="TC">о-ва Тёркс и Кайкос</option>
+						<option value="AE">ОАЭ</option>
+						<option value="OM">Оман</option>
+						<option value="KY">Острова Кайман</option>
+						<option value="CK">Острова Кука</option>
+						<option value="PK">Пакистан</option>
+						<option value="PW">Палау</option>
+						<option value="PS">Палестинские территории</option>
+						<option value="PA">Панама</option>
+						<option value="PG">Папуа &mdash; Новая Гвинея</option>
+						<option value="PY">Парагвай</option>
+						<option value="PE">Перу</option>
+						<option value="PL">Польша</option>
+						<option value="PT">Португалия</option>
+						<option value="XB">псевдо-Bidi</option>
+						<option value="XA">псевдоакценты</option>
+						<option value="PR">Пуэрто-Рико</option>
+						<option value="KR">Республика Корея</option>
+						<option value="RE">Реюньон</option>
+						<option value="RU">Россия</option>
+						<option value="RW">Руанда</option>
+						<option value="RO">Румыния</option>
+						<option value="SV">Сальвадор</option>
+						<option value="WS">Самоа</option>
+						<option value="SM">Сан-Марино</option>
+						<option value="ST">Сан-Томе и Принсипи</option>
+						<option value="SA">Саудовская Аравия</option>
+						<option value="MK">Северная Македония</option>
+						<option value="MP">Северные Марианские о-ва</option>
+						<option value="SC">Сейшельские Острова</option>
+						<option value="BL">Сен-Бартелеми</option>
+						<option value="MF">Сен-Мартен</option>
+						<option value="PM">Сен-Пьер и Микелон</option>
+						<option value="SN">Сенегал</option>
+						<option value="VC">Сент-Винсент и Гренадины</option>
+						<option value="KN">Сент-Китс и Невис</option>
+						<option value="LC">Сент-Люсия</option>
+						<option value="RS">Сербия</option>
+						<option value="EA">Сеута и Мелилья</option>
+						<option value="SG">Сингапур</option>
+						<option value="SX">Синт-Мартен</option>
+						<option value="SY">Сирия</option>
+						<option value="SK">Словакия</option>
+						<option value="SI">Словения</option>
+						<option value="US">Соединенные Штаты</option>
+						<option value="SB">Соломоновы Острова</option>
+						<option value="SO">Сомали</option>
+						<option value="SD">Судан</option>
+						<option value="SR">Суринам</option>
+						<option value="SL">Сьерра-Леоне</option>
+						<option value="TJ">Таджикистан</option>
+						<option value="TH">Таиланд</option>
+						<option value="TW">Тайвань</option>
+						<option value="TZ">Танзания</option>
+						<option value="TG">Того</option>
+						<option value="TK">Токелау</option>
+						<option value="TO">Тонга</option>
+						<option value="TT">Тринидад и Тобаго</option>
+						<option value="TA">Тристан-да-Кунья</option>
+						<option value="TV">Тувалу</option>
+						<option value="TN">Тунис</option>
+						<option value="TM">Туркменистан</option>
+						<option value="TR">Турция</option>
+						<option value="UG">Уганда</option>
+						<option value="UZ">Узбекистан</option>
+						<option value="UA">Украина</option>
+						<option value="WF">Уоллис и Футуна</option>
+						<option value="UY">Уругвай</option>
+						<option value="FO">Фарерские о-ва</option>
+						<option value="FM">Федеративные Штаты Микронезии</option>
+						<option value="FJ">Фиджи</option>
+						<option value="PH">Филиппины</option>
+						<option value="FI">Финляндия</option>
+						<option value="FK">Фолклендские о-ва</option>
+						<option value="FR">Франция</option>
+						<option value="GF">Французская Гвиана</option>
+						<option value="PF">Французская Полинезия</option>
+						<option value="TF">Французские Южные территории</option>
+						<option value="HR">Хорватия</option>
+						<option value="CF">Центрально-Африканская Республика</option>
+						<option value="TD">Чад</option>
+						<option value="ME">Черногория</option>
+						<option value="CZ">Чехия</option>
+						<option value="CL">Чили</option>
+						<option value="CH">Швейцария</option>
+						<option value="SE">Швеция</option>
+						<option value="SJ">Шпицберген и Ян-Майен</option>
+						<option value="LK">Шри-Ланка</option>
+						<option value="EC">Эквадор</option>
+						<option value="GQ">Экваториальная Гвинея</option>
+						<option value="ER">Эритрея</option>
+						<option value="SZ">Эсватини</option>
+						<option value="EE">Эстония</option>
+						<option value="ET">Эфиопия</option>
+						<option value="GS">Южная Георгия и Южные Сандвичевы о-ва</option>
+						<option value="ZA">Южно-Африканская Республика</option>
+						<option value="SS">Южный Судан</option>
+						<option value="JM">Ямайка</option>
+						<option value="JP">Япония</option>
+					</select>
+					<br>
+					<input type="email" name="email" id="emailR" placeholder="Ваш Email" required>
+					<br>
+					<input type="password" name="password" id="passR" placeholder="Пароль" required>
+					<br>
+					<input type="password" id="confirmpassR" placeholder="Повторите Пароль" required>
+					<br>
+					<br>
+					<input type="hidden" id="ref" name="ref" value="NULL">
+					<div id="reCaptcha"></div>
+					<button type="submit" id="createAccount" style="display: none;" class="main center">Создать аккаунт</button>
+					<br>
+					<br>
+					<span style="font-size: 12px;">Продолжая регистрацию, вы автоматически согласны с нашими
+						<a href="/help/terms/" target="_blank" style="color: #0067ed; font-size: 13px;">Правилами использования</a> и
+						<a href="/help/privacy-policy/" target="_blank" style="color: #0067ed; font-size: 13px;">Политикой Конфиденциальности</a>
+					</span>
+					<br>
+					<br>
+					<br>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+	<script src="assets/front/js/preloader.js?v0.0.1"></script>
+	<script src="assets/front/js/jquery-3.3.1.min.js?v0.0.1"></script>
+	<script src="assets/front/js/jquery.arcticmodal-0.3.min.js?v0.0.1"></script>
+	<script src="assets/front/js/main.js?v0.0.1"></script>
+
+	<script src="assets/front/js/auth.js?v0.0.1"></script>
+
+	<script>
+		function urlParams() {
+			var search = window.location.search.substr(1),
+				result = {};
+			if (search.length) {
+				search.split('&').forEach(function (item) {
+					var buf = item.split('=');
+					if (buf.length == 2)
+						result[buf[0]] = decodeURIComponent(buf[1]);
+				});
+			}
+			return result;
+		}  //url data
+
+
+		const isInStandaloneMode = () =>
+			(window.matchMedia('(display-mode: standalone)').matches) || (window.navigator.standalone);
+		console.log(userData);
+		if (isInStandaloneMode()) {
+			// alert("webapp is installed");
+			if (userData !== null && userData !== undefined) {
+				window.location = "/dashboard";
+			} else {
+				let mobile = urlParams().mobile;
+				if (mobile !== "yes") {
+					window.location = "/auth/?ref=pwa&t=" + new Date().getTime();
+				}
+			}
+		}
+
+
+		$('#passR, #confirmpassR').on('keyup', function () {
+			if ($('#passR').val() == $('#confirmpassR').val()) {
+				$('#confirmpassR').css("border", "none");
+				$('#createAccount').css('display', 'block');
+			} else
+				$('#confirmpassR').css("border", "1px solid red");
+			// $('#createAccount').css('display', 'none');
+		});
+
+
+		function choosePlan(plan) {
+			console.log(plan);
+			localStorage.setItem("registrationPlan", plan);
+		}
+
+	</script>
+
+	<script src="/assets/front/js/referral.js?v0.0.1"></script>
+</body>
+
+</html>

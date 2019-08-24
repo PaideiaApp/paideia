@@ -1,0 +1,165 @@
+* {
+    outline: none;
+}
+
+body {
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    background: #fcfafa;
+    /* background: #b3b3b3; */
+}
+
+.info {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 15%;
+}
+
+.info span {
+    font-size: 20px;
+    display: block;
+}
+
+.info .actions {
+    /* margin-top: 30px; */
+    position: absolute;
+    bottom: 10%;
+    width: 75%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.info button {
+    /* background: #161b23; */
+    border: 0;
+    border-radius: 13px;
+    padding: 13px 27px;
+    font-size: 17px;
+    margin-right: 6px;
+    margin-left: 6px;
+    font-family: 'Fredoka One', cursive;
+    background: none;
+    border: 2px solid #1c1c1c;
+    color: #1c1c1c;
+    letter-spacing: 0.03rem;
+    cursor: pointer;
+}
+
+#iosBlock{
+    display: none;
+    animation: smoothContent 1s;
+    position: absolute;
+    bottom: 7%;
+    width: 92%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#androidBlock{
+    display: none;
+    animation: smoothContent 1s;
+    position: absolute;
+    top: 7%;
+    width: 92%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.app{
+    /* width: 92%; */
+    /* margin: 0 auto; */
+    background: white;
+    padding: 5%;
+    box-sizing: border-box;
+    /* margin-top: 75%; */
+    border-radius: 10px;
+    text-align: center;
+}
+
+.app .headline{
+    font-size: 21px;
+    border-bottom: 1px solid #d8d8d8;
+    padding-bottom: 8px;
+}
+
+.app .app-logo{
+    /* background: #0e0e0e; */
+    width: 105px;
+    height: 105px;
+    background: url(../../pwa/img/theicon.png);
+    margin: 0 auto;
+    margin-top: 30px;
+    border-radius: 24px;
+    background-size: cover;
+}
+
+.app .app-name{
+    margin-top: 13px;
+    font-size: 29px;
+    color: #504d4d;
+    font-weight: bold;
+}
+
+.app .action{
+    margin-top: 23px;
+    background: white;
+    border-top: 1px solid #d8d8d8;
+    padding-top: 8px;
+    font-size: 0.9rem;
+}
+
+.app .action img{
+    width: 22px;
+    vertical-align: bottom;
+    margin: 0 3px;
+}
+
+.app .action b{
+    font-size: 16px;
+}
+
+.arrow{
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #fff;
+    margin: 0 auto;
+    margin-top: -1px;
+    /* display: none;
+    animation: smoothContent 1s; */
+}
+
+@keyframes smoothContent {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+@media (min-device-width: 320px) and (max-device-width: 374px) {
+    .info button{
+        padding: 11px 23px;
+    }
+}
+
+@media (min-width:1025px) {
+    #info{
+        display: none;
+    }
+    #pc{
+        display: block !important;
+    }
+}

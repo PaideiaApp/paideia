@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="/assets/dashboard/css/dashboard.css" /> -->
+    <script>document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/css/dashboard.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);</script>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $("#spinner").fadeOut("slow");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="spinner">
+        <img src="/assets/dashboard/img/load.gif">
+    </div>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    <div class="dashboard">
+        <div class="header">
+            <div class="hamburger" id="hamburger" onclick="showMobileMenu()">☰</div>
+            <div class="left">
+                <a href="/dashboard/">
+                    <div class="logo"> Paideia</div>
+                </a>
+            </div>
+            <div class="menu" id="mainMenu"></div>
+            <div class="user-profile right">
+                <div class="user dropdown">
+                    <img id="userMenuPicture">
+                    <div id="userMenuName" class="user-name"></div>
+                    <div class="dropdown-content">
+                        <a href="/dashboard/user/" onclick="window.location = '/dashboard/user/';">
+                            <button class="green">Профиль</button>
+                        </a>
+                        <br>
+                        <a href="#settings" onclick="showSettings()">
+                            <button class="blue">Настройки</button>
+                        </a>
+                        <br>
+                        <a href="#">
+                            <button onclick="logOut()" class="pink">Выйти</button>
+                        </a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page">
+            <div id="userBlock"></div>
+            <div id="jeff" style="display: none;">My name is jeff</div>
+            <div id="userInfoCover" style="display: none;">
+                <div class="closeCover" onclick="hideUserScoreInfo()">‹</div>
+            </div>
+            <div id="userStatsInfo" style="display: none;"></div>
+        </div>
+    </div>
+
+    <div id="edit" class="overlay"></div>
+    <div id="vocabulary" class="overlay"></div>
+    <div id="billing" class="overlay"></div>
+    <div id="bills" class="overlay"></div>
+
+    <div id="settings" class="overlay"></div>
+    <!-- <script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/settingsBlock.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>     `);</script>
+    <script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/main.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>     `);</script>
+    <script>document.write(`         <script type='text/javascript' src='/assets/dashboard/libs/progressbar/progressbarDist.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>     `);</script>
+    <script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/user.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>     `);</script>
+    <script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/billing.js?v=${new Date().getDate()}${new Date().getHours()}1'><\/script>         `);</script>
+    <script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/mainMenu.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script> -->
+    
+    <script>document.write(`         <script type='text/javascript' src='/dist/dashboard/user.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
+</body>
+
+</html>

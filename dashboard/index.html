@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" sizes="128x128" href="/assets/pwa/img/theicon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Styles and Libraries -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Livvic|Pirata+One|Macondo|Lato|Nova+Square|Kanit|Lexend+Deca&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square|Titan+One&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="/assets/dashboard/css/dashboard.css" /> -->
+    <script>document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/css/dashboard.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);</script>
+    <script>document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/libs/tour/bootstrap-tour-standalone.min.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);</script>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script>document.write(`<script type='text/javascript' src='/assets/dashboard/libs/tour/bootstrap-tour-standalone.min.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>`);</script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $("#spinner").fadeOut("slow");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="spinner">
+        <img src="/assets/dashboard/img/load.gif">
+    </div>
+    <div class="appPromo" id="appPromo">
+        Установите приложение
+        <a href="/app">
+            <button>Начать</button>
+        </a>
+        <span class="close" onclick="closeAppPromo()">&times;</span>
+    </div>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    <div class="dashboard">
+        <div class="header">
+            <div class="hamburger" id="hamburger" onclick="showMobileMenu()">☰</div>
+            <div class="left">
+                <a href="/dashboard/">
+                    <div class="logo"> Paideia</div>
+                </a>
+            </div>
+            <div class="menu" id="mainMenu"></div>
+            <div class="user-profile right">
+                <div class="user dropdown">
+                    <img id="userMenuPicture">
+                    <div id="userMenuName" class="user-name"></div>
+                    <div class="dropdown-content">
+                        <a href="/dashboard/user/" onclick="window.location = '/dashboard/user/';">
+                            <!-- <button class="green">My Profile</button> -->
+                            <button class="green">Профиль</button>
+                        </a>
+                        <br>
+                        <a href="#settings" onclick="showSettings()">
+                            <!-- <button class="blue">Settings</button> -->
+                            <button class="blue">Настройки</button>
+                        </a>
+                        <br>
+                        <a href="#">
+                            <!-- <button onclick="logOut()" class="pink">Log Out</button> -->
+                            <button onclick="logOut()" class="pink">Выйти</button>
+                        </a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page">
+            <div class="left-menu left" id="menu">
+                <div class="category">Wikipedia</div>
+                <a href="?f=wikipedia">Wikipedia Search</a>
+                <div class="category">для новичков</div>
+                <a href="?f=beginners&c=1">Work and School</a>
+                <a href="?f=beginners&c=2">Activities</a>
+                <a href="?f=beginners&c=3">Communication</a>
+                <a href="?f=beginners&c=4">Family</a>
+                <a href="?f=beginners&c=5">Leisure Time</a>
+                <div class="category">Свой текст</div>
+                <a href="?f=custom">Upload Text</a>
+                <a href="#" onclick="showExtension()">Extension</a>
+                <div class="category">видео</div>
+                <a href="?f=youtube">Youtube Search</a>
+            </div>
+
+            <div class="content right">
+                <div class="board" id="board">
+                    <div class="slider center">
+
+                        <div class="slide">
+                            <!-- <div class="text left">Hello World</div> -->
+                            <div class="text left">
+                                <h4>Учите языки по-новому</h4>
+                                <span>Читайте, смотрите и переводите видео, играйте в игры, тренируйте слова и предложения...</span>
+                            </div>
+                            <img class="right" src="https://images.unsplash.com/photo-1554668018-b76d73f358c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                        </div>
+
+                        <div class="slide">
+                            <!-- <div class="text left">Hello World 2</div> -->
+                            <div class="text left">
+                                <h4 class="tour"> Не знаете с чего начать? </h4>
+                                <a href="#" onclick="tour.restart();">Пройдите тур</a>
+                            </div>
+                            <!-- <img class="right" src="https://images.unsplash.com/photo-1553949285-bdcb31ec5cba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"> -->
+                            <img class="right" src="https://images.unsplash.com/photo-1523554888454-84137e72c3ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+                        </div>
+
+                        <div class="slide">
+                            <div class="text left">
+                                <h4 id="didYouKnow">А вы знали?</h4>
+                                <p id="introFact"></p>
+                            </div>
+                            <img class="right" src="https://images.unsplash.com/photo-1554668125-ffae9502cac9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
+                        </div>
+                    </div>
+
+                </div>
+                <!-- <div id="player"></div> -->
+                <div id="searchBlock" class="searchBlock"></div>
+                <div class="feed center" id="feed"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="settings" class="overlay"></div>
+
+    <div id="billing" class="overlay"></div>
+    <div id="bills" class="overlay"></div>
+
+
+    <!-- <script>document.write(`
+    <script type='text/javascript' src='/assets/dashboard/js/settingsBlock.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>
+    `);</script>
+    <script>document.write(`
+    <script type='text/javascript' src='/assets/dashboard/js/main.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>
+    `);</script>
+    <script>document.write(`
+    <script type='text/javascript' src='/assets/dashboard/js/feed.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>
+    `);</script>
+    <script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/mainMenu.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
+    <script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/tour.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
+    <script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/billing.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script> -->
+
+    <script>document.write(`         <script type='text/javascript' src='/dist/dashboard/home.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
+    <script>
+        $(document).ready(function () {
+            $('.slider').slick({
+                infinite: true,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                arrows: false,
+                dots: true,
+                // appendDots:'.controlls',
+                customPaging: function (slider, i) {
+                    return '<div class="switch"></div>';
+                }
+            });
+        });
+
+        //App Promotion
+
+        const isInStandaloneMode = () =>
+            (window.matchMedia('(display-mode: standalone)').matches) || (window.navigator.standalone);
+        console.log(userData);
+        if (isInStandaloneMode()) {
+            let appPromo = document.getElementById("appPromo");
+            appPromo.style.display = "none";
+        }
+
+
+        function closeAppPromo() {
+            let appPromo = document.getElementById("appPromo");
+            appPromo.style.display = "none";
+        }
+
+
+        //Third slide
+        let randomFact = Math.floor(Math.random() * 5) + 1;
+        let introFactBlock = document.getElementById("introFact");
+        switch (randomFact) {
+            case 1:
+                introFactBlock.innerHTML = 'В вашем профиле вы можете найти словарь,<br> с последними переведёнными словами.';
+                break;
+            case 2:
+                introFactBlock.innerHTML = 'Для того, чтобы выделить слово в разделе заметки, выделите слово *звёздочками*';
+                break;
+            case 3:
+                introFactBlock.innerHTML = 'Что вы можете включить черную тему, перейдя в настройки. <br>(come to the dark side)';
+                break;
+            case 4:
+                introFactBlock.innerHTML = 'Что в разделе видео, вы можете переводить любое YouTube видео c субтитрами.';
+                break;
+            case 5:
+                introFactBlock.innerHTML = 'Что в разделе<br> "свой текст" вы можете вставить свой текст и детально разобрать его.';
+                break;
+        }
+    </script>
+</body>
+
+</html>

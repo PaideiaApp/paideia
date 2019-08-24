@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="/assets/dashboard/css/dashboard.css" /> -->
+    <script>document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/css/dashboard.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);</script>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $("#spinner").fadeOut("slow");
+        });
+    </script>
+
+    <!-- <style>
+    
+.container, .backdrop, textarea {
+  /* width: 460px; */
+  height: 180px;
+}
+
+.highlights, textarea {
+  padding: 10px;
+  font: 20px/28px 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+}
+
+.container {
+  display: block;
+  margin: 0 auto;
+  transform: translateZ(0);
+  -webkit-text-size-adjust: none;
+  box-sizing: border-box;
+  width: 70%;
+}
+
+.backdrop {
+  position: absolute;
+  z-index: 1;
+  border: 2px solid #685972;
+  background-color: #fff;
+  overflow: auto;
+  pointer-events: none;
+  transition: transform 1s;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.highlights {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+    color: transparent;
+    box-sizing: border-box;
+}
+
+textarea {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  margin: 0;
+  border: 2px solid #74637f;
+  border-radius: 0;
+  color: #444;
+  background-color: transparent;
+  overflow: auto;
+  resize: none;
+  transition: transform 1s;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+mark {
+  border-radius: 3px;
+  color: transparent;
+  background-color: #b1d5e5;
+  box-sizing: border-box;
+}
+    </style> -->
+</head>
+
+<body>
+    <div id="spinner">
+        <img src="/assets/dashboard/img/load.gif">
+    </div>
+    <!-- <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div> -->
+    <div class="dashboard">
+        <div class="header">
+            <div class="hamburger" id="hamburger" onclick="showMobileMenu()">☰</div>
+            <div class="left">
+                <a href="/dashboard/">
+                    <div class="logo"> Paideia</div>
+                </a>
+            </div>
+            <div class="menu" id="mainMenu"></div>
+            <div class="user-profile right">
+                <div class="user dropdown">
+                    <img id="userMenuPicture">
+                    <div id="userMenuName" class="user-name"></div>
+                    <div class="dropdown-content">
+                        <a href="/dashboard/user/" onclick="window.location = '/dashboard/user/';">
+                            <button class="green">Профиль</button>
+                        </a>
+                        <br>
+                        <a href="#settings" onclick="showSettings()">
+                            <button class="blue">Настройки</button>
+                        </a>
+                        <br>
+                        <a href="#">
+                            <button onclick="logOut()" class="pink">Выйти</button>
+                        </a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page">
+            <div class="notes-editor" id="notesEditor">
+                <button class="mainWhite" onclick="window.history.go(-1); return false;">🔙 </button>
+                <br>
+                <br>
+                <div class="container">
+                    <div class="backdrop">
+                        <div class="highlights"></div>
+                    </div>
+                    <!-- <textarea id="notesBlock" placeholder="Type your text here..."></textarea> -->
+                    <div id="notesBlock" contenteditable="true" onfocus="this.value = this.value;" class="editable">Type your text here...</div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="line">
+                    <input id="notesHeading" class="main left" placeholder="Name for your note...">
+                    <button class="mainWhite right" onclick="updateNote()">Редактировать</button>
+                </div>
+                <div class="clear"></div>
+                <br>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="settings" class="overlay"></div>
+    <!-- <script>document.write(`     <script type='text/javascript' src='/assets/dashboard/js/settingsBlock.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>     `);</script>
+
+    <script>document.write(`             <script type='text/javascript' src='/assets/dashboard/js/main.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>     `);</script>
+    <script src="/assets/dashboard/js/notes.js"></script>
+    <script>document.write(`                 <script type='text/javascript' src='/assets/dashboard/js/feed.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
+    <script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/mainMenu.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script> -->
+    
+    <script>document.write(`         <script type='text/javascript' src='/dist/dashboard/notes-note.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
+
+    <script>
+//     var $container = $('.container');
+// var $backdrop = $('.backdrop');
+// var $highlights = $('.highlights');
+// var $textarea = $('textarea');
+
+// // yeah, browser sniffing sucks, but there are browser-specific quirks to handle that are not a matter of feature detection
+// var ua = window.navigator.userAgent.toLowerCase();
+// var isIE = !!ua.match(/msie|trident\/7|edge/);
+// var isWinPhone = ua.indexOf('windows phone') !== -1;
+// var isIOS = !isWinPhone && !!ua.match(/ipad|iphone|ipod/);
+
+// function applyHighlights(text) {
+//   text = text
+//     .replace(/\n$/g, '\n\n')
+//   //  .replace(/[A-Z].*?\b/g, '<mark>$&</mark>');
+//   .replace(/\*(.*?)\*/g, '<mark>$&</mark>');
+
+//   if (isIE) {
+//     // IE wraps whitespace differently in a div vs textarea, this fixes it
+//     text = text.replace(/ /g, ' <wbr>');
+//   }
+
+//   return text;
+// }
+
+// function handleInput() {
+//   var text = $textarea.val();
+//   var highlightedText = applyHighlights(text);
+//   $highlights.html(highlightedText);
+// }
+
+// function handleScroll() {
+//   var scrollTop = $textarea.scrollTop();
+//   $backdrop.scrollTop(scrollTop);
+
+//   var scrollLeft = $textarea.scrollLeft();
+//   $backdrop.scrollLeft(scrollLeft);  
+// }
+
+// function fixIOS() {
+//   // iOS adds 3px of (unremovable) padding to the left and right of a textarea, so adjust highlights div to match
+//   $highlights.css({
+//     'padding-left': '+=3px',
+//     'padding-right': '+=3px'
+//   });
+// }
+
+// function bindEvents() {
+//   $textarea.on({
+//     'input': handleInput,
+//     'scroll': handleScroll
+//   });
+// }
+
+// if (isIOS) {
+//   fixIOS();
+// }
+
+// bindEvents();
+// handleInput();
+
+    </script>
+</body>
+
+</html>

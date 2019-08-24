@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Restore</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/front/css/restore.css">
+    <script src="../assets/front/js/jquery-3.3.1.min.js?v0.0.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        	<!-- ReCaptcha -->
+	<script type="text/javascript">
+		var onloadCallback = function() {
+		  grecaptcha.render('reCaptcha', {
+			'sitekey' : '6LcCwa8UAAAAACVO6KalURAStl-BqaBIGSsCU4SX'
+		  });
+		};
+	  </script>
+</head>
+
+<body>
+    <div class="box">
+        <h2>Забыли Пароль?</h2>
+        <h4>Введите ваш Email чтобы Восстановить аккаунт</h4>
+        <input type="email" id="email" placeholder="Ваш Email"><br><br>
+        <div id="reCaptcha"></div>
+        <button onclick="restore()">Восстановить</button>
+    </div>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+    <script src="/assets/front/js/auth.js"></script>
+    <script>
+        function restore() {
+            let recaptcha = document.getElementById("g-recaptcha-response").value;
+            console.log(recaptcha);
+
+            let email = document.getElementById("email").value;
+            let params = 'email=' + encodeURIComponent(email) + '&recaptcha=' + encodeURIComponent(recaptcha);
+
+            let url = servingDomain + '/api/user/password-restore';
+
+            xhr.open("POST", url);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+            xhr.send(params);
+
+            xhr.onreadystatechange = (e) => {
+                if (xhr.readyState == 4) {
+                    console.log(xhr.responseText);
+                    Swal.fire({
+                    type: 'info',
+                    title: 'Восстановление аккаунта',
+                    text: xhr.responseText,
+                  })
+                }
+            }
+        }
+
+        function urlParams() {
+            var search = window.location.search.substr(1),
+                result = {};
+            if (search.length) {
+                search.split('&').forEach(function (item) {
+                    var buf = item.split('=');
+                    if (buf.length == 2)
+                        result[buf[0]] = decodeURIComponent(buf[1]);
+                });
+            }
+            return result;
+        }  //url data
+
+        let token = urlParams().t;
+
+
+        if (token !== null && token !== undefined) {
+            localStorage.setItem('token', token);
+            getUserData(token);
+        }
+    </script>
+</body>
+
+</html>

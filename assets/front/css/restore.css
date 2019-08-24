@@ -1,0 +1,33 @@
+body{
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+.box{
+    width: 35%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+
+input{
+    padding: 7px 13px;
+    border: 2px solid black;
+    color: black;
+    width: 90%;
+}
+
+button{
+    padding: 7px 13px;
+    border: 2px solid black;
+    color: black;
+    box-shadow: 6px 6px 0 #000000ad;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+@media screen and (max-width:1000px) {
+    .box{
+        width: 70%;
+        margin-top: 15%;
+    }
+}

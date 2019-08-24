@@ -1,0 +1,15 @@
+{
+    "name": "Paideia",
+    "short_name": "Paideia",
+    "icons": [{
+        "src": "assets/pwa/img/theicon.png",
+        "sizes": "128x128",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/dashboard/?ref=pwa",
+    "display": "fullscreen",
+    "background_color": "#FF9800",
+    "theme_color": "#FF9800",
+    "scope": "/"
+  }

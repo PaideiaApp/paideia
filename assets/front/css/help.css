@@ -1,0 +1,101 @@
+html{
+    scroll-behavior:smooth
+}
+
+body{
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.section{
+    min-height: 100vh;
+    padding-top: 10%;
+    width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+}
+
+.section .box{
+    margin: 0 auto;
+    width: 55%;
+}
+
+.section .title{
+    font-size: 28px;
+}
+
+.section h2{
+    font-size: 53px;
+    margin-top: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.section .point{
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    color: #424242;
+    background: rgb(245, 245, 245);
+    padding: 8px 11px;
+}
+
+
+.section.gray{
+    /* background: rgb(245, 245, 245); */
+    background: #1a1a21;
+    color: #5f5f69;
+}
+
+.section.gray h2{
+    color: white;
+}
+
+/* p span{
+    font-weight: bold;
+    border-bottom: 2px solid;
+    color: #000000;
+} */
+
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #3c3c3c;
+    border-bottom: 2px solid;
+    color: #ababab;
+}
+
+a.mail{
+    font-weight: bold;
+    color: #3c3c3c;
+    border-bottom: 2px solid;
+
+}
+
+.faq{
+    font-size: 17px;
+    line-height: 32px;
+}
+
+.faq span{
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Comfortaa', cursive;
+    color: white;
+}
+
+
+@media screen and (max-width:1000px) {
+    .section .box{
+        width: 80%;
+    }
+    .section .title{
+        font-size: 16px;
+    }
+    .section h2{
+        font-size: 29px;
+    }
+}

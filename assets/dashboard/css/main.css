@@ -1,0 +1,228 @@
+/* Main */
+*{
+    outline: none;
+}
+body{
+    margin: 0 auto;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.center{
+    margin: 0 auto;
+}
+
+.center-text{
+    text-align: center;
+}
+
+button.main{
+    color: #222;
+    font-weight: 600;
+    border: solid #222 2px;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: #81f5c6;
+    box-shadow: 4px 4px 0 #222;
+}
+
+/* PopUp */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 45%;
+    position: relative;
+   /* transition: all 5s ease-in-out; */
+    height: 80vh;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 26px;
+    text-decoration: none;
+    color: rgb(196, 196, 196);
+    background: #f3f3f3;
+    padding: 3px;
+    height: 28px;
+    width: 28px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.popup .close:hover {
+    color: #333;
+}
+
+.popup .content {
+    max-height: 90%;
+    overflow-y: scroll;
+}
+
+.popup input{
+    padding: 6px 12px;
+    width: 65%;
+    display: block;
+    background: white;
+    margin: 0 auto;
+    margin-top: 3%;
+}
+
+
+@media screen and (max-width: 700px) {
+    .box {
+        width: 70%;
+    }
+    .popup {
+        width: 85%;
+        margin: 40px auto;
+        padding: 15px;
+        height: 85vh;
+    }
+    .popup .content{
+        padding: 0% 3%;
+    }
+}
+
+/* welcome page */
+
+.welcome #message{
+    position: absolute;
+    left: 3%;
+    top: 5%;
+    background: white;
+    border: none;
+    border: 1px solid rgb(231, 231, 228);
+    padding: 20px 40px;
+    /* box-shadow: 0 5px 20px #CCCCCC; */
+    box-shadow: 0 5px 20px #2b2b2b;
+    display: none;
+    animation: fadeIn 1.8s;
+    z-index: 10;
+    border-radius: 6px;
+}
+.welcome{
+    margin-top: 2%;
+}
+
+.welcome .page{
+    margin-top: 5%;
+        width: 60%;
+}
+.welcome .header{
+    width: 70%;
+}
+
+.welcome .logo{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.welcome button.auth{
+    color: rgb(38, 38, 39);
+    border: 1px solid rgb(38, 38, 39);
+    padding: 8px 16px;
+    font-size: 16px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.welcome button.black{
+   background: rgb(38, 38, 39);
+   color: rgb(255, 255, 255);
+   margin-left: 20px;
+}
+
+
+/* Animations */
+
+@keyframes smooth {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateX(-200px);
+    }
+    to {
+        transform: translateX(1px);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        transform: translateX(20vh);
+    }
+    to {
+        transform: translateX(0vh);
+    }
+}
+
+@keyframes smoothContent {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes goUp {
+    from {
+        transform: translateY(-20px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes jump {
+    0%   {transform: translate3d(0,0,0) scale3d(1,1,1);}
+    40%  {transform: translate3d(0,30%,0) scale3d(.7,1.5,1);}
+    100% {transform: translate3d(0,100%,0) scale3d(1.5,.7,1);}
+  }

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Install PWA</title>
+    <!--PWA-->
+    <link rel="manifest" href="/manifest.json">
+	<script>document.write(`<link rel="apple-touch-icon" sizes="128x128" href="/assets/pwa/img/theicon.png?v=${new Date().getDate()}${new Date().getHours()}${new Date().getSeconds()}">`);</script>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/front/css/install.css">
+</head>
+
+<body>
+        <div id="pc" style="display: none; text-align: center;"><br><br><h3>Откройте эту страницу с телефона.</h3></div>
+    <div id="info" class="info">
+        Приложение
+        <span>Выберите платформу:</span>
+        <div class="actions">
+            <button onclick="showIOS()">IOS</button>
+            <button onclick="showAndroid()">Android</button>
+        </div>
+    </div>
+    <div id="iosBlock">
+        <div class="app">
+            <div class="headline">Установить приложение</div>
+            <div class="app-logo"></div>
+            <div class="app-name">Paideia</div>
+            <div class="action">
+                <!-- Tap <img src="/assets/front/img/share-icon.png"> and then <b>Add to Home Screen</b> -->
+                Нажмите на
+                <img src="/assets/front/img/share-icon.png"> затем выберите<br>
+                <b>На экран "Домой"</b>
+            </div>
+        </div>
+        <div id="arrow" class="arrow"></div>
+    </div>
+
+    <div id="androidBlock">
+        <div class="app">
+            <div class="headline">Установить приложение</div>
+            <div class="app-logo"></div>
+            <div class="app-name">Paideia</div>
+            <div class="action">
+                <!-- Tap <img src="/assets/front/img/share-icon.png"> and then <b>Add to Home Screen</b> -->
+                Нажмите на
+                <img src="/assets/front/img/share-dots-icon.png"> затем
+                <br>
+                <b>Добавить на экран "Домой"</b>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showIOS() {
+            document.getElementById("info").style.display = "none";
+            document.getElementById("iosBlock").style.display = "block";
+            document.body.style.background = "#272727";
+        }
+
+        function showAndroid() {
+            document.getElementById("info").style.display = "none";
+            document.getElementById("androidBlock").style.display = "block";
+            document.body.style.background = "#272727";
+        }
+    </script>
+</body>
+
+</html>
