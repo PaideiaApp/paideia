@@ -18,7 +18,7 @@ if (authToken !== null) {
 }
 
 // var servingDomain = "http://localhost:3000";
-var servingDomain = "http://206.81.27.236"; 
+var servingDomain = "https://api.paideia.space"; 
 // var servingDomain = "http://192.168.0.102:3000";
 const xhr = new XMLHttpRequest();
 
