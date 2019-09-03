@@ -13,7 +13,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <!-- Styles and Libraries -->
-    <link href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square|Titan+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square|Titan+One&display=swap"
+        rel="stylesheet">
     <script>document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/css/dashboard.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);</script>
     <script>document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/libs/tour/bootstrap-tour-standalone.min.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);</script>
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
@@ -189,12 +190,23 @@
             appPromo.style.display = "none";
         }
 
-
+ 
         function closeAppPromo() {
             let appPromo = document.getElementById("appPromo");
-            appPromo.style.display = "none";
+            appPromo.style.display = "none"; 
         }
 
+        // Register the service worker
+        if ('serviceWorker' in navigator) {
+            // navigator.serviceWorker.register('/assets/dashboard/service/offline.js').then(function (registration) {
+                navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+                // Registration was successful
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }).catch(function (err) {
+                // registration failed :(
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        }
 
         //Third slide
         let randomFact = Math.floor(Math.random() * 5) + 1;

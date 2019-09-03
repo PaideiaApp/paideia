@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Offline</title>
+    <style>
+        *{
+            outline: none;
+        }
+        body {
+            margin: 0 auto;
+            background: #252a41;
+        }
+
+        .page {
+            width: 95%;
+            margin: 0 auto;
+            margin-top: 3%;
+            background: white;
+            border-radius: 1rem;
+            box-sizing: border-box;
+            padding: 5%;
+            font-family: monospace;
+            font-size: 1.4rem;
+            min-height: 90vh;
+        }
+
+        button {
+            background: white;
+            border: 2px solid #252a41;
+            padding: 8px 21px;
+            font-size: .8rem;
+            border-radius: 7px;
+            box-shadow: 6px 8px 0 #000000ad;
+            cursor: pointer;
+        }
+
+        #userDictionaryBlock .word-line{
+            margin-top: 4px;
+            padding: 6px;
+            cursor: pointer;
+        }
+        #userDictionaryBlock .word-line:hover{
+            background: #252a41;
+            color: white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        The app is offline, please check your internet connection
+        <br>
+        <br>
+        <button onclick="window.location.reload()">Reload</button>
+        <br>
+        <br>
+        <div id="userDictionaryBlock"></div>
+    </div>
+
+    <script>
+        let userDictionaryBlock = document.getElementById("userDictionaryBlock");
+        let userDictionary = localStorage.getItem("userDictionary");
+        // console.log(userDictionary);
+
+        if (userDictionary !== null && userDictionary !== undefined) {
+            userDictionary = JSON.parse(userDictionary);
+            let html = "";
+            for (let i = 0; i < userDictionary.length; i++) {
+                console.log(userDictionary[i])
+                html = html + `<div class="word-line" onclick="speak('${userDictionary[i]["word"]}')">${userDictionary[i]["word"]} - ${userDictionary[i]["translation"]}</div>`;
+            }
+            userDictionaryBlock.innerHTML = html;
+        }
+
+        function speak(text) {
+    let voiceLanguageSettings = localStorage.getItem("voiceLanguageSettings");
+    console.log(voiceLanguageSettings);
+    if(voiceLanguageSettings !== null && voiceLanguageSettings !== undefined && voiceLanguageSettings == "us"){
+        sayItUS(text);
+    } else{
+       sayItGB(text);
+       voices = window.speechSynthesis.getVoices();
+    }
+
+}
+
+function sayItGB(text){
+    let message = new SpeechSynthesisUtterance();
+    message.lang = "en-GB";
+    message.rate = 0.9;
+    message.volume = 1.7;
+    message.pitch = 1;
+    message.text = text;
+    window.speechSynthesis.speak(message);
+}
+
+function sayItUS(text){
+    let message = new SpeechSynthesisUtterance();
+    message.lang = "en-US";
+    message.rate = 0.9;
+    message.volume = 1.7;
+    message.pitch = 1;
+    message.text = text;
+    window.speechSynthesis.speak(message);
+}
+    </script>
+</body>
+
+</html>
