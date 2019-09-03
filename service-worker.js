@@ -16,52 +16,27 @@ this.addEventListener('install', event => {
   );
 });
 
-// this.addEventListener('fetch', event => {
-//     // request.mode = navigate isn't supported in all browsers
-//     // so include a check for Accept: text/html header.
-//     if (event.request.mode === 'navigate' || (event.request.method === 'GET' && event.request.headers.get('accept').includes('text/html'))) {
-//           event.respondWith(
-//             fetch(event.request.url).catch(error => {
-//                 // Return the offline page
-//                 return caches.match(offlineUrl);
-//             })
-//       );
-//     }
-//     else{
-//           // Respond with everything else if we can
-//           event.respondWith(caches.match(event.request)
-//                           .then(function (response) {
-//                           return response || fetch(event.request);
-//                       })
-//               );
-//         }
-//   });
-
-this.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.match(event.request)
-      .then(function(response) {
-        if (response) {
-          return response;     // if valid response is found in cache return it
-        } else {
-          return fetch(event.request)     //fetch from internet
-            .then(function(res) {
-              return caches.open(CACHE_DYNAMIC_NAME)
-                .then(function(cache) {
-                  cache.put(event.request.url, res.clone());    //save the response for future
-                  return res;   // return the fetched data
-                })
+this.addEventListener('fetch', event => {
+    // request.mode = navigate isn't supported in all browsers
+    // so include a check for Accept: text/html header.
+    if (event.request.mode === 'navigate' || (event.request.method === 'GET' && event.request.headers.get('accept').includes('text/html'))) {
+          event.respondWith(
+            fetch(event.request.url).catch(error => {
+                // Return the offline page
+                return caches.match(offlineUrl);
             })
-            .catch(function(err) {       // fallback mechanism
-              // return caches.open(CACHE_CONTAINING_ERROR_MESSAGES)
-              //   .then(function(cache) {
-                  return cache.match(offlineUrl);
-                // });
-            });
+      );
+    }
+    else{
+          // Respond with everything else if we can
+          event.respondWith(caches.match(event.request)
+                          .then(function (response) {
+                          return response || fetch(event.request);
+                      })
+              );
         }
-      })
-  );
-});  
+  });
+
 
 
 //   caches.keys().then(function(names) {
