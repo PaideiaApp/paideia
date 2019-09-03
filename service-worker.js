@@ -29,11 +29,13 @@ this.addEventListener('fetch', event => {
     }
     else{
           // Respond with everything else if we can
-          event.respondWith(caches.match(event.request)
-                          .then(function (response) {
-                          return response || fetch(event.request);
-                      })
-              );
+          // event.respondWith(caches.match(event.request)
+          //                 .then(function (response) {
+          //                 return response || fetch(event.request);
+          //             })
+          //     );
+             // Return the offline page
+             return caches.match(offlineUrl);
         }
   });
 
