@@ -1682,6 +1682,215 @@ span.reqInfo {
     box-shadow: 4px 4px 0 #222;
 }
 
+/* Study Plan */
+
+.dashboard .studyplan{
+    /* width: 100%; */
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 4%;
+}
+
+.dashboard .studyplan h5{
+    margin-left: 26px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: -24px;
+    color: #b95000;
+    text-transform: uppercase;
+}
+.dashboard .studyplan h3{
+    margin-left: 26px;
+    font-size: 26px;
+    font-weight: bold;
+    font-family: serif;
+    margin-bottom: 35px;
+}
+
+.dashboard .studyplan .wrapper {
+    display: grid;
+    /* grid-template-columns: 33% 33% 33%; */
+    grid-template-columns: 100%;
+    grid-gap: 18px;
+    width: 100%;
+    margin: 0 auto;
+    cursor: move;
+}
+
+.dashboard .studyplan .block{
+    background-color: #444;
+    color: #fff;
+    border-radius: 1.4em;
+    transition: 0.5s;
+    height: 415px; 
+    background-size: cover;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: 25px;
+    margin-right: 10px;
+    font-family: 'Open Sans', sans-serif;
+    /* cursor: move; */
+    cursor: pointer;
+}
+
+.dashboard .studyplan .block p{
+    position: absolute;
+    bottom: 7.5%;
+    font-size: 23px;
+    cursor: pointer;
+}
+.dashboard .studyplan .block span {
+    position: absolute;
+    bottom: 7.5%;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+
+/* Modal Screen */
+
+.dashboard #modalScreenCover {
+    width: 100%;
+    background: url(https://images.unsplash.com/flagged/photo-1563248101-a975e9a18cc6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+    background-color: white;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 0;
+    background-size: cover;
+    /* background-size: contain!important;  */
+    /* animation: smooth 0.4s; */
+    animation: goDown 0.7s;
+    /* display: none; */
+    filter: brightness(0.8);
+}
+
+.dashboard #modalScreenCover .closeCover {
+    color: white;
+    font-size: 35px;
+    position: absolute;
+    top: 5%;
+    left: 6%;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.dashboard #modalScreenCoverWhitePart{
+    width: 100%;
+    /* height: 30vh; */
+    background: white;
+    position: fixed;
+    bottom: 0;
+    z-index: 0;
+}
+
+.dashboard #modalScreenContent {
+    width: 100%;
+    background: white;
+    min-height: 85vh;
+    position: absolute;
+    top: 15%;
+    border-radius: 40px 40px 0 0;
+    padding: 2% 30%;
+    box-sizing: border-box;
+    animation: goUpCard 0.9s;
+    font-family: 'Open Sans', sans-serif;
+    overflow-y: auto;
+    /* display: none; */
+    z-index: 1;
+    padding-bottom: 17vh;
+}
+
+.dashboard #modalScreenContent span {
+    color: #a3a5a5;
+}
+
+/* .dashboard #modalScreenContent a{
+    color: #292929;
+    border-bottom: 2px solid;
+    padding-bottom: 3px;
+    display: inline-block;
+} */
+
+.dashboard #modalScreenContent .modalLine{
+    height: 3px;
+    width: 30%;
+    background: #bfbfbf;
+    border-radius: 25rem;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    max-width: 120px;
+}
+
+.dashboard #modalScreenContent .section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* border-bottom: 1px solid lightgray; */
+    padding: 18px 16px;
+    margin-top: 17px;
+    background: #e1f7fd;
+    border-radius: 26px;
+}
+
+.dashboard #modalScreenContent .section span{
+    font-size: 14px;
+    color: #5d5d5d;
+    display: block;
+    margin-top: 7px;
+}
+
+.dashboard #modalScreenContent .section button{
+    /* color: #1e2023; */
+    color: #242829;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 50px;
+    padding: 9px 12px;
+    cursor: pointer;
+    /* transition: 2s; */
+    background: #c1dde4;
+    border: 0;
+}
+
+/* section colors */
+.dashboard #modalScreenContent .section.feedSection{
+    background: lightpink;
+}
+
+.dashboard #modalScreenContent .section.feedSection button{
+    background: #dc9ba5;
+    color: #312225;
+}
+
+.dashboard #modalScreenContent .section.lessonsSection{
+    background: lightsalmon;
+}
+
+.dashboard #modalScreenContent .section.lessonsSection button{
+    background: #de8359;
+    color: #46291c;
+}
+
+.dashboard #modalScreenContent .section.profileSection{
+    background: lightgoldenrodyellow;
+}
+
+.dashboard #modalScreenContent .section.profileSection button{
+    background: #e6e6b7;
+    color: #3e3e35;
+}
+
+.dashboard #modalScreenContent .section.moreSection{
+    background: lightgreen;
+}
+
+.dashboard #modalScreenContent .section.moreSection button{
+    background: #76ce76;
+    color: #1e331e;
+}
+
 /* PopUp */
 
 .overlay {
@@ -1896,6 +2105,18 @@ span.reqInfo {
     }
 }
 
+
+@keyframes smooth {
+    from {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 @keyframes smoothContent {
     from {
         transform: scale(0.8);
@@ -1957,6 +2178,7 @@ span.reqInfo {
 /* only screen and */
 
 @media (max-device-width: 480px) {
+
     #stars {
         display: none;
     }
@@ -2252,6 +2474,20 @@ span.reqInfo {
 
     .dashboard .searchBlock input{
         width: 152px;
+    }
+    .dashboard .studyplan{
+        width: 100%;
+        margin-top: 10%;
+    }
+    .dashboard .studyplan .wrapper {
+        width: 100%;
+    }
+    .dashboard .studyplan .block{
+        height: 415px;
+    }
+    .dashboard #modalScreenContent{
+        margin-top: 49%;
+        padding: 6% 7%;
     }
 }
 

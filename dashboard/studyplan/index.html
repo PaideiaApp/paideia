@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Study Plan</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="/assets/dashboard/css/dashboard.css" /> -->
+    <script>document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/css/dashboard.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);</script>
+    <link rel="stylesheet" type="text/css" href="/assets/dashboard/libs/tour/bootstrap-tour-standalone.min.css" />
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="/assets/dashboard/libs/tour/bootstrap-tour-standalone.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL6GMHQL14"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-TL6GMHQL14');
+    </script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $("#spinner").fadeOut("slow");
+        });
+    </script>
+</head>
+
+<body>
+    <div id="spinner">
+        <img src="/assets/dashboard/img/load.gif">
+    </div>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    <div class="dashboard">
+        <div class="header">
+            <div class="hamburger" id="hamburger" onclick="showMobileMenu()">☰</div>
+            <div class="left">
+                <a href="/dashboard/">
+                    <div class="logo"> Paideia</div>
+                </a>
+            </div>
+            <div class="menu" id="mainMenu"></div>
+            <div class="user-profile right">
+                <div class="user dropdown">
+                    <img id="userMenuPicture">
+                    <div id="userMenuName" class="user-name"></div>
+                    <div class="dropdown-content">
+                        <a href="/dashboard/user/" onclick="window.location = '/dashboard/user/';">
+                            <button class="green">Профиль</button>
+                        </a>
+                        <br>
+                        <a href="#settings" onclick="showSettings()">
+                            <button class="blue">Настройки</button>
+                        </a>
+                        <br>
+                        <a href="#">
+                            <button onclick="logOut()" class="pink">Выйти</button>
+                        </a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="page"> -->
+        <div id="studyplanBlocks" class="studyplan">
+            <h5>учитесь по плану</h5>
+            <h3>Study Plan</h3>
+            <div class="wrapper studyplan-slider">
+                <div class="block" style="background: url(https://images.unsplash.com/photo-1565555334121-4a4f177af7b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80); background-size: cover;"
+                    onclick="showStudyPlan(1, this.style.background)">
+                    <p>Вариант 1</p>
+                    <span>Для новичков</span>
+                </div>
+                <div class="block" style="background: url(https://images.unsplash.com/photo-1564415637254-92c66292cd64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1575&q=80); background-size: cover;"
+                    onclick="showStudyPlan(2, this.style.background)">
+                    <p>Вариант 2</p>
+                    <span>Для новичков</span>
+                </div>
+                <div class="block" style="background: url(https://images.unsplash.com/photo-1564957341478-2ee2944794b2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80); background-size: cover;"
+                    onclick="showStudyPlan(3, this.style.background)">
+                    <p>Вариант 3</p>
+                    <span>Для новичков</span>
+                </div>
+                <div class="block" style="background: url(https://images.unsplash.com/photo-1566242635312-e58f0e7fb83a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80); background-size: cover;"
+                onclick="showStudyPlan(4, this.style.background)">
+                <p>Вариант 1</p>
+                <span>Средний уровень</span>
+            </div>
+            </div>
+        </div>
+
+        <div id="modalScreenCover" style="display: none;">
+            <div class="closeCover" onclick="hideStudyPlan()">‹</div>
+        </div>
+        <div id="modalScreenCoverWhitePart" style="display: none;"></div>
+        <div id="modalScreenContent" style="display: none;"></div>
+        <!-- </div> -->
+    </div>
+
+
+    <div id="settings" class="overlay"></div>
+    <script>document.write(`         <script type='text/javascript' src='/dist/dashboard/studyplan.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
+
+    <script>
+        $(document).ready(function () {
+            $('.studyplan-slider').slick({
+                infinite: false,
+                // autoplay: true,
+                // autoplaySpeed: 4000,
+                arrows: false,
+                slidesToShow: 3,
+                // centerMode: true,
+                // centerPadding: '100px',
+                // dots: true,
+                // appendDots:'.controlls',
+                // customPaging: function (slider, i) {
+                //     return '<div class="switch"></div>';
+                // }
+                responsive: [
+                    {
+                        breakpoint: 1008,
+                        settings: {
+                            slidesToShow: 1.2,
+                        }
+                    },
+                ],
+            });
+        });
+
+
+//studyplan.js
+    </script>
+</body>
+
+</html>
