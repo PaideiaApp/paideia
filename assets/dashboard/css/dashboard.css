@@ -1854,6 +1854,16 @@ span.reqInfo {
     border: 0;
 }
 
+.dashboard #modalScreenContent .modalScreenContentFooter{
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 40px;
+    padding-top: 35px;
+    border-top: 1px solid #e6e6e6b8;
+    border-radius: 1px;
+    margin-top: 10px; 
+}
+
 /* section colors */
 .dashboard #modalScreenContent .section.feedSection{
     background: lightpink;
