@@ -2499,6 +2499,9 @@ span.reqInfo {
         margin-top: 49%;
         padding: 6% 7%;
     }
+    a.openLessonsLink{
+        font-size: 10px!important;
+    }
 }
 
 @media (min-device-width: 320px) and (max-device-width: 374px) {
