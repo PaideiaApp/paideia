@@ -30,6 +30,24 @@ h2 {
     position: relative;
     z-index: 1;
 }
+#status{
+    width: 100%;
+    box-sizing: border-box;
+    color: #5b6884;
+    text-align: center;
+    border-radius: 0 0 4px 4px;
+    animation: goDown 2.5s;
+    padding: 10px 15px;
+    border-bottom: 1px solid #e5e8ed;
+    line-height: 30px;
+}
+#status span{
+    border-radius: 5px;
+    background: lightskyblue;
+    padding: 4px 6px;
+    margin-right: 15px;
+    color: #405d6f;
+}
 .no-padding {
     padding: 0!important;
 }
@@ -903,6 +921,15 @@ nav {
     }
     to {
         transform: translateX(1px);
+    }
+}
+
+@keyframes goDown {
+    from {
+        transform: translateY(-134px);
+    }
+    to {
+        transform: translateY(1px);
     }
 }
 
