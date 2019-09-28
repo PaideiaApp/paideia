@@ -77,11 +77,11 @@ function runProfile() {
     //     profile.style.display = "block";
     //     console.log(userData);
     //     document.getElementById("userDataBlock").innerHTML = userData["response"][0]["name"];
-    if (window.location.pathname == "/") {
+    if (window.location.pathname == "/" || window.location.pathname == "/en/") {
         regButtons.innerHTML = `
         <a href="/dashboard" class="login">
         Dashboard
-        <img src="assets/front/img/arrow-right-blue.svg" style="display: -webkit-inline-box; width: 15px; margin-left: 4px;" alt="">
+        <img src="/assets/front/img/arrow-right-blue.svg" style="display: -webkit-inline-box; width: 15px; margin-left: 4px;" alt="">
         </a>
         `;
     }

@@ -4,24 +4,26 @@
 <head>
 	<meta charset="UTF-8">
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no"
+    />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Post</title>
-	<link href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square&display=swap"
+	 rel="stylesheet">
 	<!-- <link rel="stylesheet" type="text/css" href="/assets/dashboard/css/post.css" /> -->
 	<script>document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/css/post.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);</script>
 	<link rel="stylesheet" type="text/css" href="/assets/dashboard/libs/tour/bootstrap-tour-standalone.min.css" />
-    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
 	<script src="/assets/dashboard/libs/tour/bootstrap-tour-standalone.min.js"></script>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-TL6GMHQL14"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag() { dataLayer.push(arguments); }
-			gtag('js', new Date());
-	
-			gtag('config', 'G-TL6GMHQL14');
-		</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TL6GMHQL14"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'G-TL6GMHQL14');
+	</script>
 	<script type="text/javascript">
 		$(window).load(function () {
 			$("#spinner").fadeOut("slow");
@@ -30,11 +32,18 @@
 </head>
 
 <body>
-    <div id="spinner"><img src="/assets/dashboard/img/load.gif"></div>
+	<div id="spinner">
+		<img src="/assets/dashboard/img/load.gif">
+	</div>
 	<div class="headerText">
 		<br>
-		<b style="text-transform: uppercase; font-size: 13px;">English Practice</b> ·
-		<span style="color: #b7c0c5; text-transform: uppercase; font-size: 13px; cursor: pointer;" onclick="window.history.go(-1); return false;">Перейти Назад</span>
+		<div id="stickyMenu">
+			<b style="text-transform: uppercase; font-size: 13px;">English Practice</b> ·
+			<span style="color: #b7c0c5; text-transform: uppercase; font-size: 13px; cursor: pointer;" onclick="window.history.go(-1); return false;">Перейти Назад</span>
+			<div id="audioVersion">
+				<img width="100%" onclick="readingMode()" src="/assets/dashboard/img/headphones.png">
+			</div>
+		</div>
 		<br>
 		<h1 id="headingName"></h1>
 		<span style="color: #444; text-transform: uppercase; font-size: 15px;" id="author">By
@@ -46,6 +55,13 @@
 	<div id="message"></div>
 	<div id="classicPlayer"></div>
 	<!-- <div id="player"></div> -->
+	<!-- <button class="mainWhite" onclick="readingMode()">Rading Mode</button>
+	<br>
+	<br>
+	<button class="mainWhite" onclick="readingModePause()">Pause Rading Mode</button>
+	<br>
+	<br>
+	<button class="mainWhite" onclick="readingModeContinue()">Continue Rading Mode</button> -->
 	<div id="text" class="text"></div>
 	<div id="originalText"></div>
 
@@ -73,7 +89,7 @@
 	</div>
 	<br>
 	<br>
-		<!-- <script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/main.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>     `);</script>		
+	<!-- <script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/main.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>     `);</script>		
 		<script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/p/tools.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
 		<script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/p/main.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
 		<script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/p/request.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
@@ -81,7 +97,22 @@
 		<script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/p/sources.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
 		<script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/tour.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script> -->
 
-		<script>document.write(`         <script type='text/javascript' src='/dist/dashboard/posts.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
+	<script>document.write(`         <script type='text/javascript' src='/dist/dashboard/posts.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
+
+	<script>
+
+		window.onscroll = function () { stickyHeader() };
+		let headerMenuBlock = document.getElementById("stickyMenu");
+		let stickyPart = headerMenuBlock.offsetTop;
+
+		function stickyHeader() {
+			if (window.pageYOffset >= stickyPart) {
+				headerMenuBlock.classList.add("fix-header");
+			} else {
+				headerMenuBlock.classList.remove("fix-header");
+			}
+		}
+	</script>
 </body>
 
 </html>
