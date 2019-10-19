@@ -482,6 +482,7 @@ margin-left: 17%; */
         float: none;
         height: 55vh;
         margin: 0 auto;
+        overflow-x: hidden;
     }
     .text  transcript text {
         margin-left: 0;
