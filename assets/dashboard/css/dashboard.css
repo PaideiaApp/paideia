@@ -1682,6 +1682,12 @@ span.reqInfo {
     box-shadow: 4px 4px 0 #222;
 }
 
+.dashboard #partners img{
+    width: 41px;
+    border-radius: 50px;
+    margin: 0 10px;
+}
+
 /* Study Plan */
 
 .dashboard .studyplan{
