@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dashboard</title>
     <!-- PWA -->
@@ -53,8 +54,8 @@
     <div id='stars2'></div>
     <div id='stars3'></div>
     <div class="dashboard">
-        <div class="header">
-            <div class="hamburger" id="hamburger" onclick="showMobileMenu()">☰</div>
+        <div class="header home">
+            <div class="hamburger home" id="hamburger" onclick="showMobileMenu()">☰</div>
             <div class="left">
                 <a href="/dashboard/">
                     <div class="logo"> Paideia</div>
@@ -67,45 +68,74 @@
         <div class="page">
             <div class="left-menu left" id="menu"></div>
 
-            <div class="content right">
-                <div class="board" id="board">
-                    <div class="slider center">
+            <div class="content right" id="contentRight">
+                <div id="homeContentBlocks">
+                    <div id="challenge" class="challengeBlock"></div>
 
-                        <div class="slide">
-                            <!-- <div class="text left">Hello World</div> -->
-                            <div class="text left">
-                                <h4>Учите языки по-новому</h4>
-                                <span>Читайте, смотрите и переводите видео, играйте в игры, тренируйте слова и предложения...</span>
-                            </div>
-                            <img class="right" src="https://images.unsplash.com/photo-1554668018-b76d73f358c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
-                        </div>
-
-                        <div class="slide">
-                            <!-- <div class="text left">Hello World 2</div> -->
-                            <div class="text left">
-                                <h4 class="tour" onclick="window.location='/dashboard/studyplan';"> Не знаете с чего начать? </h4>
-                                <!-- <a href="#" onclick="tour.restart();">Пройдите тур</a> -->
-                                <a href="studyplan" class="openLessonsLink">Откройте уроки</a> 
-                            </div>
-                            <!-- <img class="right" src="https://images.unsplash.com/photo-1553949285-bdcb31ec5cba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"> -->
-                            <img class="right" src="https://images.unsplash.com/photo-1523554888454-84137e72c3ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
-                        </div>
-
-                        <div class="slide">
-                            <div class="text left">
-                                <h4 id="didYouKnow">А вы знали?</h4>
-                                <p id="introFact"></p>
-                            </div>
-                            <img class="right" src="https://images.unsplash.com/photo-1554668125-ffae9502cac9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
-                        </div>
-                    </div>
-
+                    <div id="dailyTask" class="daily-task"></div>
+                    <div class="home-headline" id="homeHeadlineActions"></div>
+                    <div class="block-line" id="suggestionsBlocks"></div>
+                    <div class="home-headline" id="homeHeadlineContent"></div>
+                    <div class="block-line" id="contentBlocks"></div>
                 </div>
+                <!-- <div class="board" id="board">
+                            <div class="slider center">
+        
+                                <div class="slide">
+
+                                    <div class="text left">
+                                        <h4>Учите языки по-новому</h4>
+                                        <span>Читайте, смотрите и переводите видео, играйте в игры, тренируйте слова и предложения...</span>
+                                    </div>
+                                    <img class="right" src="https://images.unsplash.com/photo-1554668018-b76d73f358c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                                </div>
+        
+                                <div class="slide">
+                                    <div class="text left">
+                                        <h4 class="tour" onclick="window.location='/dashboard/studyplan';"> Не знаете с чего начать? </h4>
+                                        <a href="studyplan" class="openLessonsLink">Откройте уроки</a> 
+                                    </div>
+                                    <img class="right" src="https://images.unsplash.com/photo-1523554888454-84137e72c3ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80">
+                                </div>
+        
+                                <div class="slide">
+                                    <div class="text left">
+                                        <h4 id="didYouKnow">А вы знали?</h4>
+                                        <p id="introFact"></p>
+                                    </div>
+                                    <img class="right" src="https://images.unsplash.com/photo-1554668125-ffae9502cac9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80">
+                                </div>
+                            </div>
+        
+                        </div> -->
+
                 <!-- <div id="player"></div> -->
                 <div id="searchBlock" class="searchBlock"></div>
                 <div class="feed center" id="feed"></div>
             </div>
         </div>
+
+
+        <div id="translationBlock">
+            <input type="text" id="translationField" placeholder="Быстрый перевод..." maxlength="20">
+            <span id="tranlsationResult"></span>
+        </div>
+
+        <div id="bottomMenu" class="bottom-menu">
+            <div class="link" onclick="quickTranslate()" id="quickTranslateMenu">
+                <img src="../../assets/dashboard/img/homeIcons/translate-50.png">
+            </div>
+            <div class="link" onclick="window.location = '/dashboard/studyplan';">
+                <img src="../../assets/dashboard/img/homeIcons/flashcards-50.png">
+            </div>
+            <div class="link" onclick="window.location = '/dashboard/notes';">
+                <img src="../../assets/dashboard/img/homeIcons/bookmark-50.png">
+            </div>
+            <div class="link" onclick="window.location = '/dashboard/user';">
+                <img src="../../assets/dashboard/img/homeIcons/customer-50.png">
+            </div>
+        </div>
+
     </div>
 
 
@@ -132,6 +162,29 @@
     <script>document.write(`         <script type='text/javascript' src='/dist/dashboard/home.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
     <script>
         $(document).ready(function () {
+
+            //actions slider
+            $('#suggestionsBlocks').slick({
+                infinite: true,
+                // autoplay: true,
+                autoplaySpeed: 4000,
+                arrows: false,
+                dots: false,
+                slidesToShow: 2,
+            });
+
+            //content menu slider
+            $('#contentBlocks').slick({
+                infinite: true,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                // centerMode: true,
+                arrows: false,
+                dots: false,
+                slidesToShow: 2,
+            });
+
+            //Bottom Slider
             $('.slider').slick({
                 infinite: true,
                 autoplay: true,
@@ -155,10 +208,10 @@
             appPromo.style.display = "none";
         }
 
- 
+
         function closeAppPromo() {
             let appPromo = document.getElementById("appPromo");
-            appPromo.style.display = "none"; 
+            appPromo.style.display = "none";
         }
 
         // // Register the service worker
@@ -174,25 +227,26 @@
         // }
 
         //Third slide
-        let randomFact = Math.floor(Math.random() * 5) + 1;
-        let introFactBlock = document.getElementById("introFact");
-        switch (randomFact) {
-            case 1:
-                introFactBlock.innerHTML = 'В вашем профиле вы можете найти словарь,<br> с последними переведёнными словами.';
-                break;
-            case 2:
-                introFactBlock.innerHTML = 'Для того, чтобы выделить слово в разделе заметки, выделите слово *звёздочками*';
-                break;
-            case 3:
-                introFactBlock.innerHTML = 'Что вы можете включить черную тему, перейдя в настройки. <br>(come to the dark side)';
-                break;
-            case 4:
-                introFactBlock.innerHTML = 'Что в разделе видео, вы можете переводить любое YouTube видео c субтитрами.';
-                break;
-            case 5:
-                introFactBlock.innerHTML = 'Что в разделе<br> "свой текст" вы можете вставить свой текст и детально разобрать его.';
-                break;
-        }
+        // let randomFact = Math.floor(Math.random() * 5) + 1;
+        // let introFactBlock = document.getElementById("introFact");
+        // switch (randomFact) {
+        //     case 1:
+        //         introFactBlock.innerHTML = 'В вашем профиле вы можете найти словарь,<br> с последними переведёнными словами.';
+        //         break;
+        //     case 2:
+        //         introFactBlock.innerHTML = 'Для того, чтобы выделить слово в разделе заметки, выделите слово *звёздочками*';
+        //         break;
+        //     case 3:
+        //         introFactBlock.innerHTML = 'Что вы можете включить черную тему, перейдя в настройки. <br>(come to the dark side)';
+        //         break;
+        //     case 4:
+        //         introFactBlock.innerHTML = 'Что в разделе видео, вы можете переводить любое YouTube видео c субтитрами.';
+        //         break;
+        //     case 5:
+        //         introFactBlock.innerHTML = 'Что в разделе<br> "свой текст" вы можете вставить свой текст и детально разобрать его.';
+        //         break;
+        // }
+
     </script>
 </body>
 
