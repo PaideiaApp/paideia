@@ -53,6 +53,28 @@
     <div id='stars'></div>
     <div id='stars2'></div>
     <div id='stars3'></div>
+    <div id="theUpdate">
+        <div id="firstPartUpdate">
+            <h3>Hello</h3>
+            <span>Welcome to Paidea v2.0. ✌️</span>
+            <button id="play-button">Next</button>
+        </div>
+        <div id="secondPartUpdate" style="display: none;">
+            <!-- <iframe id="videoUpdate" width="100%" height="200px" src="https://www.youtube.com/embed/jA9sANDUcNs?enablejsapi=1&amp;html5=1?rel=0&amp;playsinline=1&amp;start=23"
+                frameborder="0"></iframe> -->
+            <iframe id="videoUpdate" src="https://www.youtube.com/embed/zlVsSlAd3eE?enablejsapi=1&amp;html5=1?rel=0&amp;playsinline=1&amp;start=8"
+                frameborder="0"></iframe>
+            <p>
+                - New Home Screen
+                <br> - Improved UI/UX
+                <br> - Quick In-app Translations
+                <br> - Suggestion Cards
+                <br> - Daily Challenge
+                <br> - Bug Fixes
+            </p> 
+            <button onclick="closeUpdatePromo()"> Let's Go!</button>
+        </div>
+    </div>
     <div class="dashboard">
         <div class="header home">
             <div class="hamburger home" id="hamburger" onclick="showMobileMenu()">☰</div>
@@ -248,6 +270,58 @@
         // }
 
     </script>
+
+    <!-- The Update -->
+    <script type="text/javascript" id="www-widgetapi-script" src="https://s.ytimg.com/yts/jsbin/www-widgetapi-vfl8_u944/www-widgetapi.js"
+        async=""></script>
+    <script src="https://www.youtube.com/player_api"></script>
+    <script>
+        let theUpdate = localStorage.getItem("theUpdate");
+
+        if(theUpdate == null && theUpdate == undefined){
+        document.getElementById("theUpdate").style.display = "flex";
+        
+        let player;
+
+        // this function gets called when API is ready to use
+        function onYouTubePlayerAPIReady() {
+            // create the global player from the specific iframe (#video)
+            player = new YT.Player('videoUpdate', {
+                events: {
+                    // call this function when player is ready to use
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            setBlackTheme();
+            // bind events
+            let playButton = document.getElementById("play-button");
+            playButton.addEventListener("click", function () {
+                document.getElementById("theUpdate").style.background = "black";
+                document.getElementById("firstPartUpdate").style.display = "none";
+                document.getElementById("secondPartUpdate").style.display = "block";
+                player.playVideo();
+            });
+        }
+
+
+        // Inject YouTube API script
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/player_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+
+        function closeUpdatePromo() {
+            document.getElementById("theUpdate").innerHTML = "";
+            document.getElementById("theUpdate").style.display = "none";
+            localStorage.setItem("theUpdate", "true");
+        }
+    }
+    </script>
+
 </body>
 
 </html>

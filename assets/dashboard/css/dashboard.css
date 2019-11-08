@@ -116,6 +116,70 @@ button.mainWhite {
     color: #6b6b6b;
 }
 
+#theUpdate{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    left: 0; 
+    top: 0;
+    background: white;
+    z-index: 999;
+    box-sizing: border-box;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#theUpdate h3{
+    font-size: 40px;
+}
+#theUpdate span{
+    animation: smoothContent 6s;
+    color: lightslategrey;
+    display: block;
+}
+
+#theUpdate button{
+    margin-top: 40px;
+    background: lightpink;
+    padding: 10px 40px;
+    font-size: 17px;
+    border: 0;
+    border-radius: 6px;
+    color: white;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+#theUpdate button span{
+    display: inline-block;
+    animation: smoothContent 2s;
+}
+
+#theUpdate div{
+    text-align: center;
+    width: 100%;
+}
+
+#theUpdate p{
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    line-height: 27px;
+    margin-top: 30px;
+    color: white;
+    animation: smoothContent 3s;
+}
+
+#theUpdate iframe{
+    width: 400px;
+    height: 200px;
+}
+
+
 /* Home */
 
 .home {}
@@ -183,6 +247,7 @@ button.mainWhite {
     right: 0;
     margin-left: auto;
     margin-right: auto;
+    border: 0;
     -webkit-appearance: none;
 }
 
@@ -2635,7 +2700,7 @@ span.reqInfo {
     .dashboard .menu {
         display: none;
         position: absolute;
-        margin-top: 45px;
+        margin-top: 75px;
         z-index: 100;
         background: white;
         width: 100%;
@@ -2663,7 +2728,7 @@ span.reqInfo {
         width: 100%;
         height: auto;
         position: relative;
-        margin-top: 105px;
+        margin-top: 120px;
         display: none;
         animation: smoothContent 0.4s;
     }
@@ -2775,6 +2840,7 @@ span.reqInfo {
     }
     .timeline main {
         width: 80%;
+        margin-top: 5vh;
     }
     .timeline #content {
         margin: auto;
@@ -2897,8 +2963,9 @@ span.reqInfo {
         display: flex;
     }
     .dashboard .header {
-        padding-top: 20px;
+        padding-top: 40px;
         box-shadow: none!important;
+        align-items: center;
     }
     .dashboard .hamburger {
         display: flex;
@@ -2941,6 +3008,9 @@ span.reqInfo {
     }
     .dashboard .footer {
         margin-bottom: 150px!important;
+    }
+    #theUpdate iframe{
+        width: 100%;
     }
 }
 
