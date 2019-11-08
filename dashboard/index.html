@@ -295,10 +295,10 @@
         }
 
         function onPlayerReady(event) {
-            setBlackTheme();
             // bind events
             let playButton = document.getElementById("play-button");
             playButton.addEventListener("click", function () {
+                setBlackTheme();
                 document.getElementById("theUpdate").style.background = "black";
                 document.getElementById("firstPartUpdate").style.display = "none";
                 document.getElementById("secondPartUpdate").style.display = "block";
