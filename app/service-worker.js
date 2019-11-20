@@ -1,5 +1,5 @@
 
-var version = 'v1.0.0::';
+var version = `v1.0.${new Date().getDate()}${new Date().getHours()}::`;
 
 self.addEventListener("install", function(event) {
   console.log('WORKER: install event in progress.');
@@ -20,7 +20,8 @@ self.addEventListener("install", function(event) {
         */
         return cache.addAll([
           '/',
-          '../assets/front/css/install.css',
+          '/dashboard/',
+          '../assets/front/',
         ]);
       })
       .then(function() {
