@@ -14,8 +14,8 @@
     ],
     "start_url": "/dashboard/?ref=pwa",
     "display": "fullscreen",
-    "background_color": "#FF9800",
-    "theme_color": "#FF9800",
+    "background_color": "#12131d",
+    "theme_color": "#12131d",
     "scope": "/",
     "prefer_related_applications": false
   }
