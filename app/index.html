@@ -8,26 +8,30 @@
     <title>Install PWA</title>
     <!--PWA-->
     <link rel="manifest" href="/manifest.json">
-	<script>document.write(`<link rel="apple-touch-icon" sizes="128x128" href="/assets/pwa/img/theicon.png?v=${new Date().getDate()}${new Date().getHours()}${new Date().getSeconds()}">`);</script>
+    <script>document.write(`<link rel="apple-touch-icon" sizes="128x128" href="/assets/pwa/img/theicon.png?v=${new Date().getDate()}${new Date().getHours()}${new Date().getSeconds()}">`);</script>
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/front/css/install.css">
-    	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TL6GMHQL14"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL6GMHQL14"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-		gtag('config', 'G-TL6GMHQL14');
-	</script>
+        gtag('config', 'G-TL6GMHQL14');
+    </script>
 </head>
 
 <body>
-        <div id="pc" style="display: none; text-align: center;"><br><br><h3>Откройте эту страницу с телефона.</h3></div>
+    <div id="pc" style="display: none; text-align: center;">
+        <br>
+        <br>
+        <h3>Откройте эту страницу с телефона.</h3>
+    </div>
     <div id="info" class="info">
         Приложение
         <span>Выберите платформу:</span>
@@ -44,7 +48,8 @@
             <div class="action">
                 <!-- Tap <img src="/assets/front/img/share-icon.png"> and then <b>Add to Home Screen</b> -->
                 Нажмите на
-                <img src="/assets/front/img/share-icon.png"> затем выберите<br>
+                <img src="/assets/front/img/share-icon.png"> затем выберите
+                <br>
                 <b>На экран "Домой"</b>
             </div>
         </div>
@@ -78,6 +83,27 @@
             document.getElementById("androidBlock").style.display = "block";
             document.body.style.background = "#272727";
         }
+    </script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            console.log('CLIENT: service worker registration in progress.');
+            navigator.serviceWorker.register('service-worker.js').then(function () {
+                console.log('CLIENT: service worker registration complete.');
+            }, function () {
+                console.log('CLIENT: service worker registration failure.');
+            });
+        } else {
+            console.log('CLIENT: service worker is not supported.');
+        }
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevent Chrome 76 and later from showing the mini-infobar
+            e.preventDefault();
+            // Stash the event so it can be triggered later.
+            deferredPrompt = e;
+            showInstallPromotion();
+        });
     </script>
 </body>
 
