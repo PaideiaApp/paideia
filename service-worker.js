@@ -74,7 +74,6 @@ self.addEventListener("install", function(event) {
         return cache.addAll([
           '/',
           '/dashboard',
-          '/dashboard/',
           '/app',
           '/assets'
         ]);
