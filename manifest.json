@@ -5,11 +5,17 @@
         "src": "assets/pwa/img/theicon.png",
         "sizes": "128x128",
         "type": "image/png"
+      },
+      {
+        "src": "assets/pwa/img/theicon512.png",
+        "sizes": "512x512",
+        "type": "image/png"
       }
     ],
     "start_url": "/dashboard/?ref=pwa",
     "display": "fullscreen",
     "background_color": "#FF9800",
     "theme_color": "#FF9800",
-    "scope": "/"
+    "scope": "/",
+    "prefer_related_applications": "false"
   }
