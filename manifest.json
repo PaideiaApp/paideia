@@ -17,5 +17,5 @@
     "background_color": "#FF9800",
     "theme_color": "#FF9800",
     "scope": "/",
-    "prefer_related_applications": "false"
+    "prefer_related_applications": false
   }
