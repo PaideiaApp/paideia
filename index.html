@@ -1308,6 +1308,28 @@
 
 	<script src="/assets/front/js/referral.js?v0.0.2"></script>
 
+
+	<script>
+		if ('serviceWorker' in navigator) {
+			console.log('CLIENT: service worker registration in progress.');
+			navigator.serviceWorker.register('service-worker.js').then(function () {
+				console.log('CLIENT: service worker registration complete.');
+			}, function () {
+				console.log('CLIENT: service worker registration failure.');
+			});
+		} else {
+			console.log('CLIENT: service worker is not supported.');
+		}
+
+		window.addEventListener('beforeinstallprompt', (e) => {
+			// Prevent Chrome 76 and later from showing the mini-infobar
+			//   e.preventDefault();
+			// Stash the event so it can be triggered later.
+			deferredPrompt = e;
+			showInstallPromotion();
+		});
+	</script>
+
 </body>
 
 </html>

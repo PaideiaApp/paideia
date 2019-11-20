@@ -181,19 +181,6 @@
     <script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/tour.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
     <script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/billing.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script> -->
 
-    <script>
-        if ('serviceWorker' in navigator) {
-            console.log('CLIENT: service worker registration in progress.');
-            navigator.serviceWorker.register('/app/service-worker.js').then(function () {
-                console.log('CLIENT: service worker registration complete.');
-            }, function () {
-                console.log('CLIENT: service worker registration failure.');
-            });
-        } else {
-            console.log('CLIENT: service worker is not supported.');
-        }
-    </script>
-
     <script>document.write(`         <script type='text/javascript' src='/dist/dashboard/home.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
     <script>
         $(document).ready(function () {
