@@ -1278,7 +1278,7 @@
       (window.matchMedia('(display-mode: standalone)').matches) || (window.navigator.standalone) || document.referrer.includes('android-app://');
 		console.log(userData);
 		if (isInStandaloneMode()) {
-			// alert("webapp is installed");
+			alert("webapp is installed");
 			if (userData !== null && userData !== undefined) {
 				window.location = "/dashboard";
 			} else {
