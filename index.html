@@ -1289,6 +1289,9 @@
 	// 		}
 	// 	}
 
+	let isInWebAppChrome = window.matchMedia('(display-mode: standalone)').matches;
+	alert(isInWebAppChrome);
+
 	if (window.matchMedia('(display-mode: standalone)').matches) {  
 			alert("webapp is installed");
 			if (userData !== null && userData !== undefined) {
