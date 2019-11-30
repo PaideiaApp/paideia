@@ -18,7 +18,7 @@ if (authToken !== null) {
 }
 
 // var servingDomain = "http://localhost:3000";
-var servingDomain = "https://api.paideia.space"; 
+var servingDomain = "https://api.paideia.space";
 // var servingDomain = "http://192.168.0.102:3000";
 const xhr = new XMLHttpRequest();
 
@@ -49,6 +49,31 @@ function auth() {
 }
 
 
+function authAfterR(email, pass) {
+    let params = 'email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(pass);
+
+    let url = servingDomain + '/api/auth/login';
+
+    xhr.open("POST", url);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    xhr.send(params);
+
+    xhr.onreadystatechange = (e) => {
+        if (xhr.readyState == 4) {
+            let data = JSON.parse(xhr.responseText);
+            if (data["response"]["token"] !== undefined) {
+                localStorage.setItem('token', data["response"]["token"]);
+                getUserData(data["response"]["token"]);
+            } else {
+                showMessage(data["response"]["message"]);
+            }
+        }
+    }
+}
+
+
+
 function getUserData(token) {
     let url = servingDomain + '/api/auth/user';
 
@@ -60,10 +85,10 @@ function getUserData(token) {
     xhr.onreadystatechange = (e) => {
         if (xhr.readyState == 4) {
             console.log(xhr.responseText);
-            if(xhr.responseText !== "Forbidden"){
-            localStorage.setItem('userData', xhr.responseText);
-            window.location.href = "/dashboard";
-             runProfile();
+            if (xhr.responseText !== "Forbidden") {
+                localStorage.setItem('userData', xhr.responseText);
+                window.location.href = "/dashboard";
+                runProfile();
             }
         }
     }
@@ -143,17 +168,20 @@ $("#registration").submit(function (e) {
 
             if (code == 100) {
                 //  alert("Ваш аккаунт успешно создан! Пожалуйста авторизируйтесь!");
-                Swal.fire({ title: "Ваш аккаунт успешно создан!", text: "Пожалуйста авторизируйтесь!", type: "success" }).then((result) => {
-                  window.location.reload();
-                  });
+                Swal.fire({ title: "Ваш аккаунт успешно создан!", text: "Нажмите ок, чтобы продолжить", type: "success" }).then((result) => {
+                    //   window.location.reload();
+                    let emailR = document.getElementById("emailR").value;
+                    let passR = document.getElementById("passR").value;
+                    authAfterR(emailR, passR);
+                });
             } else {
                 Swal.fire({
                     type: 'error',
                     title: 'Oops...',
                     text: data["message"],
-                  })
+                })
                 // alert(data["message"]);
-                
+
                 grecaptcha.reset();
             }
         }
