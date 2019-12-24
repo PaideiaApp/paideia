@@ -52,7 +52,7 @@
 
 
 
-var version = `v1${new Date().getDate()}::`;
+var version = `v1${new Date().getMonth()}::`;
  
 self.addEventListener("install", function(event) {
   console.log('WORKER: install event in progress.');

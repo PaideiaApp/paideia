@@ -40,9 +40,7 @@
 </head>
 
 <body>
-    <div id="spinner">
-        <img src="/assets/dashboard/img/load.gif">
-    </div>
+    <script src="/assets/dashboard/loader/loading.js"></script>
     <div class="appPromo" id="appPromo">
         Установите приложение
         <a href="/app">
@@ -94,11 +92,15 @@
                 <div id="homeContentBlocks">
                     <div id="challenge" class="challengeBlock"></div>
 
+                    <div id="dailyEdition" class="daily-edition"></div>
+
                     <div id="dailyTask" class="daily-task"></div>
                     <div class="home-headline" id="homeHeadlineActions"></div>
                     <div class="block-line" id="suggestionsBlocks"></div>
                     <div class="home-headline" id="homeHeadlineContent"></div>
                     <div class="block-line" id="contentBlocks"></div>
+                    <div class="home-headline" id="homeHeadlineNews"></div>
+                    <div class="block-line" id="newsBlocks"></div>
                 </div>
                 <!-- <div class="board" id="board">
                             <div class="slider center">
@@ -147,7 +149,7 @@
             <div class="link" onclick="quickTranslate()" id="quickTranslateMenu">
                 <img src="../../assets/dashboard/img/homeIcons/translate-50.png">
             </div>
-            <div class="link" onclick="window.location = '/dashboard/studyplan';">
+            <div class="link" onclick="startChallenge()">
                 <img src="../../assets/dashboard/img/homeIcons/flashcards-50.png">
             </div>
             <div class="link" onclick="window.location = '/dashboard/notes';">
@@ -272,6 +274,45 @@
         //         introFactBlock.innerHTML = 'Что в разделе<br> "свой текст" вы можете вставить свой текст и детально разобрать его.';
         //         break;
         // }
+
+        //Daily Edition
+
+        // let dailyEdition = document.getElementById("dailyEdition");
+
+        // dailyEdition.innerHTML = `
+        //     <h2>Daily Edition</h2>
+        //     <span id="dailyEditionClose" onclick="closeDailyEdition()">‹</span>
+        //     <a href="/dashboard/roadmap/?next=true">
+        //     <div class="option-block">
+        //         <div class="left icon">
+        //             <img src="../../assets/dashboard/img/homeIcons/map-50.png">
+        //         </div>
+        //         <div class="left description">
+        //         <h3>The Map</h3>
+        //         <span>Перейти</span>
+        //         </div>
+        //     </div>
+        //     </a>
+        //     <div class="option-block">
+        //         <div class="left icon">
+        //             <img src="../../assets/dashboard/img/homeIcons/flashcards-50.png">
+        //         </div>
+        //         <div class="left description">
+        //         <h3>New Words</h3>
+        //         <span>Перейти</span>
+        //         </div>
+        //     </div>
+        // `;
+
+        // function showDailyEdition() {
+        //     dailyEdition.style.display = "block";
+        // }
+
+        // function closeDailyEdition() {
+        //     dailyEdition.style.display = "none";
+        // }
+
+
 
     </script>
 

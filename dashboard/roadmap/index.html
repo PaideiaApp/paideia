@@ -3,9 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no"
+    />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Partners</title>
+    <title>Roadmap</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square&display=swap"
         rel="stylesheet">
     <!-- <link rel="stylesheet" type="text/css" href="/assets/dashboard/css/dashboard.css" /> -->
@@ -13,6 +18,9 @@
     <link rel="stylesheet" type="text/css" href="/assets/dashboard/libs/tour/bootstrap-tour-standalone.min.css" />
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <script src="/assets/dashboard/libs/tour/bootstrap-tour-standalone.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL6GMHQL14"></script>
     <script>
@@ -30,7 +38,7 @@
 </head>
 
 <body>
-    <script src="/assets/dashboard/loader/loading.js"></script>
+        <script src="/assets/dashboard/loader/loading.js"></script>
     <div id='stars'></div>
     <div id='stars2'></div>
     <div id='stars3'></div>
@@ -42,29 +50,33 @@
                     <div class="logo"> Paideia</div>
                 </a>
             </div>
-            <!-- <div class="hamburger" id="hamburger" onclick="showMobileMenu()">☰</div> -->
             <div class="menu" id="mainMenu"></div>
             <div class="user-profile right" id="user-menu"></div>
         </div>
 
         <div class="page">
-            <div class="partners-page">
-                <div class="partners" id="partners"></div>
-                <div class="block">
-                    <div id="refInfo"></div>
-                    <div id="refHistory"></div>
+            <div class="roadmap">
+                <div id="roadmapMenu" class="roadmapMenu">
+                    <b>Roadmap</b>
+                    <br> Progress:
+                    <span id="userProgress"></span>
+                    <span class="arrow" id="nextTask">↑</span>
                 </div>
+                <div id="theMap" class="map"></div>
             </div>
         </div>
+
+        <div id="singleStep" class="single-step">
+            <div class="close" onclick="closeStep()">‹</div>
+            <div id="singleStepContent"></div>
+        </div>
+
     </div>
 
-    <div id="settings" class="overlay"></div>
-    <!-- <script>document.write(`     <script type='text/javascript' src='/assets/dashboard/js/settingsBlock.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>     `);</script>
-        <script>document.write(`          <script type='text/javascript' src='/assets/dashboard/js/main.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>     `);</script>
-        <script>document.write(`          <script type='text/javascript' src='/assets/dashboard/js/mainMenu.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
-        <script>document.write(`          <script type='text/javascript' src='/assets/dashboard/js/partners.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>     `);</script> -->
 
-    <script>document.write(`          <script type='text/javascript' src='/dist/dashboard/partners.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
+    <div id="settings" class="overlay"></div>
+
+    <script>document.write(`         <script type='text/javascript' src='/dist/dashboard/roadmap.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
 </body>
 
 </html>

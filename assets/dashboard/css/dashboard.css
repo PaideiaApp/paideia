@@ -75,11 +75,12 @@ button.mainWhite {
 }
 
 #spinner {
-    position: fixed;
-    left: 0px;
-    top: 0px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* bottom: 0; */
     width: 100%;
-    height: 100%;
+    height: 100vh;
     z-index: 9999;
     /* background: url(https://media.giphy.com/media/fxk77fLi2ZPQU6kHKx/giphy.gif) 50% 50% no-repeat white; */
     background: white;
@@ -89,12 +90,18 @@ button.mainWhite {
     justify-content: center;
 }
 
+#spinner.dark {
+    /* background: black; */
+    background: #12131d;
+}
+
 #spinner img {
     width: 200px;
     margin: 0 auto;
     display: flex;
     align-self: center;
 }
+
 
 .appPromo {
     display: none;
@@ -121,11 +128,11 @@ button.mainWhite {
     color: #6b6b6b;
 }
 
-#theUpdate{
+#theUpdate {
     position: fixed;
     height: 100vh;
     width: 100%;
-    left: 0; 
+    left: 0;
     top: 0;
     background: white;
     z-index: 999;
@@ -137,16 +144,17 @@ button.mainWhite {
     overflow: hidden;
 }
 
-#theUpdate h3{
+#theUpdate h3 {
     font-size: 40px;
 }
-#theUpdate span{
+
+#theUpdate span {
     animation: smoothContent 6s;
     color: lightslategrey;
     display: block;
 }
 
-#theUpdate button{
+#theUpdate button {
     margin-top: 40px;
     background: lightpink;
     padding: 10px 40px;
@@ -158,17 +166,17 @@ button.mainWhite {
     cursor: pointer;
 }
 
-#theUpdate button span{
+#theUpdate button span {
     display: inline-block;
     animation: smoothContent 2s;
 }
 
-#theUpdate div{
+#theUpdate div {
     text-align: center;
     width: 100%;
 }
 
-#theUpdate p{
+#theUpdate p {
     text-align: left;
     display: flex;
     justify-content: center;
@@ -179,11 +187,10 @@ button.mainWhite {
     animation: smoothContent 3s;
 }
 
-#theUpdate iframe{
+#theUpdate iframe {
     width: 400px;
     height: 200px;
 }
-
 
 /* Home */
 
@@ -216,7 +223,7 @@ button.mainWhite {
     /* margin-top: 14%; */
     margin-top: 4%;
     border-radius: 17px;
-     /* background: url(https://images.unsplash.com/photo-1569938297878-0bd7b8a1476a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=658&q=80) 50% 20%; */
+    /* background: url(https://images.unsplash.com/photo-1569938297878-0bd7b8a1476a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=658&q=80) 50% 20%; */
     background-position: center;
 }
 
@@ -299,6 +306,29 @@ button.mainWhite {
     word-break: break-word;
 }
 
+.dashboard .block-line .news {
+    color: white;
+    width: 100%;
+    /* height: 13vh; */
+    height: 16vh;
+    background: lightskyblue;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    /* padding: 9% 7%; */
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.dashboard .block-line .news span{
+    padding: 7%;
+}
+
 .dashboard .beginnersCategory {
     padding-top: 14vh;
     display: flex;
@@ -340,10 +370,73 @@ button.mainWhite {
     height: 25px;
 }
 
-
 /* Home Challenge */
 
-.dashboard .challengeBlock{
+.dashboard .daily-edition{
+    width: 100%;
+    background: #ffffff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 75vh;
+    z-index: 100;
+    box-sizing: border-box;
+    padding: 10% 0;
+    border-radius: 40px 40px 0 0;
+    animation: goUpCard 1s;
+    display: none;
+}
+
+.dashboard .daily-edition h2{
+    margin: 0;
+    margin-left: 8%;
+    margin-bottom: 9%;
+}
+
+.dashboard .daily-edition #dailyEditionClose{
+    z-index: 100;
+    position: absolute;
+    right: 8%;
+    top: 5%;
+    color: lightgrey;
+    font-size: 38px;
+    font-weight: bold;
+    cursor: pointer;
+    /* animation: smoothContent 2s; */
+    transform: rotate(-90deg);
+}
+
+.dashboard .daily-edition .option-block{
+    padding: 7% 9%;
+    border-bottom: 1px solid #ccc9c9ad;
+    height: 8%;
+}
+
+.dashboard .daily-edition .option-block .icon{
+    width: 12%;
+}
+
+.dashboard .daily-edition .option-block .icon img{
+    width: 100%;
+}
+
+.dashboard .daily-edition .option-block .description{
+    margin-left: 7%;
+}
+
+.dashboard .daily-edition .option-block h3{
+    font-size: 17px;
+    color: black;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 13%;
+}
+
+.dashboard .daily-edition .option-block span{
+    color: #8c8a8a;
+}
+
+.dashboard .challengeBlock {
     width: 100%;
     background: lightslategrey;
     position: fixed;
@@ -354,9 +447,10 @@ button.mainWhite {
     box-sizing: border-box;
     padding: 10% 20%;
     display: none;
+    animation: goUpBlock 0.6s;
 }
 
-.dashboard #challengeClose{
+.dashboard #challengeClose {
     z-index: 100;
     position: fixed;
     left: 8%;
@@ -365,9 +459,10 @@ button.mainWhite {
     font-size: 45px;
     font-weight: bold;
     cursor: pointer;
+    animation: smoothContent 3.1s;
 }
 
-.dashboard #challenge button{
+.dashboard #challenge button {
     padding: 12px 34px;
     font-size: 16px;
     background: lightslategrey;
@@ -377,7 +472,7 @@ button.mainWhite {
     border: none;
 }
 
-.dashboard #challenge button.white{
+.dashboard #challenge button.white {
     padding: 12px 34px;
     font-size: 16px;
     background: white;
@@ -387,14 +482,12 @@ button.mainWhite {
     border: none;
 }
 
-
-
-.dashboard .wordCards{
+.dashboard .wordCards {
     height: 60vh;
-    width: 100%;    
+    width: 100%;
 }
 
-.dashboard .wordCards .wordCard{
+.dashboard .wordCards .wordCard {
     background: white;
     text-align: center;
     box-sizing: border-box;
@@ -406,8 +499,7 @@ button.mainWhite {
     position: relative;
 }
 
-.dashboard .wordCards .wordCard:before,
-.dashboard .wordCards .wordCard:after{
+.dashboard .wordCards .wordCard:before, .dashboard .wordCards .wordCard:after {
     position: absolute;
     content: "";
     height: 10px;
@@ -417,35 +509,37 @@ button.mainWhite {
     margin-left: auto;
     margin-right: auto;
 }
-.dashboard .wordCards .wordCard:before{
+
+.dashboard .wordCards .wordCard:before {
     width: 80%;
     bottom: -9px;
     background: #cacaca;
     z-index: -1;
 }
-.dashboard .wordCards .wordCard:after{
+
+.dashboard .wordCards .wordCard:after {
     width: 68%;
     bottom: -17px;
     background: #abacad;
     z-index: -2;
-    }
+}
 
-#challenge .slick-list{
+#challenge .slick-list {
     overflow: visible!important;
 }
 
-#challenge .slick-slide{
+#challenge .slick-slide {
     opacity: 0;
     transition: all 0.3s ease;
     transform: scale(.35);
 }
 
-#challenge .slick-active{
+#challenge .slick-active {
     opacity: 1;
     transform: scale(1)
 }
 
-.dashboard #challenge .infoCard{
+.dashboard #challenge .infoCard {
     background: white;
     text-align: center;
     box-sizing: border-box;
@@ -456,14 +550,13 @@ button.mainWhite {
     margin-left: 10px;
 }
 
-.dashboard #currentCard{
+.dashboard #currentCard {
     text-align: center;
     margin-top: 50px;
     font-size: 18px;
 }
 
-
-.dashboard .wordChallengeOG{
+.dashboard .wordChallengeOG {
     text-transform: capitalize;
     font-size: 36px;
     /* animation: smoothContent 1s; */
@@ -471,7 +564,7 @@ button.mainWhite {
     text-align: center;
 }
 
-.dashboard .wordBlockOption{
+.dashboard .wordBlockOption {
     cursor: pointer;
     padding: 10px 20px;
     transition: 0.5s;
@@ -487,7 +580,7 @@ button.mainWhite {
     animation: smoothContent 1s;
 }
 
-.dashboard .wordChallengeCorrect{
+.dashboard .wordChallengeCorrect {
     cursor: pointer;
     padding: 10px 18px;
     transition: 0.5s;
@@ -499,7 +592,7 @@ button.mainWhite {
     animation: smoothContent 1s;
 }
 
-.dashboard .wordChallengeWrong{
+.dashboard .wordChallengeWrong {
     cursor: pointer;
     padding: 10px 18px;
     transition: 0.5s;
@@ -511,7 +604,7 @@ button.mainWhite {
     animation: smoothContent 1s;
 }
 
-.dashboard .challengeThemeBackground{
+.dashboard .challengeThemeBackground {
     background: #f09a89;
     display: flex!important;
     justify-content: center;
@@ -519,22 +612,22 @@ button.mainWhite {
     flex-direction: column;
 }
 
-.dashboard .challengeThemeBackgroundResult{
+.dashboard .challengeThemeBackgroundResult {
     background: #1a1a21;
     color: #bebed0;
 }
 
-.dashboard #challenge .wordOptions{
+.dashboard #challenge .wordOptions {
     padding: 7% 3%;
 }
 
-.dashboard #challenge .wordsResultBlock{
+.dashboard #challenge .wordsResultBlock {
     text-align: center;
     font-size: 25px;
     animation: smoothContent 3s;
 }
 
-.dashboard #translationBlock{
+.dashboard #translationBlock {
     width: 100%;
     position: fixed;
     top: 0;
@@ -544,7 +637,7 @@ button.mainWhite {
     display: none;
 }
 
-.dashboard #translationBlock input{
+.dashboard #translationBlock input {
     width: 80%;
     margin: 0 auto;
     margin-top: 20%;
@@ -560,7 +653,7 @@ button.mainWhite {
     -webkit-appearance: none;
 }
 
-.dashboard #translationBlock span{
+.dashboard #translationBlock span {
     display: block;
     color: white;
     text-align: center;
@@ -2060,7 +2153,7 @@ span.reqInfo {
     border-radius: 10px;
 }
 
-.popup a.pricing{
+.popup a.pricing {
     color: gray;
     border-bottom: 2px solid lightseagreen;
     padding-bottom: 4px;
@@ -2210,6 +2303,263 @@ span.reqInfo {
     bottom: 7.5%;
     font-size: 14px;
     cursor: pointer;
+}
+
+/* Road Map */
+
+.roadmap {}
+
+.roadmap .roadmapMenu {
+    position: fixed;
+    left: 0;
+    width: 30%;
+    height: 100vh;
+    /* background: lightsteelblue; */
+    /* background: #232323; */
+    background: url(https://images.unsplash.com/photo-1563941406054-949225931d52?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+    background-size: cover;
+    box-sizing: border-box;
+    padding: 18% 8%;
+    font-size: 20px;
+    /* color: #161c23; */
+    color: white;
+}
+
+.roadmap .roadmapMenu #userProgress{
+    background: #313131;
+    padding: 3px 7px;
+    border-radius: 5px; 
+}
+.roadmap .roadmapMenu b{
+    font-size: 23px;
+    display: block;
+}
+
+.roadmap .roadmapMenu .arrow {
+    font-size: 25px;
+    position: absolute;
+    right: 5%;
+    top: 30%;
+    font-weight: bold;
+    color: #5e6c79;
+    cursor: pointer;
+}
+
+.roadmap .map {
+    /* width: 30%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; */
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-top: 5%; */
+    height: 100vh;
+    overflow-y: auto;
+    flex-direction: column-reverse;
+    box-sizing: border-box;
+    position: fixed;
+    right: 0;
+    animation: smoothContent 2s;
+}
+
+.roadmap .map .step {
+    /* margin-top: 33%; */
+    text-align: center;
+    width: 35%;
+}
+
+.roadmap .map .step:first-child {
+    padding-bottom: 18%;
+}
+.roadmap .map .step:first-child .circle{
+    filter: opacity(0.6);
+    border: 10px solid lightsteelblue;
+    background: lightblue;
+}
+
+.roadmap .map .step .circle.active {
+    /* color: red;
+    font-size: 30px; */
+    filter: opacity(1);
+}
+
+.roadmap .map .split {
+    width: 70%;
+    height: 2px;
+    display: table;
+    position: relative;
+    margin-bottom: 6%;
+    border-bottom: 2px dashed #7788993d;
+    color: #778899a6;
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+
+.roadmap .map .line {
+    width: 5px;
+    /* height: 70px; */
+    height: 10px;
+    background: lightslategrey;
+    display: table;
+    position: relative;
+    /* margin: 13% auto; */
+    margin: 1% auto;
+    border-radius: 50px;
+    /* border-left: 8px dotted lightgray; */
+    -webkit-appearance: none;
+}
+
+.roadmap .map .line.t {
+    margin-top: 5%;
+}
+
+.roadmap .map .line.b {
+    margin-bottom: 5%;
+}
+
+/* .roadmap .map .step::before {
+    content: " ";
+    display: block;
+    position: relative;
+    height: 80px;
+    background: black;
+    width: 3px;
+    margin: 0 auto;
+} */
+
+.roadmap .map .step .circle {
+    /* background: #d2d2d273; */
+    background: #e8e8e8;
+    position: relative;
+    border-radius: 50%;
+    width: 30%;
+    height: auto;
+    padding-top: 30%;
+    filter: opacity(0.7);
+    cursor: pointer;
+    transition: 1.2s;
+    display: block;
+    margin: 0 auto;
+    /* border: 12px solid lightgrey; */
+}
+
+
+.roadmap .map .step .circle:hover {
+    filter: opacity(0.6);
+}
+
+.roadmap .map .step .circle.done {
+    filter: opacity(0.5);
+    border: 10px solid #06f370;
+    width: 34%;
+    padding-top: 34%;
+    /* margin-left: -6px; */
+}
+
+.roadmap .map .step .circle.done:hover {
+    /* background: #030304!important; */
+    filter: opacity(1);
+}
+
+.roadmap .map .step b {
+    margin-top: 10px;
+    display: block;
+    color: #545353;
+}
+
+.roadmap .map .step span{
+    margin-top: 2px;
+    display: block;
+}
+
+.roadmap .map .combined {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+/* Roadmap Step */
+
+.dashboard .single-step{
+    width: 100%;
+    height: 100vh;
+    background: white;
+    /* background: #f1f1f1; */
+    /* background: #f3f3f3; */
+    /* background: #f5f5f5; */
+    box-sizing: border-box;
+    padding: 10% 12%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    animation: goUpCard 0.6s;
+}
+
+.dashboard .single-step .close{
+    z-index: 100;
+    position: fixed;
+    left: 8%;
+    top: 6%;
+    /* top: 8%; */
+    color: #d3d6d8;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+    animation: smoothContent 2.5s;
+}
+
+.dashboard .single-step #singleStepContent{
+    padding-top: 5%;
+    color: #1b1f23;
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+    color: #2b2b2b;
+}
+
+.dashboard .single-step #singleStepContent span{
+    margin: 7% 0;
+    line-height: 26px;
+}
+
+
+.dashboard .single-step #singleStepContent b.name{
+    font-size: 25px;
+}
+
+.dashboard .single-step #singleStepContent b.done{
+    color: #71bd71;
+    font-size: 16px;
+    margin-top: 1%;
+}
+
+.dashboard .single-step button{
+    padding: 13px 34px;
+    font-size: 15px;
+    background: lightslategrey;
+    /* background: #f5f5f5; */
+    border-radius: 9px;
+    -webkit-appearance: none;
+    color: white;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.dashboard .single-step button.done{
+    /* background: #79c17b; */
+    background: #79c17bf7;
 }
 
 /* Modal Screen */
@@ -2580,6 +2930,15 @@ span.reqInfo {
     }
 }
 
+@keyframes slideIn {
+    from {
+        transform: translateX(-400px);
+    }
+    to {
+        transform: translateX(1px);
+    }
+}
+
 @keyframes smooth {
     from {
         transform: scale(0.1);
@@ -2620,6 +2979,15 @@ span.reqInfo {
     }
 }
 
+@keyframes goUpBlock {
+    from {
+        transform: translateY(90vh);
+    } 
+    to {
+        transform: translateY(0px);
+    }
+}
+
 @keyframes goDown {
     from {
         transform: translateY(-20px);
@@ -2645,15 +3013,19 @@ span.reqInfo {
     .dashboard .notes-editor {
         background: none;
     }
-    .dashboard .daily-task{
+    .dashboard .daily-task {
         height: 22vh;
     }
-    .dashboard .block-line .block{
+    .dashboard .block-line .block {
         height: 13vh;
     }
-    .dashboard .home-headline{
+    .dashboard .home-headline {
         margin-top: 3vh;
         margin-bottom: 3vh;
+    }
+    .dashboard .single-step #singleStepContent{
+        padding-top: 6%;
+        font-size: 19px;
     }
 }
 
@@ -2693,6 +3065,9 @@ span.reqInfo {
         padding: 0px 20px;
         min-width: 128px;
         min-height: 52px;
+    }
+    .dashboard .page {
+        height: 80vh;
     }
     .dashboard .logo {
         /* font-size: 21px; */
@@ -2763,7 +3138,7 @@ span.reqInfo {
     }
     .dashboard .board .slide h4.tour {
         margin-bottom: 10px;
-    } 
+    }
     .dashboard .board .slide a {
         font-size: 12px;
     }
@@ -2887,7 +3262,7 @@ span.reqInfo {
     }
     .dashboard .sentences {
         width: 85%;
-        margin-top: 4%;
+        margin-top: 15%;
     }
     .dashboard .sentences video {
         width: 100%;
@@ -2986,24 +3361,21 @@ span.reqInfo {
     .dashboard .daily-task {
         margin-top: 14%;
     }
-    .dashboard .block-line,
-    .dashboard .home-headline,
-    .dashboard .daily-task {
+    .dashboard .block-line, .dashboard .home-headline, .dashboard .daily-task {
         width: 83%;
     }
     .dashboard .task-layout h2 {
         padding-top: 28%;
     }
-
-    .dashboard .challengeBlock{
+    .dashboard .challengeBlock {
         padding: 40% 3%;
+        bottom: 0;
+        position: fixed;
     }
-
-    .dashboard #challenge .infoCard{
+    .dashboard #challenge .infoCard {
         padding: 40% 0px;
     }
-
-    .dashboard .wordCards .wordCard{
+    .dashboard .wordCards .wordCard {
         padding: 2% 0;
     }
     .dashboard .daily-task {
@@ -3022,8 +3394,83 @@ span.reqInfo {
     .dashboard .footer {
         margin-bottom: 150px!important;
     }
-    #theUpdate iframe{
+    #theUpdate iframe {
         width: 100%;
+    }
+    .roadmap .map {
+        height: 73vh;
+        width: 100%;
+        /* margin-top: 7%; */
+        margin-top: 5vh;
+        position: relative;
+    }
+    .roadmap .roadmapMenu {
+        bottom: 0;
+        top: auto;
+        width: 100%;
+        /* background: lightslategrey; */
+        background: #232323;
+        z-index: 100;
+        color: white;
+        box-sizing: border-box;
+        padding: 6% 5%;
+        left: 0;
+        height: auto;
+        font-size: 18px;
+        padding-bottom: calc(3% + env(safe-area-inset-bottom));
+    }
+    .roadmap .map .step {
+        width: 70%;
+        /* display: flex;
+        flex-direction: column;
+        align-items: center; */
+    }
+    .roadmap .map .step .circle{
+        width: 35%;
+        padding-top: 35%;
+        display: block;
+        margin: 0 auto;
+    }
+    .roadmap .map .line {
+        margin: 1.5% auto;
+    }
+    .roadmap .map .line.t {
+        margin-top: 10%;
+    }
+    .roadmap .map .line.b {
+        margin-bottom: 10%;
+    }
+    .roadmap .map .split {
+        width: 80%;
+        margin-bottom: 15%;
+    }
+    .roadmap .map .step:first-child {
+        padding-bottom: 19%;
+    }
+    .roadmap .roadmapMenu #userProgress{
+        background: none; 
+        padding: 0;
+        border-radius: none; 
+        font-size: 19px;
+        margin-left: 4px;
+        /* margin-left: 10px; */
+    }
+    .roadmap .roadmapMenu b{
+        display: inline-block;
+        /* margin-bottom: -15px; */
+        /* font-size: 20px; */
+        font-size: inherit;
+        font-weight: bolder;
+    }
+    .dashboard .single-step #singleStepContent{
+        /* padding-top: 40%; */
+        /* padding-top: 55%; */
+    }
+    .dashboard .single-step #singleStepContent span{
+        /* margin: 15% 0; */
+        margin: 27% 0;
+        line-height: 28px;
+        font-size: 18px;
     }
 }
 
