@@ -4,8 +4,14 @@ let header = document.getElementsByTagName('header');
 let sections = document.getElementsByTagName('section');
 let footer = document.getElementsByTagName('footer');
 
-window.onload = function() {
+function hideLoader(){
 	preloader.classList.add('preloader_hidden');
+}
+
+setTimeout(hideLoader, 1300);
+
+window.onload = function() {
+	// preloader.classList.add('preloader_hidden');
 	
 	for (let i = 0; i < header.length; i++) {
 		header[i].classList.add('full_size');
