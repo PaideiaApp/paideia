@@ -329,6 +329,29 @@ button.mainWhite {
     padding: 7%;
 }
 
+.dashboard .block-line .bots {
+    color: white;
+    width: 94%;
+    /* height: 13vh; */
+    height: 16vh;
+    background: lightslategrey;
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    /* padding: 9% 7%; */
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.dashboard .block-line .bots span{
+    padding: 7%;
+}
+
 .dashboard .beginnersCategory {
     padding-top: 14vh;
     display: flex;
