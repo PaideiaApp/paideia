@@ -102,7 +102,6 @@ button.mainWhite {
     align-self: center;
 }
 
-
 .appPromo {
     display: none;
     padding: 3% 4%;
@@ -190,6 +189,102 @@ button.mainWhite {
 #theUpdate iframe {
     width: 400px;
     height: 200px;
+}
+
+/* Walkthrough */
+
+.walkthrough {
+    width: 100%;
+    height: 100vh;
+    z-index: 10000;
+    display: none;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.walkthrough .slick-slider {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.walkthrough .w-slide {
+    width: 100%;
+    height: 90vh;
+    box-sizing: border-box;
+    padding: 0;
+    text-align: center;
+    color: #171717;
+    /* cursor: move;  */
+}
+
+.walkthrough .w-slide h2 {
+    /* margin-top: 30%; */
+    margin-top: 3%;
+    /* font-weight: 500; */
+    cursor: move;
+}
+
+.walkthrough .w-slide span {
+    color: #848383;
+    cursor: move;
+}
+
+.walkthrough .w-slide img {
+    width: 40%;
+    margin: 0 auto;
+    /* height: 35vh; */ 
+    box-shadow: 0 5px 20px #CCCCCC;
+    border-radius: 10px;
+    margin-top: 2%;
+    cursor: move;
+}
+
+.walkthrough .w-slide video {
+    width: 40%;
+    margin: 0 auto;
+    height: 45vh;
+    box-shadow: 0 5px 20px #CCCCCC;
+    border-radius: 10px;
+    margin-top: 2%;
+    cursor: move;
+}
+
+.walkthrough .w-slide button {
+    display: block;
+    margin: 0 auto;
+    background: lightsteelblue;
+    /* padding: 4% 9%; */
+    padding: 13px 29px;
+    font-size: 14px;
+    border: 0;
+    border-radius: 17px;
+    font-weight: bold;
+    margin-top: 5%;
+    cursor: pointer;
+}
+
+.w-controlls ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    -webkit-appearance: none;
+}
+
+.w-controlls ul li {
+    margin-right: 20px;
+    color: lightgray;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+.w-controlls ul li.slick-active {
+    color: black;
 }
 
 /* Home */
@@ -325,7 +420,7 @@ button.mainWhite {
     line-height: 30px;
 }
 
-.dashboard .block-line .news span{
+.dashboard .block-line .news span {
     padding: 7%;
 }
 
@@ -348,7 +443,7 @@ button.mainWhite {
     line-height: 30px;
 }
 
-.dashboard .block-line .bots span{
+.dashboard .block-line .bots span {
     padding: 7%;
 }
 
@@ -395,7 +490,7 @@ button.mainWhite {
 
 /* Home Challenge */
 
-.dashboard .daily-edition{
+.dashboard .daily-edition {
     width: 100%;
     background: #ffffff;
     position: fixed;
@@ -410,13 +505,13 @@ button.mainWhite {
     display: none;
 }
 
-.dashboard .daily-edition h2{
+.dashboard .daily-edition h2 {
     margin: 0;
     margin-left: 8%;
     margin-bottom: 9%;
 }
 
-.dashboard .daily-edition #dailyEditionClose{
+.dashboard .daily-edition #dailyEditionClose {
     z-index: 100;
     position: absolute;
     right: 8%;
@@ -429,25 +524,25 @@ button.mainWhite {
     transform: rotate(-90deg);
 }
 
-.dashboard .daily-edition .option-block{
+.dashboard .daily-edition .option-block {
     padding: 7% 9%;
     border-bottom: 1px solid #ccc9c9ad;
     height: 8%;
 }
 
-.dashboard .daily-edition .option-block .icon{
+.dashboard .daily-edition .option-block .icon {
     width: 12%;
 }
 
-.dashboard .daily-edition .option-block .icon img{
+.dashboard .daily-edition .option-block .icon img {
     width: 100%;
 }
 
-.dashboard .daily-edition .option-block .description{
+.dashboard .daily-edition .option-block .description {
     margin-left: 7%;
 }
 
-.dashboard .daily-edition .option-block h3{
+.dashboard .daily-edition .option-block h3 {
     font-size: 17px;
     color: black;
     font-weight: bold;
@@ -455,7 +550,7 @@ button.mainWhite {
     margin-bottom: 13%;
 }
 
-.dashboard .daily-edition .option-block span{
+.dashboard .daily-edition .option-block span {
     color: #8c8a8a;
 }
 
@@ -2348,12 +2443,13 @@ span.reqInfo {
     color: white;
 }
 
-.roadmap .roadmapMenu #userProgress{
+.roadmap .roadmapMenu #userProgress {
     background: #313131;
     padding: 3px 7px;
-    border-radius: 5px; 
+    border-radius: 5px;
 }
-.roadmap .roadmapMenu b{
+
+.roadmap .roadmapMenu b {
     font-size: 23px;
     display: block;
 }
@@ -2398,7 +2494,8 @@ span.reqInfo {
 .roadmap .map .step:first-child {
     padding-bottom: 18%;
 }
-.roadmap .map .step:first-child .circle{
+
+.roadmap .map .step:first-child .circle {
     filter: opacity(0.6);
     border: 10px solid lightsteelblue;
     background: lightblue;
@@ -2470,7 +2567,6 @@ span.reqInfo {
     /* border: 12px solid lightgrey; */
 }
 
-
 .roadmap .map .step .circle:hover {
     filter: opacity(0.6);
 }
@@ -2494,7 +2590,7 @@ span.reqInfo {
     color: #545353;
 }
 
-.roadmap .map .step span{
+.roadmap .map .step span {
     margin-top: 2px;
     display: block;
 }
@@ -2506,10 +2602,9 @@ span.reqInfo {
     align-items: center;
 }
 
-
 /* Roadmap Step */
 
-.dashboard .single-step{
+.dashboard .single-step {
     width: 100%;
     height: 100vh;
     background: white;
@@ -2528,7 +2623,7 @@ span.reqInfo {
     animation: goUpCard 0.6s;
 }
 
-.dashboard .single-step .close{
+.dashboard .single-step .close {
     z-index: 100;
     position: fixed;
     left: 8%;
@@ -2541,7 +2636,7 @@ span.reqInfo {
     animation: smoothContent 2.5s;
 }
 
-.dashboard .single-step #singleStepContent{
+.dashboard .single-step #singleStepContent {
     padding-top: 5%;
     color: #1b1f23;
     font-size: 17px;
@@ -2550,23 +2645,22 @@ span.reqInfo {
     color: #2b2b2b;
 }
 
-.dashboard .single-step #singleStepContent span{
+.dashboard .single-step #singleStepContent span {
     margin: 7% 0;
     line-height: 26px;
 }
 
-
-.dashboard .single-step #singleStepContent b.name{
+.dashboard .single-step #singleStepContent b.name {
     font-size: 25px;
 }
 
-.dashboard .single-step #singleStepContent b.done{
+.dashboard .single-step #singleStepContent b.done {
     color: #71bd71;
     font-size: 16px;
     margin-top: 1%;
 }
 
-.dashboard .single-step button{
+.dashboard .single-step button {
     padding: 13px 34px;
     font-size: 15px;
     background: lightslategrey;
@@ -2580,15 +2674,14 @@ span.reqInfo {
     font-weight: bold;
 }
 
-.dashboard .single-step button.done{
+.dashboard .single-step button.done {
     /* background: #79c17b; */
     background: #79c17bf7;
 }
 
-
 /* Speech */
 
-.dashboard .speech{
+.dashboard .speech {
     min-height: 100vh;
     width: 100%;
     background: url(https://images.unsplash.com/photo-1483794344563-d27a8d18014e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
@@ -2596,7 +2689,7 @@ span.reqInfo {
     display: inline-block;
 }
 
-.dashboard .speech .info{
+.dashboard .speech .info {
     font-size: 18px;
     color: #292929;
     width: 50%;
@@ -2610,22 +2703,22 @@ span.reqInfo {
     animation: goUp 1.6s;
 }
 
-.dashboard .speech .info button{
+.dashboard .speech .info button {
     margin-top: 3%;
 }
 
-.dashboard .speech #sentencesBlock{
+.dashboard .speech #sentencesBlock {
     margin: 0 auto;
     width: 70%;
     margin-top: 7%;
 }
 
-.dashboard .speech #sentencesBlock .sentence{
+.dashboard .speech #sentencesBlock .sentence {
     text-align: center;
     font-size: 25px;
 }
 
-.dashboard .speech .userSpeech{
+.dashboard .speech .userSpeech {
     width: 50%;
     margin: 0 auto;
     margin-top: 7%;
@@ -2633,13 +2726,11 @@ span.reqInfo {
     text-align: center;
 }
 
-.dashboard .speech .userSpeech button{
+.dashboard .speech .userSpeech button {
     margin-top: 8%;
     display: none;
     animation: goUp 1.2s;
 }
-
-
 
 /* Modal Screen */
 
@@ -3061,7 +3152,7 @@ span.reqInfo {
 @keyframes goUpBlock {
     from {
         transform: translateY(90vh);
-    } 
+    }
     to {
         transform: translateY(0px);
     }
@@ -3102,9 +3193,18 @@ span.reqInfo {
         margin-top: 3vh;
         margin-bottom: 3vh;
     }
-    .dashboard .single-step #singleStepContent{
+    .dashboard .single-step #singleStepContent {
         padding-top: 6%;
         font-size: 19px;
+    }
+
+    .walkthrough .w-slide img{
+        width: 55%;
+        margin-top: 4%;
+    }
+    .walkthrough .w-slide video {
+        width: 55%;
+         margin-top: 4%;
     }
 }
 
@@ -3305,7 +3405,7 @@ span.reqInfo {
     .dashboard .docs .text {
         width: 98%;
     }
-    .dashboard .docs .mobile-lessons{
+    .dashboard .docs .mobile-lessons {
         display: none;
     }
     .timeline main {
@@ -3507,7 +3607,7 @@ span.reqInfo {
         flex-direction: column;
         align-items: center; */
     }
-    .roadmap .map .step .circle{
+    .roadmap .map .step .circle {
         width: 35%;
         padding-top: 35%;
         display: block;
@@ -3529,40 +3629,62 @@ span.reqInfo {
     .roadmap .map .step:first-child {
         padding-bottom: 19%;
     }
-    .roadmap .roadmapMenu #userProgress{
-        background: none; 
+    .roadmap .roadmapMenu #userProgress {
+        background: none;
         padding: 0;
-        border-radius: none; 
+        border-radius: none;
         font-size: 19px;
         margin-left: 4px;
         /* margin-left: 10px; */
     }
-    .roadmap .roadmapMenu b{
+    .roadmap .roadmapMenu b {
         display: inline-block;
         /* margin-bottom: -15px; */
         /* font-size: 20px; */
         font-size: inherit;
         font-weight: bolder;
     }
-    .dashboard .single-step #singleStepContent{
+    .dashboard .single-step #singleStepContent {
         /* padding-top: 40%; */
         /* padding-top: 55%; */
     }
-    .dashboard .single-step #singleStepContent span{
+    .dashboard .single-step #singleStepContent span {
         /* margin: 15% 0; */
         margin: 27% 0;
         line-height: 28px;
         font-size: 18px;
     }
-
-    .dashboard .speech{
+    .dashboard .speech {
         margin-top: 11%;
     }
-    .dashboard #speechBlocks{
+    .dashboard #speechBlocks {
         margin-top: 35%;
     }
-    .dashboard .speech .info{
+    .dashboard .speech .info {
         width: 85%;
+    }
+
+    .dashboard .freeReqExplain{
+        width: 80%;
+        margin-top: 15%;
+    }
+
+    .walkthrough .w-slide{
+        padding: 1.5% 0.5%;
+    }
+    .walkthrough .w-slide img{
+        width: 95%;
+        margin-top: 0;
+    }
+    .walkthrough .w-slide video {
+        width: 95%;
+        margin-top: 0;
+    }
+    .walkthrough .w-slide h2{
+        margin-top: 10%;
+    }
+    .walkthrough .w-slide button{
+        margin-top: 10%;
     }
 }
 
@@ -3587,6 +3709,9 @@ span.reqInfo {
     }
     .dashboard #userBlock button.action {
         margin-top: 10px;
+    }
+    .walkthrough .w-slide{
+        height: 92vh;
     }
 }
 
