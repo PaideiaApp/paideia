@@ -58,15 +58,15 @@ button.main {
 button.mainWhite {
     color: #222;
     font-weight: 600;
-    border: solid #000000ad 2px;
+    /* border: solid #000000ad 2px; */
+    border: solid #8c8a8a 1px;
     display: inline-block;
     border-radius: 5px;
     padding: 6px 12px;
     cursor: pointer;
-    /* background-color: #81f5c6; */
-    box-shadow: 5px 7px 0 #000000ad;
+    /* box-shadow: 5px 7px 0 #000000ad; */
+    box-shadow: 5px 7px 0 #00000094;
     margin-bottom: 11px;
-    /* box-shadow: 4px 4px 0 #222; */
     transition: 2s;
 }
 
@@ -356,6 +356,7 @@ button.mainWhite {
     margin-right: auto;
     border: 0;
     -webkit-appearance: none;
+    cursor: pointer;
 }
 
 .dashboard .home-headline {
@@ -367,6 +368,45 @@ button.mainWhite {
     font-size: 18px;
     font-weight: bold;
     font-family: 'Open Sans', sans-serif;
+}
+
+.dashboard .menu-line {
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+    margin-top: 4.5%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.dashboard .menu-line::-webkit-scrollbar {
+    width: 0px; 
+    background: transparent; 
+    /* -webkit-appearance: none;  */
+}
+
+.dashboard .menu-line .link{
+    margin-right: 9px;
+    background: #f5f6fa;
+    padding: 9px 19px;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    cursor: pointer;
+    /* font-weight: bold; */
+    font-size: 13px;
+    transition: 0.4s;
+}
+
+.dashboard .menu-line .link:hover{
+    background: #ccd0e2;
+}
+
+.dashboard .menu-line .link span{
+    margin-right: 8px;
+    font-size: 18px;
 }
 
 .dashboard .block-line {
@@ -476,6 +516,8 @@ button.mainWhite {
     display: none;
     /* align-items: center; */
     justify-content: space-around;
+    box-sizing: border-box;
+    padding: 0 6%;
 }
 
 .dashboard .bottom-menu .link {
@@ -803,7 +845,8 @@ button.mainWhite {
     height: 100%;
     /* background: #f9f9f9; */
     padding: 0px 20px;
-    min-width: 128px;
+    /* min-width: 128px; */
+    min-width: 131px;
 }
 
 .dropdown {
@@ -818,7 +861,7 @@ button.mainWhite {
     border-radius: 5px;
     padding: 6px 12px;
     cursor: pointer;
-    /* background-color: #81f5c6; */
+    /* background-color: #eae9e9; */
     box-shadow: 5px 7px 0 #000000ad;
     margin-bottom: 11px;
     width: 55%;
@@ -835,7 +878,8 @@ button.mainWhite {
     display: none;
     position: absolute;
     background-color: #f9f9f9f5;
-    min-width: 168px;
+    /* min-width: 168px; */
+    min-width: 171px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 100000;
     text-align: center;
@@ -925,6 +969,20 @@ span.reqInfo {
     /* font-family: 'Lato', sans-serif;  */
     font-family: 'Nova Square', cursive;
     /* font-family: 'Kanit', sans-serif;    */
+}
+
+.mobile-menu-overflow{
+    width: 100%;
+    height: 80vh;
+    /* background: #00000087; */
+    background: #000000a4;
+    /* background: #000000bf; */
+    z-index: 5;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    /* animation: goUpCard 0.4s; */
+    display: none;
 }
 
 .dashboard .menu {
@@ -1195,6 +1253,87 @@ span.reqInfo {
     color: #18a56c;
 }
 
+.dashboard .feed #youtubeList{
+    display: grid;
+    grid-template-columns: 47% 47%;
+    grid-column-gap: 6%;
+}
+
+.dashboard .feed #youtubeList .video-post{
+    display: block;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.dashboard .feed #youtubeList .video-post img{
+    width: 100%;
+    height: 27vh;
+    /* height: 192px; */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.dashboard .feed #youtubeList .video-post b{
+    font-size: 17px;
+    margin-top: 7px;
+    display: block;
+}
+
+.dashboard .feed #youtubeList .video-post span{
+    margin-top: 7px;
+    display: block;
+    font-size: 15px;
+    color: #969696;
+}
+
+/* home feed videos */
+
+.dashboard .feed #youtubeListHomeFeed{
+    margin-top: 55px;
+}
+
+.dashboard .feed #youtubeListHomeFeed .video-post{
+    display: flex;
+    cursor: pointer;
+    margin-bottom: 55px;
+    justify-content: space-between;
+}
+
+
+.dashboard .feed #youtubeListHomeFeed .video-post img{
+    width: 45%;
+    height: 26vh;
+    object-fit: cover;
+    border-radius: 8px;
+    min-height: 175px;
+}
+
+.dashboard .feed #youtubeListHomeFeed .video-post .video-about{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.dashboard .feed #youtubeListHomeFeed .video-post b{
+    font-size: 19px;
+    margin-top: 7px;
+    display: block;
+}
+
+.dashboard .feed #youtubeListHomeFeed .video-post p{
+    word-break: break-word;
+    font-size: 15px;
+    line-height: 23px;
+    /* display: none; */
+}
+
+.dashboard .feed #youtubeListHomeFeed .video-post span{
+    display: block;
+    font-size: 15px;
+    color: #969696;
+}
+
+
 .dashboard .freeReqExplain {
     display: none;
     animation: smoothContent 1s;
@@ -1308,6 +1447,30 @@ span.reqInfo {
     color: #444;
 }
 
+
+.dashboard .user-block{
+    /* flex-grow: 0.05; */
+    display: flex;
+}
+
+.dashboard .header .teachers {
+    display: flex;
+    align-self: center;
+    justify-self: left;
+    font-size: 14px;
+    color: #f18585;
+    margin-right: 3%;
+    /* background: #fefaec; */
+    background: #fff7d9;
+    padding: 0% 9%;
+    cursor: pointer;
+    line-height: 5vh;
+    /* margin-top: 1vh; */
+    border-radius: 50px;
+    min-width: 64px;
+}
+
+
 .dashboard .user-profile {
     /* display: flex; */
     flex-direction: row;
@@ -1336,29 +1499,39 @@ span.reqInfo {
     width: 70%;
     margin-top: 50px;
     animation: fadein 2s;
-    margin-left: 14%;
+    /* margin-left: 14%; */
+    margin: 0 auto;
     animation: fadein 2s;
 }
 
 .games .wrapper {
     display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-gap: 18px;
+    grid-template-columns: 29% 29% 29%;
+    /* grid-gap: 18px; */
+    grid-gap: 6%;
     /* background-color: #fff; */
     color: #444;
+    margin-bottom: 12%;
 }
 
 .games .card {
     display: flex;
-    max-width: 280px;
+    /* max-width: 280px; */
+    min-width: 245px;
     width: 100%;
-    margin: 18px;
+    /* margin: 18px; */
+    margin-bottom: 18px;
     /* height: 60vh; */
-    min-height: 360px;
-    max-height: 420px;
+    /* min-height: 360px;
+    max-height: 420px; */
     border-radius: 10px;
     overflow: hidden;
     flex: 0 0 auto;
+    cursor: pointer;
+}
+
+.games .card--content{
+    width: 100%;
 }
 
 .games .card--content header {
@@ -1369,7 +1542,8 @@ span.reqInfo {
     padding: 18px;
     position: relative;
     transition: all .3s ease;
-    height: 100%;
+    /* height: 360px; */
+    height: 50.5vh;
     width: 100%;
     max-height: 420px;
 }
@@ -1395,6 +1569,24 @@ span.reqInfo {
     text-decoration: none;
     font-size: 90%;
 }
+
+.games .promo-wrapper {
+    display: grid;
+    grid-template-columns: 64% 29%;
+    grid-gap: 6%;
+    color: #444;
+    margin-bottom: 5%;
+    margin-top: 8%;
+}
+
+.games .promo-wrapper .card{
+    /* min-height: 285px; */
+}
+
+.games .card.big{
+    min-width: 507px;
+}
+
 
 /* Lessons - Docs */
 
@@ -1432,15 +1624,24 @@ span.reqInfo {
     background-color: #cfcfcf;
 }
 
+.dashboard .docs #anchor{
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 .dashboard .docs .docs-menu .category {
     color: #7d7d7d;
     font-size: 14px;
     text-transform: uppercase;
-    /* margin-bottom: 15px; */
     margin-top: 15px;
     font-weight: bold;
+    letter-spacing: 0.3px;
     color: #303940;
     animation: goUp 1s;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 5px;
 }
 
 .dashboard .docs .docs-menu .category:first-child {
@@ -1449,13 +1650,15 @@ span.reqInfo {
 
 .dashboard .docs .docs-menu a {
     font-size: 18px;
-    /* color: #333; */
     color: #2f383e;
     display: block;
-    /* margin-bottom: 15px; */
     font-size: 0.9rem;
-    margin-left: 10px;
+    /* margin-left: 10px; */
+    margin-left: 18px;
     animation: goUp 1s;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
 .dashboard .docs .docs-menu .active {
@@ -1825,14 +2028,39 @@ span.reqInfo {
 }
 
 .dashboard .sentences .info {
-    border: 2px solid #525252;
-    padding: 7% 5%;
+    padding: 7% 9%;
     box-sizing: border-box;
-    font-size: 18px;
-    line-height: 28px;
-    color: #222222;
-    box-shadow: 11px 12px 0 #000000ad;
+    font-size: 17px;
+    line-height: 35px;
+    color: #000000;
+    box-shadow: 11px 12px 0 #dce3e7;
     border-radius: 10px;
+    background: #fbfbfc;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.dashboard .sentences .sentencesButton{
+    padding: 9px 28px;
+    font-size: 13px;
+    background: #dce3e7;
+    border-radius: 7px;
+    -webkit-appearance: none;
+    color: #383e42;
+    border: none;
+    margin: 0 auto;
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+    box-shadow: 8px 9px 0 #b3babd;
+    cursor: pointer;
+}
+
+.dashboard .sentences .sentencesButton.next{
+    background: lightsteelblue;
+    box-shadow: 8px 9px 0 #8da0b9;
+    /* color: #363c44; */
+    color: #404750;
 }
 
 .dashboard .sentences video {
@@ -1845,6 +2073,9 @@ span.reqInfo {
     float: right;
     margin-top: 10%;
     max-width: 30%;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
 }
 
 .dashboard .sentences .translation span {
@@ -1853,15 +2084,23 @@ span.reqInfo {
 }
 
 .dashboard .sentences #optionsBlock span {
-    cursor: pointer;
-    border: 2px solid black;
-    padding: 10px;
     transition: 0.5s;
-    display: inline-block;
+    padding: 4% 11%;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 35px;
+    color: #000000;
+    box-shadow: 11px 12px 0 #dce3e7;
+    border-radius: 10px;
+    background: #fbfbfc;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    display: block;
+    cursor: pointer;
 }
 
 .dashboard .sentences #optionsBlock span:hover {
-    background: #00000029;
+    /* background: #dce3e7; */
 }
 
 .dashboard .sentences #optionOG {
@@ -1871,6 +2110,8 @@ span.reqInfo {
 .dashboard .sentences #optionsBlock .wrong {
     background: #f9535380;
     cursor: auto;
+    box-shadow: 11px 12px 0 #d08185;
+    color: #231617;
 }
 
 .dashboard .sentences #optionsBlock .wrong:hover {
@@ -1880,10 +2121,20 @@ span.reqInfo {
 .dashboard .sentences #optionsBlock .correct {
     background: #67de6780;
     cursor: auto;
+    box-shadow: 11px 12px 0 #80c190;
+    color: #0e1710;
 }
 
 .dashboard .sentences #optionsBlock .correct:hover {
     background: #67de6780;
+}
+
+.dashboard .sentences .endButtons{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
 }
 
 /* Game - Play */
@@ -2732,6 +2983,196 @@ span.reqInfo {
     animation: goUp 1.2s;
 }
 
+
+/* Teachers  */
+.dashboard .teachers{
+
+}
+
+.dashboard .teachers .left{
+    width: 50%;
+    height: 100vh;
+    padding: 1%;
+    box-sizing: border-box;
+}
+
+.dashboard .teachers .right{
+    width: 50%;
+    height: 100vh;
+    background: lightcyan;
+    padding: 2%;
+    box-sizing: border-box;
+}
+
+.dashboard .teachers img{
+    width: 65%;
+    border-radius: 30px;
+    margin: 0 auto;
+    display: block;
+}
+
+
+.dashboard .teachers .nav-line{
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+/* Vocabulary */
+
+
+.dashboard .vocabulary{
+    /* margin-top: 5vh; */
+    margin-top: 6.5vh;
+}
+
+.dashboard .vocabulary .vocabulary-info{
+    margin-bottom: 6.5vh;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    /* text-transform: none; */
+    /* box-sizing: border-box;
+    padding: 0% 6%; */
+}
+
+.dashboard .vocabulary .vocabulary-info h1 {
+    font-size: 28px;
+    color: #222;
+    font-weight: bold;
+}
+
+.dashboard .vocabulary .vocabulary-line{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.9vh;
+}
+
+.dashboard .vocabulary .vocabulary-line img{
+    width: 26px;
+    background: #f3f3f3;
+    padding: 1%;
+    border-radius: 12px;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.dashboard .vocabulary .vocabulary-line img:hover{
+    background: #eaeaea;
+}
+
+.dashboard .vocabulary #vocabularyList{
+    width: 80%;
+    margin: 0 auto;
+    text-transform: capitalize;
+    height: 87vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    /* padding: 0% 6%; */
+    padding: 0 9%;
+}
+
+.dashboard .vocabulary .dictionary-line{
+    margin-bottom: 20px;
+    font-size: 19px;
+    background: #f3f3f3;
+    padding: 2% 6%;
+    border-radius: 8px;
+    color: #171717;
+    box-shadow: rgb(241, 242, 242) 0px 1px 0px;
+    transition: 0.35s;
+    cursor: pointer;
+}
+
+/* .dashboard .vocabulary .dictionary-line:nth-child(odd){
+    background: #2f2f2f;
+    color: white;
+} */
+
+.dashboard .vocabulary .dictionary-line:hover{
+    background: #212121;
+    color: white;
+    transition: 0.45s;
+}
+
+.dashboard .vocabulary .dictionary-line span.word{
+    font-size: 21px;
+}
+
+.dashboard .vocabulary .dictionary-line span.translation{
+    font-size: 17px;
+    margin-top: 8px;
+    display: block;
+}
+
+.dashboard #vocabularyCards{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #080808;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    color: white;
+    display: none;
+    /* animation: slideInRight 0.6s; */
+    animation: goUpBlock 0.6s;
+}
+
+.dashboard #vocabularyCards.hidden{
+    /* transform: translateX(400px); */
+    transform: translateY(100vh);
+    transition: all 0.6s;
+}
+
+
+.dashboard #vocabularyCards .vocabulary-cards-info{
+    position: absolute;
+    top: 6%;
+    left: 8%;
+    font-size: 20px;
+    color: gray;
+}
+
+.dashboard #vocabularyCardsList{
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 12vh;
+    height: 70vh;
+    padding-top: 25vh;
+    display: block;
+}
+
+.dashboard #vocabularyCards .vocabulary-card{
+    cursor: pointer;
+    text-transform: capitalize;
+    width: 100%;
+    display: block;
+} 
+
+.dashboard #vocabularyCards .vocabulary-card h1{
+    font-size: 45px;
+}
+
+.dashboard #vocabularyCards .vocabulary-card span{
+    font-size: 19px;
+}
+
+.dashboard #vocabularyCards .vocabulary-card p{
+    text-transform: none;
+}
+
+.dashboard #vocabularyCards .vocabulary-cards-close{
+    position: absolute;
+    bottom: 6%;
+    left: 8%;
+    font-size: 20px;
+    color: gray;
+    cursor: pointer;
+}
+
+
+
 /* Modal Screen */
 
 .dashboard #modalScreenCover {
@@ -3109,6 +3550,15 @@ span.reqInfo {
     }
 }
 
+@keyframes slideInRight {
+    from {
+        transform: translateX(400px);
+    }
+    to {
+        transform: translateX(1px);
+    }
+}
+
 @keyframes smooth {
     from {
         transform: scale(0.1);
@@ -3134,6 +3584,15 @@ span.reqInfo {
 @keyframes goUp {
     from {
         transform: translateY(20px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes goUpMenu {
+    from {
+        transform: translateY(30px);
     }
     to {
         transform: translateY(0px);
@@ -3167,18 +3626,37 @@ span.reqInfo {
     }
 }
 
+
 /* Tablet Version */
 
 @media (min-width: 768px) and (max-width: 1024px) {
+    /* .dashboard .user-block{
+        flex-grow: 0.11;
+    } */
     .games .wrapper {
-        grid-template-columns: 50% 50%;
-        grid-gap: 0%;
+        grid-template-columns: 47% 47%;
+        grid-gap: 4%;
+    }
+    .games .card {
+        margin-bottom: 3px;
+        max-width: none;
+        min-width: auto;
     }
     .games .content {
         width: 85% !important;
         margin: 0 auto;
         margin-top: 40px;
         /* margin-left: 4%; */
+    }
+    .games .card--content header{
+        height: 360px;
+    }
+    .games .card.big{
+        min-width: auto;
+    }
+    .games .promo-wrapper {
+        grid-template-columns: 61% 34%;
+        grid-gap: 3%;
     }
     .dashboard .notes-editor {
         background: none;
@@ -3205,6 +3683,22 @@ span.reqInfo {
     .walkthrough .w-slide video {
         width: 55%;
          margin-top: 4%;
+    }
+
+    .dashboard .feed #youtubeList .video-post img {
+        height: 17vh;
+    }
+
+    .dashboard .feed #youtubeListHomeFeed .video-post{
+        flex-direction: column;
+        margin-bottom: 4vh;
+    }
+    .dashboard .feed #youtubeListHomeFeed .video-post img{
+        width: 100%;
+    }
+    .dashboard .feed #youtubeListHomeFeed .video-post .video-about{
+        margin-top: 2vh;
+        width: 100%;
     }
 }
 
@@ -3242,7 +3736,8 @@ span.reqInfo {
     }
     .header .user:hover {
         padding: 0px 20px;
-        min-width: 128px;
+        /* min-width: 128px; */
+        min-width: 131px;
         min-height: 52px;
     }
     .dashboard .page {
@@ -3274,7 +3769,8 @@ span.reqInfo {
         padding: 20px 0px;
         right: 0;
         justify-content: left;
-        animation: smoothContent 0.4s;
+        /* animation: smoothContent 0.4s; */
+        animation: goUpMenu 0.4s;
     }
     .dashboard .hamburger {
         display: block;
@@ -3298,6 +3794,7 @@ span.reqInfo {
         margin-top: 120px;
         display: none;
         animation: smoothContent 0.4s;
+        /* background: #f5f6fa; */
     }
     .more-dropdown-content {
         margin-left: -36%;
@@ -3349,6 +3846,42 @@ span.reqInfo {
         margin: 20px auto;
         border-radius: 2px;
     }
+
+    .dashboard .feed #youtubeList{
+        grid-template-columns: 100%;
+        margin-top: 16%;
+    }
+
+    .dashboard .feed #youtubeList .video-post{
+        margin-bottom: 42px;
+    }
+
+    .dashboard .feed #youtubeList .video-post img{
+        height: 20vh;
+    }
+
+    .dashboard .feed #youtubeListHomeFeed{
+        margin-top: 4vh;
+    }
+
+    .dashboard .feed #youtubeListHomeFeed .video-post{
+        flex-direction: column;
+        margin-bottom: 5vh;
+    }
+    .dashboard .feed #youtubeListHomeFeed .video-post img{
+        width: 100%;
+        height: 20vh;
+        min-height: auto;
+    }
+    .dashboard .feed #youtubeListHomeFeed .video-post .video-about{
+        width: 100%;
+        margin-top: 2vh;
+    }
+
+    .dashboard .feed #youtubeListHomeFeed .video-post b{
+        font-weight: bolder;
+    }
+
     .dashboard .feed .videoCollage {
         width: 100%;
         margin-top: 50%;
@@ -3370,6 +3903,8 @@ span.reqInfo {
     }
     .games .wrapper {
         grid-template-columns: 100%;
+        /* margin-top: 17%; */
+        grid-gap: 18px;
     }
     .games .content {
         width: 85% !important;
@@ -3381,6 +3916,27 @@ span.reqInfo {
         width: 100%;
         margin: 0;
         margin-bottom: 25px;
+        min-width: auto;
+        border-radius: 33px;
+    }
+    .games .card--content header {
+        height: 55vh;
+        max-height: none;
+    }
+    .games .card--content header h2{
+        font-size: 31px;
+    }
+    .games .card.big {
+        min-width: auto;
+    }
+    .games .promo-wrapper {
+        grid-template-columns: 100%;
+        grid-gap: 18px;
+        margin-top: 19%;
+        margin-bottom: 18px;
+    }
+    .dashboard .docs #anchor {
+        position: relative;
     }
     .dashboard .docs .docs-menu {
         min-width: 100%;
@@ -3392,6 +3948,16 @@ span.reqInfo {
         border-right: none;
         /* background: #fbfbfb; */
         padding: 10%;
+    }
+    .dashboard .docs .docs-menu a{
+        font-size: 15px;
+        margin-bottom: 4px;
+        margin-left: 20px;
+    }
+    .dashboard .docs .docs-menu .category {
+        margin-top: 27px;
+        margin-bottom: 2px;
+        font-size: 17px;
     }
     .dashboard .docs .docs-content {
         left: auto;
@@ -3444,6 +4010,9 @@ span.reqInfo {
     }
     .dashboard .sentences {
         width: 85%;
+        margin-top: 15%;
+    }
+    .dashboard .sentences .info{
         margin-top: 15%;
     }
     .dashboard .sentences video {
@@ -3514,7 +4083,7 @@ span.reqInfo {
     }
     .dashboard .studyplan {
         width: 100%;
-        margin-top: 10%;
+        margin-top: 11%;
     }
     .dashboard .studyplan .wrapper {
         width: 100%;
@@ -3532,6 +4101,11 @@ span.reqInfo {
     .dashboard .bottom-menu {
         display: flex;
     }
+    /* the notch (menu)*/
+    .dashboard .bottom-menu .link{
+        padding-top: calc(4.85vh - env(safe-area-inset-bottom) / 2);
+    }
+
     .dashboard .header {
         padding-top: 40px;
         box-shadow: none!important;
@@ -3541,7 +4115,8 @@ span.reqInfo {
         display: flex;
     }
     .dashboard .daily-task {
-        margin-top: 14%;
+        margin-top: 8%;
+        /* margin-top: 14%; */
     }
     .dashboard .block-line, .dashboard .home-headline, .dashboard .daily-task {
         width: 83%;
@@ -3565,6 +4140,14 @@ span.reqInfo {
     }
     .dashboard .task-layout h2 {
         padding-top: 18%;
+    }
+    .dashboard .menu-line {
+        /* width: 83%; */
+        width: 92%;
+        margin-left: 8%;
+        /* margin-top: 16%; */
+        /* margin-top: 11%; */
+        margin-top: 8%;
     }
     .dashboard .block-line .block {
         height: 26vh;
@@ -3685,6 +4268,22 @@ span.reqInfo {
     }
     .walkthrough .w-slide button{
         margin-top: 10%;
+    }
+
+    .dashboard .vocabulary #vocabularyList{
+        width: 100%;
+    }
+
+    .dashboard .vocabulary .vocabulary-line img{
+        padding: 3%;
+    }
+
+    .dashboard .vocabulary .dictionary-line{
+        padding: 5% 7%;
+    }
+
+    .dashboard .menu-line .link.desktop{
+        display: none;
     }
 }
 

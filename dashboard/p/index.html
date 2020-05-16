@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="notranslate" translate="no">
 
 <head>
 	<meta charset="UTF-8">
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no"
-    />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="google" content="notranslate" />
 	<title>Post</title>
-	<link href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square&display=swap"
-	 rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square&display=swap"
+		rel="stylesheet">
 	<!-- <link rel="stylesheet" type="text/css" href="/assets/dashboard/css/post.css" /> -->
 	<script>document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/css/post.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);</script>
 	<link rel="stylesheet" type="text/css" href="/assets/dashboard/libs/tour/bootstrap-tour-standalone.min.css" />
@@ -32,12 +34,13 @@
 </head>
 
 <body>
-		<script src="/assets/dashboard/loader/loading.js"></script>
+	<script src="/assets/dashboard/loader/loading.js"></script>
 	<div class="headerText">
 		<br>
 		<div id="stickyMenu">
 			<b style="text-transform: uppercase; font-size: 13px;">English Practice</b> ·
-			<span style="color: #b7c0c5; text-transform: uppercase; font-size: 13px; cursor: pointer;" onclick="window.history.go(-1); return false;">Перейти Назад</span>
+			<span style="color: #b7c0c5; text-transform: uppercase; font-size: 13px; cursor: pointer;"
+				onclick="window.history.go(-1); return false;">Перейти Назад</span>
 			<div id="audioVersion">
 				<img width="100%" onclick="readingMode()" src="/assets/dashboard/img/headphones.png">
 			</div>
@@ -52,7 +55,6 @@
 	<a name="top"></a>
 	<div id="message"></div>
 	<div id="classicPlayer"></div>
-	<!-- <div id="player"></div> -->
 	<!-- <button class="mainWhite" onclick="readingMode()">Rading Mode</button>
 	<br>
 	<br>
@@ -60,8 +62,12 @@
 	<br>
 	<br>
 	<button class="mainWhite" onclick="readingModeContinue()">Continue Rading Mode</button> -->
-	<div id="text" class="text"></div>
-	<div id="originalText"></div>
+	<div class="content">
+		<div id="player"></div>
+		<div id="text" class="text"></div>
+		<div id="originalText"></div>
+	</div>
+	<div id="moreVideos"></div>
 
 	<!-- PopUp-->
 
@@ -73,7 +79,6 @@
 	</div>
 
 	<!--Actions-->
-	<br>
 	<div class="actions">
 		<br>
 		<br>
@@ -85,8 +90,60 @@
 		<div style="color: #b7c0c5; float: left; text-transform: uppercase; font-size: 13px;">© 2019 Paideia</div>
 		<a style="float: right;" href="https://discord.gg/J6urRdQ">Forum</a>
 	</div>
-	<br>
-	<br>
+
+	<script>
+		let timerID = false;
+		let seconds = 0;
+		let scrollStamps = [];
+		let recommendedBlock = document.getElementById("moreVideos");
+
+		function startTimer() {
+			let elements = document.querySelectorAll("transcript text");
+			console.log(elements);
+			for (let i = 0; i < elements.length; i++) {
+				scrollStamps.push(parseInt(elements[i]["attributes"][0]["value"]).toFixed(0));
+			}
+			console.log(scrollStamps);
+
+			resumeTimer()
+		}
+
+		function resumeTimer() {
+			recommendedBlock.style.display = "none";
+			timerID = setInterval(function () {
+				seconds = player.getCurrentTime().toFixed(0);
+				console.log("Seconds: " + seconds);
+				let lineBlock = document.getElementsByTagName("TRANSCRIPT")[0].children[scrollStamps.indexOf(seconds.toString())];
+				let previousLineBlock = document.getElementsByTagName("TRANSCRIPT")[0].children[scrollStamps.indexOf(seconds.toString()) - 1];
+				if (lineBlock !== undefined) {
+					// previousLineBlock.style.background = "none";
+					// previousLineBlock.style.color = "#cac9c9";
+					// lineBlock.style.background = "#e0e0e0"; 
+					// lineBlock.style.color = "#333";
+
+					if(scrollStamps.indexOf(seconds.toString()) == 0){ //first line
+						lineBlock.scrollIntoView({ block: "start", behavior: "smooth" });
+						lineBlock.classList.add("activeLine");
+					} else{
+						previousLineBlock.classList.remove("activeLine");
+						lineBlock.classList.add("activeLine");
+						previousLineBlock.scrollIntoView({ block: "start", behavior: "smooth" });
+					}
+					console.log("scrolling into: " + seconds);
+				}
+			}, 200);
+		}
+
+		function pauseTimer() {
+			console.log("pauseTimer called")
+			clearInterval(timerID);
+			timerID = false;
+			recommendedBlock.style.display = "block";
+		}
+
+		// setTimeout(startTimer, 2000);
+
+	</script>
 	<!-- <script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/main.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>     `);</script>		
 		<script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/p/tools.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
 		<script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/p/main.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>

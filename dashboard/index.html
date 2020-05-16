@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="notranslate" translate="no">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
-    />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google" content="notranslate" />
     <title>Dashboard</title>
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json">
@@ -14,7 +15,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <!-- Styles and Libraries -->
-    <link href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square|Titan+One&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square|Titan+One&display=swap"
         rel="stylesheet">
     <script>document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/css/dashboard.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);</script>
     <script>document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/libs/tour/bootstrap-tour-standalone.min.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);</script>
@@ -60,7 +62,8 @@
         <div id="secondPartUpdate" style="display: none;">
             <!-- <iframe id="videoUpdate" width="100%" height="200px" src="https://www.youtube.com/embed/jA9sANDUcNs?enablejsapi=1&amp;html5=1?rel=0&amp;playsinline=1&amp;start=23"
                 frameborder="0"></iframe> -->
-            <iframe id="videoUpdate" src="https://www.youtube.com/embed/zlVsSlAd3eE?enablejsapi=1&amp;html5=1?rel=0&amp;playsinline=1&amp;start=8"
+            <iframe id="videoUpdate"
+                src="https://www.youtube.com/embed/zlVsSlAd3eE?enablejsapi=1&amp;html5=1?rel=0&amp;playsinline=1&amp;start=8"
                 frameborder="0"></iframe>
             <p>
                 - New Home Screen
@@ -76,6 +79,7 @@
     <!-- Walkthrough -->
     <div id="walkthrough" class="walkthrough"></div>
 
+    <div class="mobile-menu-overflow" id="mobileMenuOverflow"></div>
     <div class="dashboard">
         <div class="header home">
             <div class="hamburger home" id="hamburger" onclick="showMobileMenu()">☰</div>
@@ -85,7 +89,12 @@
                 </a>
             </div>
             <div class="menu" id="mainMenu"></div>
-            <div class="user-profile right" id="user-menu"></div>
+            <div class="user-block">
+                <!-- <div onclick="window.location = '/dashboard/teachers'" class="teachers left" id="teachers">
+                    🧑‍🏫 Уроки
+                </div> -->
+                <div class="user-profile left" id="user-menu"></div>
+            </div>
         </div>
 
         <div class="page">
@@ -94,9 +103,17 @@
             <div class="content right" id="contentRight">
                 <div id="homeContentBlocks">
                     <div id="challenge" class="challengeBlock"></div>
-
                     <div id="dailyEdition" class="daily-edition"></div>
 
+                    <br>
+                    <!-- <div class="home-headline" style="font-size: 29px; margin-bottom: 0px; margin-bottom: -1vh;">Your Feed</div> -->
+                    <div class="menu-line" id="contentBlocksMenu">
+                        <div class="link" onclick="window.location = '?f=wikipedia';"><span>📗</span> Wikipedia</div>
+                        <div class="link" onclick="window.location = '?f=youtube';"><span>🎬</span> YouTube</div>
+                        <div class="link" onclick="window.location = '?f=beginners-categories';"><span>🔥</span> Текст для новичков</div>
+                        <div class="link" onclick="window.location = '?f=custom';"><span>✌️</span> Свой текст</div>
+                        <div class="link desktop" onclick="window.location = '/dashboard/vocabulary';"><span>👾</span> Словарь</div>
+                    </div>
                     <div id="dailyTask" class="daily-task"></div>
                     <div class="home-headline" id="homeHeadlineActions"></div>
                     <div class="block-line" id="suggestionsBlocks"></div>
@@ -151,13 +168,14 @@
         </div>
 
         <div id="bottomMenu" class="bottom-menu">
+            <div class="link" onclick="window.location = '/dashboard/roadmap';">
+                <!-- <img src="../../assets/dashboard/img/homeIcons/flashcards-50.png"> -->
+                <img src="../assets/dashboard/img/homeIcons/sphere-50.png" width="99%">
+            </div> 
             <div class="link" onclick="quickTranslate()" id="quickTranslateMenu">
                 <img src="../../assets/dashboard/img/homeIcons/translate-50.png">
             </div>
-            <div class="link" onclick="startChallenge()">
-                <img src="../../assets/dashboard/img/homeIcons/flashcards-50.png">
-            </div>
-            <div class="link" onclick="window.location = '/dashboard/notes';">
+            <div class="link" onclick="window.location = '/dashboard/vocabulary';">
                 <img src="../../assets/dashboard/img/homeIcons/bookmark-50.png">
             </div>
             <div class="link" onclick="window.location = '/dashboard/user';">

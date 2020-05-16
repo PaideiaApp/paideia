@@ -110,6 +110,7 @@ a {
     margin-top: 35px;
     font-family: 'Open Sans', sans-serif;
 }
+
 .text::first-letter {
     font-size: 60px;
     font-weight: normal;
@@ -122,14 +123,14 @@ a {
     vertical-align: text-top;
     color: #333333;
     /* font-family: cursive; */
-  }
+}
 
-.text span{
+.text span {
     cursor: pointer;
     transition: 1s;
 }
 
-.text span:hover{
+.text span:hover {
     background: #80808021;
 }
 
@@ -140,7 +141,7 @@ a {
     font-family: 'Raleway', sans-serif;
 }
 
-#headingName img{
+#headingName img {
     width: 50px;
     vertical-align: middle;
     margin-left: 20px;
@@ -217,7 +218,7 @@ margin-left: 17%; */
     color: black;
 }
 
-.fix-header{
+.fix-header {
     position: fixed;
     background: white;
     width: 100%;
@@ -228,10 +229,10 @@ margin-left: 17%; */
     top: 0;
     /* border-bottom: 1px solid #f1f1f1; */
     border-bottom: 1px solid #eae8e8;
-    transition: 0.3s; 
+    transition: 0.3s;
 }
 
-#audioVersion{
+#audioVersion {
     width: 26px;
     float: right;
     cursor: pointer;
@@ -309,17 +310,17 @@ margin-left: 17%; */
     display: inline-block;
 }
 
-
-#Dialog{
+#Dialog {
     position: absolute;
     background: white;
     padding: 40px 65px;
     display: none;
     box-shadow: 0 5px 20px #CCCCCC;
     border-radius: 5px;
+    z-index: 10;
 }
 
-#Dialog .close{
+#Dialog .close {
     /* color: gray; */
     font-size: 24px;
     cursor: pointer;
@@ -334,7 +335,7 @@ margin-left: 17%; */
     display: none;
 }
 
-.translatedWord{
+.translatedWord {
     color: #4a4a4a;
     /* font-weight: bold; */
     /* border-bottom: 2px solid #4a4a4a; */
@@ -344,8 +345,7 @@ margin-left: 17%; */
     border-radius: 6px;
 }
 
-
-#message{
+#message {
     font-size: 17px;
     max-width: 700px;
     margin: 0 auto;
@@ -359,7 +359,7 @@ margin-left: 17%; */
     background: #cecece;
 }
 
-#postImg{
+#postImg {
     margin: 0 auto;
     /* width: 60%;
     height: 400px; */
@@ -370,136 +370,211 @@ margin-left: 17%; */
     cursor: pointer;
 }
 
-
-#postImg:hover{
+#postImg:hover {
     /* transition: 5s; */
     background-position: 50% 10% !important;
 }
 
-#postImg img{
+#postImg img {
     width: 100%;
 }
 
-.actions{
-    width: 80%; 
+.actions {
+    width: 80%;
     margin: 0 auto;
+    margin-bottom: 25px;
+    margin-top: 8px;
 }
 
-#getResultBlock{
+#getResultBlock {
     text-align: center;
 }
 
-#classicPlayer{
+#classicPlayer {
     width: 75%;
     /* max-width: 700px; */
     margin: 0 auto;
     display: block;
 }
 
-#classicPlayer iframe{
+#classicPlayer iframe {
     width: 100%;
 }
 
 /* Captions */
 
-.text transcript{
-   /* margin-top: 5%; */
-    display: block;
-    width: 48%;
-    float: right;
+.text transcript {
+    display: inline-block;
     height: 60vh;
     overflow-y: auto;
     word-break: break-word;
+    font-size: 18px;
+    /* -webkit-font-smoothing: antialiased; */
 }
 
-.text transcript text{
-    /* display: inline-block; */
+.text transcript text {
     display: block;
-    /* float: left; */
-    /* clear: left; */
     margin-top: 12px;
-    transition: 1s;
+    /* transition: 0.165s; */
+    transition: 0.186s;
+    /* transition: background 0.3s ease; */
     cursor: pointer;
     margin-left: 10px;
     padding: 3px;
     padding-bottom: 13px;
-}
-.text transcript text:hover{
-    background: #e0e0e0;
+    color: #cac9c9;
+    white-space: pre-line;
 }
 
-.text #player{
+.text transcript text:hover {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.text #player {
     width: 48%;
     float: left;
+}
 
+.text transcript .activeLine{
+    color: #333;
+}
+
+
+#youtubeRecommendedList{
+    width: 70%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 24% 24% 24% 24%;
+    grid-gap: 4%;
+    margin-top: 5%;
+}
+
+#youtubeRecommendedList .video-post{
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: 'Raleway', sans-serif;
+    cursor: pointer;
+}
+
+#youtubeRecommendedList .video-post img{
+    width: 100%;
+    /* max-height: 135px; */
+    max-height: 18vh;
+    object-fit: cover;
+}
+
+#youtubeRecommendedList .video-post b{
+    font-size: 19px;
+    margin-top: 7px;
+    display: block;
+}
+
+#youtubeRecommendedList .video-post span{
+    display: block;
+    font-size: 15px;
+    color: #969696;
+    margin-top: 8px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .content iframe#player {
+        width: 50% !important;
+        max-height: 300px !important;
+    }
 }
 
 @media (max-width:767px) {
-    .fix-header{
+    .fix-header {
         padding: 4% 7%;
-        padding-top: calc(env(safe-area-inset-top) + 10px);  
+        padding-top: calc(env(safe-area-inset-top) + 10px);
     }
-    img{
+    img {
         /* width: 90% !important; */
     }
-    .headerText{
+    .headerText {
         padding: 7%;
         margin-bottom: 15px;
         padding-top: calc(env(safe-area-inset-top) + 10px);
     }
-    .text{
-    /* padding-left: 2%; */
-    padding-right: 7%;
-    cursor: pointer;
-    width: 80%;
-    word-break: break-word;
-    font-size: 17px;
+    .text {
+        /* padding-left: 2%; */
+        padding-right: 7%;
+        cursor: pointer;
+        width: 80%;
+        word-break: break-word;
+        font-size: 17px;
     }
-    .text::first-letter{
+    .text::first-letter {
         font-size: 56px;
         line-height: 62px;
     }
-    #Dialog{
+    #Dialog {
         left: 7% !important;
         /* top: 5% !important; */
     }
-    #Dialog .close{
+    #Dialog .close {
         display: block;
     }
-    #postImg{
+    #postImg {
         width: 100%;
         height: 250px;
     }
-
-    .text  #player{
+    .text #player {
         width: 100%;
         max-width: 100%;
         height: 230px;
         margin-bottom: 35px;
     }
-    .text  transcript{
-        width: 80%;
+    .text transcript {
+        width: 100%;
         float: none;
-        height: 55vh;
+        height: 45vh;
         margin: 0 auto;
         overflow-x: hidden;
     }
-    .text  transcript text {
+    .text transcript text {
         margin-left: 0;
         margin-top: 7px;
         line-height: 30px;
+        font-size: 20px; 
     }
-    .text.video{
+    .text.video {
         max-width: 100% !important;
-        width: 100% !important;
+        width: 85% !important;
         padding-right: 0% !important;
+        padding-top: 50px !important;
+        margin: 0 auto !important;
+    }
+    .content {
+        width: 100% !important;
+        display: block !important;
+        height: 95vh !important;
+    }
+    .content iframe#player {
+        width: 100% !important;
+        height: 30vh !important;
+        margin-top: 4vh !important;
+    }
+    .text transcript .activeLine{
+
+    }
+
+    #youtubeRecommendedList{
+        grid-template-columns: 100%;
+    }
+    #youtubeRecommendedList {
+        width: 82%;
+        margin-bottom: 25vh;
+    }
+    #youtubeRecommendedList .video-post img {
+        max-height: 21vh;
     }
 }
 
 @media (min-device-width: 320px) and (max-device-width: 374px) {
-        .text{
-            font-size: 16px;
-        }
+    .text {
+        font-size: 16px;
+    }
 }
 
 @keyframes smoothContent {
