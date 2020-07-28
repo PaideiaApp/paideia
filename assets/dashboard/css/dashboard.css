@@ -3762,7 +3762,8 @@ span.reqInfo {
     .dashboard .menu {
         display: none;
         position: absolute;
-        margin-top: 75px;
+        /* margin-top: 75px; */
+        margin-top: 20vh;
         z-index: 100;
         background: white;
         width: 100%;
