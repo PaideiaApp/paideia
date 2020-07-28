@@ -973,10 +973,9 @@ span.reqInfo {
 
 .mobile-menu-overflow{
     width: 100%;
-    height: 80vh;
-    /* background: #00000087; */
+    /* height: 80vh; */
+    height: 100vh;
     background: #000000a4;
-    /* background: #000000bf; */
     z-index: 5;
     position: fixed;
     bottom: 0;
@@ -3759,11 +3758,11 @@ span.reqInfo {
         /* font-family: 'Titan One', cursive; */
         /* letter-spacing: 1px; */
     }
-    .dashboard .menu {
+    .dashboard .menu { 
         display: none;
         position: absolute;
-        /* margin-top: 75px; */
-        margin-top: 20vh;
+        margin-top: 170px;
+        /* margin-top: 20vh; */
         z-index: 100;
         background: white;
         width: 100%;
@@ -4114,6 +4113,7 @@ span.reqInfo {
     }
     .dashboard .hamburger {
         display: flex;
+        z-index: 6;
     }
     .dashboard .daily-task {
         margin-top: 8%;
@@ -4312,6 +4312,16 @@ span.reqInfo {
     }
     .walkthrough .w-slide{
         height: 92vh;
+    }
+}
+
+/* Mobile PWA  */
+@media (max-device-width: 480px) and (display-mode: fullscreen) {
+    .dashboard .menu {
+        margin-top: 75px;
+    }
+    .mobile-menu-overflow{
+        height: 80vh;
     }
 }
 
