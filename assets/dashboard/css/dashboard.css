@@ -3116,6 +3116,7 @@ span.reqInfo {
     display: none;
     /* animation: slideInRight 0.6s; */
     animation: goUpBlock 0.6s;
+    z-index: 7;
 }
 
 .dashboard #vocabularyCards.hidden{
