@@ -974,7 +974,7 @@ span.reqInfo {
 .mobile-menu-overflow{
     width: 100%;
     /* height: 80vh; */
-    height: 100vh;
+    /* height: 100vh; */
     background: #000000a4;
     z-index: 5;
     position: fixed;
@@ -4114,7 +4114,7 @@ span.reqInfo {
     }
     .dashboard .hamburger {
         display: flex;
-        z-index: 6;
+        /* z-index: 6; */
     }
     .dashboard .daily-task {
         margin-top: 8%;
