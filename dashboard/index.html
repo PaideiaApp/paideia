@@ -16,7 +16,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <!-- Styles and Libraries -->
     <link
-        href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square|Titan+One&display=swap"
+        href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square|Titan+One|Montserrat:400,500,600,700,800&display=swap"
         rel="stylesheet">
     <script>document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/css/dashboard.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);</script>
     <script>document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/libs/tour/bootstrap-tour-standalone.min.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);</script>
@@ -110,10 +110,17 @@
                     <div class="menu-line" id="contentBlocksMenu">
                         <div class="link" onclick="window.location = '?f=wikipedia';"><span>📗</span> Wikipedia</div>
                         <div class="link" onclick="window.location = '?f=youtube';"><span>🎬</span> YouTube</div>
-                        <div class="link" onclick="window.location = '?f=beginners-categories';"><span>🔥</span> Текст для новичков</div>
+                        <div class="link" onclick="window.location = '?f=beginners-categories';"><span>🔥</span> Текст
+                            для новичков</div>
                         <div class="link" onclick="window.location = '?f=custom';"><span>✌️</span> Свой текст</div>
-                        <div class="link desktop" onclick="window.location = '/dashboard/vocabulary';"><span>👾</span> Словарь</div>
+                        <div class="link desktop" onclick="window.location = '/dashboard/vocabulary';"><span>👾</span>
+                            Словарь</div>
                     </div>
+
+                    <div class="welcome-block" id="welcomeBlock"></div>
+
+                    <div id="homeQuickBlocks"></div>
+
                     <div id="dailyTask" class="daily-task"></div>
                     <div class="home-headline" id="homeHeadlineActions"></div>
                     <div class="block-line" id="suggestionsBlocks"></div>
@@ -161,27 +168,7 @@
             </div>
         </div>
 
-
-        <div id="translationBlock">
-            <input type="text" id="translationField" placeholder="Быстрый перевод..." maxlength="20">
-            <span id="tranlsationResult"></span>
-        </div>
-
-        <div id="bottomMenu" class="bottom-menu">
-            <div class="link" onclick="window.location = '/dashboard/roadmap';">
-                <!-- <img src="../../assets/dashboard/img/homeIcons/flashcards-50.png"> -->
-                <img src="../assets/dashboard/img/homeIcons/sphere-50.png" width="99%">
-            </div> 
-            <div class="link" onclick="quickTranslate()" id="quickTranslateMenu">
-                <img src="../../assets/dashboard/img/homeIcons/translate-50.png">
-            </div>
-            <div class="link" onclick="window.location = '/dashboard/vocabulary';">
-                <img src="../../assets/dashboard/img/homeIcons/bookmark-50.png">
-            </div>
-            <div class="link" onclick="window.location = '/dashboard/user';">
-                <img src="../../assets/dashboard/img/homeIcons/customer-50.png">
-            </div>
-        </div>
+        <div id="mobileMenu"></div>
 
     </div>
 
@@ -217,7 +204,7 @@
                 autoplaySpeed: 4000,
                 arrows: false,
                 dots: false,
-                slidesToShow: 2,
+                slidesToShow: 1,
             });
 
             //content menu slider

@@ -208,7 +208,7 @@ nav {
     transform: translateY(-1px);
 }
 .sub_menu {
-    min-width: 160px;
+    /* min-width: 220px; */
     box-shadow: 0 1px 3px #00000014, 0 10px 40px -10px #00000059;
     border-radius: 4px;
     z-index: 200;
@@ -218,6 +218,9 @@ nav {
     opacity: 0;
     visibility: hidden;
     background: #fff;
+}
+.sub_menu_1 {
+    min-width: 285px;
 }
 .sub_link {
     display: -webkit-flex;

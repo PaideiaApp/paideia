@@ -3,15 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="google" content="notranslate" />
+    <meta name="google" content="notranslate" />
     <title>Sentences</title>
     <link rel="manifest" href="/manifest.json">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square|Montserrat:400,500,600,700,800&display=swap"
         rel="stylesheet">
     <!-- <link rel="stylesheet" type="text/css" href="/assets/dashboard/css/dashboard.css" /> -->
     <script>document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/css/dashboard.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);</script>
@@ -21,15 +23,15 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TL6GMHQL14"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL6GMHQL14"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-		gtag('config', 'G-TL6GMHQL14');
-	</script>
+        gtag('config', 'G-TL6GMHQL14');
+    </script>
     <script type="text/javascript">
         $(window).load(function () {
             $("#spinner").fadeOut("slow");
@@ -38,7 +40,7 @@
 </head>
 
 <body>
-        <script src="/assets/dashboard/loader/loading.js"></script>
+    <script src="/assets/dashboard/loader/loading.js"></script>
     <div id='stars'></div>
     <div id='stars2'></div>
     <div id='stars3'></div>
@@ -69,11 +71,18 @@
                 <br>
                 <button class="sentencesButton" onclick="getSentences(showSentences)">Начать</button>
             </div>
+            <div class="exp-info-actions" id="expInfoActions">
+                <div class="logo" onclick="expiredInfo()">Paideia</div>
+                <p onclick="logOut('ru')">Выйти</p>
+            </div>
         </div>
+        <div id="expiration"></div>
+        <div id="mobileMenu"></div>
     </div>
-
-
     <div id="settings" class="overlay"></div>
+
+    <div id="billing" class="overlay"></div>
+    <div id="bills" class="overlay"></div>
     <!-- <script>document.write(`     <script type='text/javascript' src='/assets/dashboard/js/settingsBlock.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>     `);</script>
     <script>document.write(`             <script type='text/javascript' src='/assets/dashboard/js/main.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>     `);</script>
     <script src="/assets/dashboard/js/sentences.js"></script>

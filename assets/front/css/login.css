@@ -193,10 +193,14 @@ select{
 }
 
 @media (min-width:1425px) {
-    #authScreen{
+    /* #authScreen{
         display: none;
-    }
+    } */
     #pc{
         display: block !important;
+        font-size: 14px;
+        border-bottom: 2px solid;
+        width: 300px;
+        margin: 0 auto;
     }
 }

@@ -335,6 +335,16 @@ margin-left: 17%; */
     display: none;
 }
 
+#Dialog .error{
+    display: block;
+    word-break: break-word;
+    width: 150px;
+    font-size: 13px;
+    margin-bottom: 17px;
+    margin-top: 7px;
+    color: gray;
+}
+
 .translatedWord {
     color: #4a4a4a;
     /* font-weight: bold; */
