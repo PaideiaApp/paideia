@@ -2337,8 +2337,23 @@ span.reqInfo {
     font-size: 16px;
 }
 
+.dashboard .sentences .translation-line{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard .sentences .translation-line.options{
+    justify-content: unset;
+}
+
+.dashboard .sentences .translation-line img{
+    width: 28px;
+    margin-left: 13px;
+}
+
 .dashboard .sentences .translation span {
-    font-size: 20px;
+    font-size: 22px;
     cursor: pointer;
 }
 
@@ -4354,10 +4369,13 @@ span.reqInfo {
         max-height: 300px;
     }
     .dashboard .sentences .translation {
-        float: none;
+        float: unset;
         text-align: center;
         margin-top: auto;
         max-width: none;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
     }
     .dashboard .game {
         width: 98%;
