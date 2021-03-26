@@ -45,7 +45,8 @@ a {
     cursor: pointer;
 }
 
-.word:hover, .word:focus {
+.word:hover,
+.word:focus {
     border-color: rgba(52, 73, 94, 0);
     background-color: rgba(52, 73, 94, 0.1);
 }
@@ -104,7 +105,8 @@ a {
     max-width: 700px;
     margin: 0 auto;
     letter-spacing: 0.03em;
-    line-height: 2;
+    /* line-height: 2; */
+    line-height: 33px;
     color: #333;
     z-index: 1;
     margin-top: 35px;
@@ -132,6 +134,10 @@ a {
 
 .text span:hover {
     background: #80808021;
+}
+
+.some_space {
+    margin-bottom: 18px;
 }
 
 .headerText {
@@ -335,7 +341,7 @@ margin-left: 17%; */
     display: none;
 }
 
-#Dialog .error{
+#Dialog .error {
     display: block;
     word-break: break-word;
     width: 150px;
@@ -376,6 +382,7 @@ margin-left: 17%; */
     width: 75%;
     height: 363px;
     filter: brightness(75%);
+    /* animation: goUp 1.8s; */
     animation: smoothContent 1.2s;
     cursor: pointer;
 }
@@ -410,6 +417,7 @@ margin-left: 17%; */
 #classicPlayer iframe {
     width: 100%;
 }
+
 
 /* Captions */
 
@@ -446,12 +454,11 @@ margin-left: 17%; */
     float: left;
 }
 
-.text transcript .activeLine{
+.text transcript .activeLine {
     color: #333;
 }
 
-
-#youtubeRecommendedList{
+#youtubeRecommendedList {
     width: 70%;
     margin: 0 auto;
     display: grid;
@@ -460,30 +467,39 @@ margin-left: 17%; */
     margin-top: 5%;
 }
 
-#youtubeRecommendedList .video-post{
+#youtubeRecommendedList .video-post {
     /* font-family: 'Open Sans', sans-serif; */
     font-family: 'Raleway', sans-serif;
     cursor: pointer;
 }
 
-#youtubeRecommendedList .video-post img{
+#youtubeRecommendedList .video-post img {
     width: 100%;
     /* max-height: 135px; */
     max-height: 18vh;
     object-fit: cover;
 }
 
-#youtubeRecommendedList .video-post b{
+#youtubeRecommendedList .video-post b {
     font-size: 19px;
     margin-top: 7px;
     display: block;
 }
 
-#youtubeRecommendedList .video-post span{
+#youtubeRecommendedList .video-post span {
     display: block;
     font-size: 15px;
     color: #969696;
     margin-top: 8px;
+}
+
+.content iframe#player {
+    width: 50%!important;
+}
+
+.content .text.video {
+    width: 50%;
+    margin-left: 2%;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -503,8 +519,18 @@ margin-left: 17%; */
     }
     .headerText {
         padding: 7%;
-        margin-bottom: 15px;
-        padding-top: calc(env(safe-area-inset-top) + 10px);
+        margin-bottom: -40px;
+        /* padding-top: calc(env(safe-area-inset-top) + 10px); */
+        padding-top: 15px;
+        /* margin-top: 280px; */
+        margin-top: 30vh;
+        border-radius: 26px;
+        z-index: 2;
+        position: relative;
+        background: white;
+    }
+    #headingName {
+        margin-bottom: 8px;
     }
     .text {
         /* padding-left: 2%; */
@@ -527,7 +553,10 @@ margin-left: 17%; */
     }
     #postImg {
         width: 100%;
-        height: 250px;
+        /* height: 310px; */
+        height: 45vh;
+        position: absolute;
+        top: 0;
     }
     .text #player {
         width: 100%;
@@ -546,7 +575,7 @@ margin-left: 17%; */
         margin-left: 0;
         margin-top: 7px;
         line-height: 30px;
-        font-size: 20px; 
+        font-size: 20px;
     }
     .text.video {
         max-width: 100% !important;
@@ -565,11 +594,8 @@ margin-left: 17%; */
         height: 30vh !important;
         margin-top: 4vh !important;
     }
-    .text transcript .activeLine{
-
-    }
-
-    #youtubeRecommendedList{
+    .text transcript .activeLine {}
+    #youtubeRecommendedList {
         grid-template-columns: 100%;
     }
     #youtubeRecommendedList {
@@ -595,5 +621,14 @@ margin-left: 17%; */
     to {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+@keyframes goUp {
+    from {
+        transform: translateY(-150px);
+    }
+    to {
+        transform: translateY(0px);
     }
 }

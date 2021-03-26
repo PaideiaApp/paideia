@@ -2,149 +2,156 @@
 <html lang="en" class="notranslate" translate="no">
 
 <head>
-	<meta charset="UTF-8">
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="google" content="notranslate" />
-	<title>Post</title>
-	<link
-		href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square&display=swap"
-		rel="stylesheet">
-	<!-- <link rel="stylesheet" type="text/css" href="/assets/dashboard/css/post.css" /> -->
-	<script>document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/css/post.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);</script>
-	<link rel="stylesheet" type="text/css" href="/assets/dashboard/libs/tour/bootstrap-tour-standalone.min.css" />
-	<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-	<script src="/assets/dashboard/libs/tour/bootstrap-tour-standalone.min.js"></script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TL6GMHQL14"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="google" content="notranslate" />
+    <title>Post</title>
+    <link href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" type="text/css" href="/assets/dashboard/css/post.css" /> -->
+    <script>
+        document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/css/post.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);
+    </script>
+    <link rel="stylesheet" type="text/css" href="/assets/dashboard/libs/tour/bootstrap-tour-standalone.min.css" />
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="/assets/dashboard/libs/tour/bootstrap-tour-standalone.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL6GMHQL14"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-		gtag('config', 'G-TL6GMHQL14');
-	</script>
-	<script type="text/javascript">
-		$(window).load(function () {
-			$("#spinner").fadeOut("slow");
-		});
-	</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-TL6GMHQL14');
+    </script>
+    <script type="text/javascript">
+        $(window).load(function() {
+            $("#spinner").fadeOut("slow");
+        });
+    </script>
 </head>
 
 <body>
-	<script src="/assets/dashboard/loader/loading.js"></script>
-	<div class="headerText">
-		<br>
-		<div id="stickyMenu">
-			<b style="text-transform: uppercase; font-size: 13px;">English Practice</b> ·
-			<span style="color: #b7c0c5; text-transform: uppercase; font-size: 13px; cursor: pointer;"
-				onclick="window.history.go(-1); return false;">Перейти Назад</span>
-			<div id="audioVersion">
-				<img width="100%" onclick="readingMode()" src="/assets/dashboard/img/headphones.png">
-			</div>
-		</div>
-		<br>
-		<h1 id="headingName"></h1>
-		<span style="color: #444; text-transform: uppercase; font-size: 15px;" id="author">By
+    <script src="/assets/dashboard/loader/loading.js"></script>
+    <div class="headerText">
+        <br>
+        <div id="stickyMenu">
+            <b style="text-transform: uppercase; font-size: 13px;">Paideia</b> ·
+            <span style="color: #b7c0c5; text-transform: uppercase; font-size: 13px; cursor: pointer;" onclick="window.history.go(-1); return false;">Перейти Назад</span>
+            <div id="audioVersion">
+                <img width="100%" onclick="readingMode()" src="/assets/dashboard/img/headphones.png">
+            </div>
+        </div>
+        <br>
+        <h1 id="headingName"></h1>
+        <span style="color: #444; text-transform: uppercase; font-size: 15px;" id="author">By
 			<a target="_blank" href="#"></a>
 		</span>
-	</div>
-	<div id="postImg" onmouseover="applyImgTranstion()"></div>
-	<a name="top"></a>
-	<div id="message"></div>
-	<div id="classicPlayer"></div>
-	<!-- <button class="mainWhite" onclick="readingMode()">Rading Mode</button>
+    </div>
+    <div id="postImg" onmouseover="applyImgTranstion()"></div>
+    <a name="top"></a>
+    <div id="message"></div>
+    <div id="classicPlayer"></div>
+    <!-- <button class="mainWhite" onclick="readingMode()">Rading Mode</button>
 	<br>
 	<br>
 	<button class="mainWhite" onclick="readingModePause()">Pause Rading Mode</button>
 	<br>
 	<br>
 	<button class="mainWhite" onclick="readingModeContinue()">Continue Rading Mode</button> -->
-	<div class="content">
-		<div id="player"></div>
-		<div id="text" class="text"></div>
-		<div id="originalText"></div>
-	</div>
-	<div id="moreVideos"></div>
+    <div class="content">
+        <div id="player"></div>
+        <div id="text" class="text"></div>
+        <div id="originalText"></div>
+    </div>
+    <div id="moreVideos"></div>
 
-	<!-- PopUp-->
+    <!-- PopUp-->
 
-	<div id="Dialog">
-		<div id="wordBut" style="margin: 0 auto; text-align: center;">
-			<a href="#" class="another-button" style="margin-right: 7px;">Translate to Russian</a>
-			<a href="#" class="cool-button" style="margin-left: 7px;">Dictionary</a>
-		</div>
-	</div>
+    <div id="Dialog">
+        <div id="wordBut" style="margin: 0 auto; text-align: center;">
+            <a href="#" class="another-button" style="margin-right: 7px;">Translate to Russian</a>
+            <a href="#" class="cool-button" style="margin-left: 7px;">Dictionary</a>
+        </div>
+    </div>
 
-	<!--Actions-->
-	<div class="actions">
-		<br>
-		<br>
-		<div id="getResultBlock">
-			<a onclick="getResult()" class="cool-button">Get Result</a>
-		</div>
-		<br>
-		<br>
-		<div style="color: #b7c0c5; float: left; text-transform: uppercase; font-size: 13px;">© 2019 Paideia</div>
-		<a style="float: right;" href="https://discord.gg/J6urRdQ">Forum</a>
-	</div>
+    <!--Actions-->
+    <div class="actions">
+        <br>
+        <br>
+        <div id="getResultBlock">
+            <a onclick="getResult()" class="cool-button">Get Result</a>
+        </div>
+        <br>
+        <br>
+        <div style="color: #b7c0c5; float: left; text-transform: uppercase; font-size: 13px;">© 2021 Paideia</div>
+        <a style="float: right;" href="https://discord.gg/J6urRdQ">Forum</a>
+        <br>
+    </div>
 
-	<script>
-		let timerID = false;
-		let seconds = 0;
-		let scrollStamps = [];
-		let recommendedBlock = document.getElementById("moreVideos");
+    <script>
+        let timerID = false;
+        let seconds = 0;
+        let scrollStamps = [];
+        let recommendedBlock = document.getElementById("moreVideos");
 
-		function startTimer() {
-			let elements = document.querySelectorAll("transcript text");
-			console.log(elements);
-			for (let i = 0; i < elements.length; i++) {
-				scrollStamps.push(parseInt(elements[i]["attributes"][0]["value"]).toFixed(0));
-			}
-			console.log(scrollStamps);
+        function startTimer() {
+            let elements = document.querySelectorAll("transcript text");
+            console.log(elements);
+            for (let i = 0; i < elements.length; i++) {
+                scrollStamps.push(parseInt(elements[i]["attributes"][0]["value"]).toFixed(0));
+            }
+            console.log(scrollStamps);
 
-			resumeTimer()
-		}
+            resumeTimer()
+        }
 
-		function resumeTimer() {
-			recommendedBlock.style.display = "none";
-			timerID = setInterval(function () {
-				seconds = player.getCurrentTime().toFixed(0);
-				console.log("Seconds: " + seconds);
-				let lineBlock = document.getElementsByTagName("TRANSCRIPT")[0].children[scrollStamps.indexOf(seconds.toString())];
-				let previousLineBlock = document.getElementsByTagName("TRANSCRIPT")[0].children[scrollStamps.indexOf(seconds.toString()) - 1];
-				if (lineBlock !== undefined) {
-					// previousLineBlock.style.background = "none";
-					// previousLineBlock.style.color = "#cac9c9";
-					// lineBlock.style.background = "#e0e0e0"; 
-					// lineBlock.style.color = "#333";
+        function resumeTimer() {
+            recommendedBlock.style.display = "none";
+            timerID = setInterval(function() {
+                seconds = player.getCurrentTime().toFixed(0);
+                console.log("Seconds: " + seconds);
+                let lineBlock = document.getElementsByTagName("TRANSCRIPT")[0].children[scrollStamps.indexOf(seconds.toString())];
+                let previousLineBlock = document.getElementsByTagName("TRANSCRIPT")[0].children[scrollStamps.indexOf(seconds.toString()) - 1];
+                if (lineBlock !== undefined) {
+                    // previousLineBlock.style.background = "none";
+                    // previousLineBlock.style.color = "#cac9c9";
+                    // lineBlock.style.background = "#e0e0e0"; 
+                    // lineBlock.style.color = "#333";
 
-					if(scrollStamps.indexOf(seconds.toString()) == 0){ //first line
-						lineBlock.scrollIntoView({ block: "start", behavior: "smooth" });
-						lineBlock.classList.add("activeLine");
-					} else{
-						previousLineBlock.classList.remove("activeLine");
-						lineBlock.classList.add("activeLine");
-						previousLineBlock.scrollIntoView({ block: "start", behavior: "smooth" });
-					}
-					console.log("scrolling into: " + seconds);
-				}
-			}, 200);
-		}
+                    if (scrollStamps.indexOf(seconds.toString()) == 0) { //first line
+                        lineBlock.scrollIntoView({
+                            block: "start",
+                            behavior: "smooth"
+                        });
+                        lineBlock.classList.add("activeLine");
+                    } else {
+                        previousLineBlock.classList.remove("activeLine");
+                        lineBlock.classList.add("activeLine");
+                        previousLineBlock.scrollIntoView({
+                            block: "start",
+                            behavior: "smooth"
+                        });
+                    }
+                    console.log("scrolling into: " + seconds);
+                }
+            }, 200);
+        }
 
-		function pauseTimer() {
-			console.log("pauseTimer called")
-			clearInterval(timerID);
-			timerID = false;
-			recommendedBlock.style.display = "block";
-		}
+        function pauseTimer() {
+            console.log("pauseTimer called")
+            clearInterval(timerID);
+            timerID = false;
+            recommendedBlock.style.display = "block";
+        }
 
-		// setTimeout(startTimer, 2000);
-
-	</script>
-	<!-- <script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/main.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>     `);</script>		
+        // setTimeout(startTimer, 2000);
+    </script>
+    <!-- <script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/main.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>     `);</script>		
 		<script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/p/tools.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
 		<script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/p/main.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
 		<script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/p/request.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
@@ -152,22 +159,25 @@
 		<script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/p/sources.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
 		<script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/tour.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script> -->
 
-	<script>document.write(`         <script type='text/javascript' src='/dist/dashboard/posts.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
+    <script>
+        document.write(`         <script type='text/javascript' src='/dist/dashboard/posts.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);
+    </script>
 
-	<script>
+    <script>
+        window.onscroll = function() {
+            stickyHeader()
+        };
+        let headerMenuBlock = document.getElementById("stickyMenu");
+        let stickyPart = headerMenuBlock.offsetTop;
 
-		window.onscroll = function () { stickyHeader() };
-		let headerMenuBlock = document.getElementById("stickyMenu");
-		let stickyPart = headerMenuBlock.offsetTop;
-
-		function stickyHeader() {
-			if (window.pageYOffset >= stickyPart) {
-				headerMenuBlock.classList.add("fix-header");
-			} else {
-				headerMenuBlock.classList.remove("fix-header");
-			}
-		}
-	</script>
+        function stickyHeader() {
+            if (window.pageYOffset >= stickyPart) {
+                headerMenuBlock.classList.add("fix-header");
+            } else {
+                headerMenuBlock.classList.remove("fix-header");
+            }
+        }
+    </script>
 </body>
 
 </html>
