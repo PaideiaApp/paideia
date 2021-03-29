@@ -2,960 +2,960 @@
 <html lang="en" class="notranslate" translate="no">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>Paideia</title>
-	<meta name="description" content="Gamify the process of learning">
-	<meta name="keywords" content="paideia, paideia app, languages, english">
-	<!-- Favicon -->
-	<link rel="icon" href="/assets/pwa/img/icon.png" type="image/x-icon">
-	<link rel="shortcut icon" href="/assets/pwa/img/icon.png" type="image/x-icon">
-	<!--PWA-->
-	<link rel="manifest" href="/manifest.json">
-	<script>document.write(`<link rel="apple-touch-icon" sizes="128x128" href="/assets/pwa/img/theicon.png?v=${new Date().getDate()}${new Date().getHours()}${new Date().getSeconds()}">`);</script>
-	<meta name="mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<!-- OG Tags -->
-	<meta property="og:title" content="Paideia">
-	<meta property="og:description" content="Gamify the process of learning">
-	<meta property="og:type" content="article">
-	<meta property="og:image" content="/assets/front/img/handholder3.png">
-	<meta property="og:site_name" content="Paideia">
-	<!-- CSS Styles -->
-	<link rel="stylesheet" href="/assets/front/css/preloader.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap&subset=cyrillic" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,900&display=swap&subset=cyrillic" rel="stylesheet">
-	<link rel="stylesheet" href="/assets/front/css/bootstrap-grid.min.css">
-	<link rel="stylesheet" href="/assets/front/css/jquery.arcticmodal-0.3_simple.css">
-	<link rel="stylesheet" href="/assets/front/css/main.css">
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-	<!-- ReCaptcha -->
-	<script type="text/javascript">
-		var onloadCallback = function () {
-			grecaptcha.render('reCaptcha', {
-				'sitekey': '6LcCwa8UAAAAACVO6KalURAStl-BqaBIGSsCU4SX'
-			});
-		};
-	</script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TL6GMHQL14"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Paideia</title>
+    <meta name="description" content="Gamify the process of learning">
+    <meta name="keywords" content="paideia, paideia app, languages, english">
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/pwa/img/icon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/pwa/img/icon.png" type="image/x-icon">
+    <!--PWA-->
+    <link rel="manifest" href="/manifest.json">
+    <script>
+        document.write(`<link rel="apple-touch-icon" sizes="128x128" href="/assets/pwa/img/theicon.png?v=${new Date().getDate()}${new Date().getHours()}${new Date().getSeconds()}">`);
+    </script>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- OG Tags -->
+    <meta property="og:title" content="Paideia">
+    <meta property="og:description" content="Gamify the process of learning">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="/assets/front/img/handholder3.png">
+    <meta property="og:site_name" content="Paideia">
+    <!-- CSS Styles -->
+    <link rel="stylesheet" href="/assets/front/css/preloader.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,900&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/front/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/assets/front/css/jquery.arcticmodal-0.3_simple.css">
+    <link rel="stylesheet" href="/assets/front/css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <!-- ReCaptcha -->
+    <script type="text/javascript">
+        var onloadCallback = function() {
+            grecaptcha.render('reCaptcha', {
+                'sitekey': '6LcCwa8UAAAAACVO6KalURAStl-BqaBIGSsCU4SX'
+            });
+        };
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL6GMHQL14"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-		gtag('config', 'G-TL6GMHQL14');
-	</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-TL6GMHQL14');
+    </script>
 </head>
 
 <body id="body">
 
-	<div id="preloader">
-		<img src="/assets/front/img/preloader_2.svg" alt="">
-	</div>
+    <div id="preloader">
+        <img src="/assets/front/img/preloader_2.svg" alt="">
+    </div>
 
-	<!-- <div id="status"><span>Внимание</span>В данный момент некоторые сервисы недоступны, из-за технических проблем с серверами. Пожалуйста, попробуйте немного позже. 🤖👾</div> -->
-	<div id="status"><span>Beta!</span>The English version is only for showcase purposes 🤖👾</div>
+    <!-- <div id="status"><span>Внимание</span>В данный момент некоторые сервисы недоступны, из-за технических проблем с серверами. Пожалуйста, попробуйте немного позже. 🤖👾</div> -->
+    <div id="status"><span>Beta!</span>The English version is only for showcase purposes 🤖👾</div>
 
-	<header id="header">
-		<div class="container">
-			<nav>
-				<div class="row row_z_index d-flex align-items-center">
-					<div class="d-none d-sm-block col-sm-4 col-md-3 col-lg-2">
-						<div class="logo">
-							<!-- <img src="img/logo.png" alt="logo"> -->
-							<span>Paideia</span>
-						</div>
-					</div>
-					<div class="col-12 col-sm-8 col-md-9 offset-lg-3 offset-xl-4 col-lg-7 col-xl-6">
-						<div class="menu_bars">
-							<div class="logo logo_mobile">
-								<!-- <img src="" alt="logo"> -->
-								<span></span>
-							</div>
-							<div class="bars_wrap">
-								<span class="bars_1"></span>
-								<span class="bars_2"></span>
-								<span class="bars_3"></span>
-							</div>
-						</div>
-						<div class="navigation">
-							<ul class="main_menu">
-								<li class="with_sub_menu">
-									<a href="#">
-										<!-- Product -->
-										Product
-									</a>
-									<div class="sub_menu">
-										<a href="#info" class="sub_link scrolling">
-											<div class="logo_image">
-												<img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/exchange-512.png" style="background: lightcyan;" alt="">
-											</div>
-											<div class="sub_text">
-												<p class="sub_title">
-													Our approach
-												</p>
-												<p class="sub_desc">
-													About our approach
-												</p>
-											</div>
-										</a>
-										<a href="#info_second" class="sub_link scrolling">
-											<div class="logo_image">
-												<img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/info-512.png" style="background: lightyellow;" alt="">
-											</div>
-											<div class="sub_text">
-												<p class="sub_title">
-													Details
-												</p>
-												<p class="sub_desc">
-													About our platform
-												</p>
-											</div>
-										</a>
-										<a href="#features" class="sub_link scrolling">
-											<div class="logo_image">
-												<img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/rocket-512.png" style="background: lightpink;" alt="">
-											</div>
-											<div class="sub_text">
-												<p class="sub_title">
-													Capability
-												</p>
-												<p class="sub_desc">
-													List of our features
-												</p>
-											</div>
-										</a>
-									</div>
-								</li>
-								<li class="with_sub_menu">
-									<a href="#">
-										<!-- Add-Ons -->
-										Other
-									</a>
-									<div class="sub_menu">
-										<a href="#" id="downloadApp" onclick="window.location = '/app';" class="sub_link downloadAppLink">
-											<div class="logo_image">
-												<img src="/assets/pwa/img/icon.png" alt="">
-											</div>
-											<div class="sub_text">
-												<p class="sub_title">
-													Download the App
-												</p>
-												<p class="sub_desc">
-													Always near you
-												</p>
-											</div>
-										</a>
-										<a href="/help" onclick="window.location = '/help';" class="sub_link">
-											<div class="logo_image">
-												<img src="/assets/front/img/logo.png" alt="">
-											</div>
-											<div class="sub_text">
-												<p class="sub_title">
-													Help
-												</p>
-												<p class="sub_desc">
-													Would like to ask a question?
-												</p>
-											</div>
-										</a>
-									</div>
-								</li>
-								<li>
-									<a href="#pricing" class="scrolling">
-										<!-- Pricing -->
-										Pricing
-									</a>
-								</li>
-								<li>
-									<a href="#examples" class="scrolling">
-										<!-- Showcase -->
-										Demo
-									</a>
-								</li>
-							</ul>
-							<div class="reg_buttons" id="regButtons">
-								<a href="#" class="login">
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="row row_z_index d-flex align-items-center">
+                    <div class="d-none d-sm-block col-sm-4 col-md-3 col-lg-2">
+                        <div class="logo">
+                            <!-- <img src="img/logo.png" alt="logo"> -->
+                            <span>Paideia</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-8 col-md-9 offset-lg-3 offset-xl-4 col-lg-7 col-xl-6">
+                        <div class="menu_bars">
+                            <div class="logo logo_mobile">
+                                <!-- <img src="" alt="logo"> -->
+                                <span></span>
+                            </div>
+                            <div class="bars_wrap">
+                                <span class="bars_1"></span>
+                                <span class="bars_2"></span>
+                                <span class="bars_3"></span>
+                            </div>
+                        </div>
+                        <div class="navigation">
+                            <ul class="main_menu">
+                                <li class="with_sub_menu">
+                                    <a href="#">
+                                        <!-- Product -->
+                                        Product
+                                    </a>
+                                    <div class="sub_menu">
+                                        <a href="#info" class="sub_link scrolling">
+                                            <div class="logo_image">
+                                                <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/exchange-512.png" style="background: lightcyan;" alt="">
+                                            </div>
+                                            <div class="sub_text">
+                                                <p class="sub_title">
+                                                    Our approach
+                                                </p>
+                                                <p class="sub_desc">
+                                                    About our approach
+                                                </p>
+                                            </div>
+                                        </a>
+                                        <a href="#info_second" class="sub_link scrolling">
+                                            <div class="logo_image">
+                                                <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/info-512.png" style="background: lightyellow;" alt="">
+                                            </div>
+                                            <div class="sub_text">
+                                                <p class="sub_title">
+                                                    Details
+                                                </p>
+                                                <p class="sub_desc">
+                                                    About our platform
+                                                </p>
+                                            </div>
+                                        </a>
+                                        <a href="#features" class="sub_link scrolling">
+                                            <div class="logo_image">
+                                                <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/rocket-512.png" style="background: lightpink;" alt="">
+                                            </div>
+                                            <div class="sub_text">
+                                                <p class="sub_title">
+                                                    Capability
+                                                </p>
+                                                <p class="sub_desc">
+                                                    List of our features
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li class="with_sub_menu">
+                                    <a href="#">
+                                        <!-- Add-Ons -->
+                                        Other
+                                    </a>
+                                    <div class="sub_menu">
+                                        <a href="#" id="downloadApp" onclick="window.location = '/app';" class="sub_link downloadAppLink">
+                                            <div class="logo_image">
+                                                <img src="/assets/pwa/img/icon.png" alt="">
+                                            </div>
+                                            <div class="sub_text">
+                                                <p class="sub_title">
+                                                    Download the App
+                                                </p>
+                                                <p class="sub_desc">
+                                                    Always near you
+                                                </p>
+                                            </div>
+                                        </a>
+                                        <a href="/help" onclick="window.location = '/help';" class="sub_link">
+                                            <div class="logo_image">
+                                                <img src="/assets/front/img/logo.png" alt="">
+                                            </div>
+                                            <div class="sub_text">
+                                                <p class="sub_title">
+                                                    Help
+                                                </p>
+                                                <p class="sub_desc">
+                                                    Would like to ask a question?
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#pricing" class="scrolling">
+                                        <!-- Pricing -->
+                                        Pricing
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#examples" class="scrolling">
+                                        <!-- Showcase -->
+                                        Demo
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="reg_buttons" id="regButtons">
+                                <a href="#" class="login">
 									Sign In
 									<img src="/assets/front/img/arrow-right-blue.svg" alt="">
 								</a>
-								<a href="#" class="get_started">
-									<!-- Get Started -->
-									Create an account
-									<img src="/assets/front/img/arrow-right-blue.svg" alt="">
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</nav>
-			<div class="main_offer">
-				<div class="offer_left" style="margin-right: 160px;">
-					<div class="offer_img_wrap">
-						<img src="/assets/front/img/handholder3.png" alt="">
-					</div>
-				</div>
-				<div class="offer_right">
-					<h1>
-						<!-- <span style="font-size: 33px;">Gamify the process</span>
+                                <a href="#" class="get_started">
+                                    <!-- Get Started -->
+                                    Create an account
+                                    <img src="/assets/front/img/arrow-right-blue.svg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="main_offer">
+                <div class="offer_left" style="margin-right: 160px;">
+                    <div class="offer_img_wrap">
+                        <img src="/assets/front/img/handholder3.png" alt="">
+                    </div>
+                </div>
+                <div class="offer_right">
+                    <h1>
+                        <!-- <span style="font-size: 33px;">Gamify the process</span>
 						<br>of learning -->
-						<!-- <span style="font-size: 46px;">Learn languages</span>
+                        <!-- <span style="font-size: 46px;">Learn languages</span>
 						<br> in a new way -->
-						<span style="font-size: 50px;">Gamify the process of learning</span>
-					</h1>
-					<p>
-						It’s time to change the way we learn languages.
-						<br> Where you enjoy the process of learning.
-					</p>
-					<div class="offer_buttons">
-						<a href="#examples" class="try_it">
+                        <span style="font-size: 50px;">Gamify the process of learning</span>
+                    </h1>
+                    <p>
+                        It’s time to change the way we learn languages.
+                        <br> Where you enjoy the process of learning.
+                    </p>
+                    <div class="offer_buttons">
+                        <a href="#examples" class="try_it">
 							Try now
 							<img src="/assets/front/img/arrow-right.svg" alt="">
 						</a>
-						<a href="#info" class="learn_more scrolling">
+                        <a href="#info" class="learn_more scrolling">
 							Find out more
 						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	<section id="info">
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-lg-6">
-					<div class="left_info">
-						<h2>
-							Approach
-						</h2>
-						<p class="info_main_desc info_main_desc_1">
-							By using our platform you are able to learn English with pleasure
-							<br> without the necessity of leaving your home.
-						</p>
-						<div class="info_first_items">
-							<div class="info_item info_item_1">
-								<div class="logo_image">
-									<div class="logo_image">
-										<img src="/assets/front/img/logo.png" alt="">
-									</div>
-								</div>
-								<div class="info_text info_text_1">
-									<p class="info_title info_title_1">
-										Efficient
-									</p>
-									<p class="info_desc info_desc_1">
-										Use platform visualization tools, practice your reading skills, grammar and memorize new words
-									</p>
-								</div>
-							</div>
-							<div class="info_item info_item_1">
-								<div class="logo_image">
-									<img src="/assets/front/img/logo.png" alt="">
-								</div>
-								<div class="info_text info_text_1">
-									<p class="info_title info_title_1">
-										Accessible
-									</p>
-									<p class="info_desc info_desc_1">
-										Learn with your favorite videos and songs, read interesting articles and translations, play games and so much more...
-									</p>
-								</div>
-							</div>
-							<div class="info_item info_item_1">
-								<div class="logo_image">
-									<img src="/assets/front/img/logo.png" alt="">
-								</div>
-								<div class="info_text info_text_1">
-									<p class="info_title info_title_1">
-										Stress free
-									</p>
-									<p class="info_desc info_desc_1">
-										Improve your level everyday by practicing at your own pace, whenever and wherever you want
-									</p>
-									<a href="#info_second" class="more_about more_about_1 scrolling">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="info">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="left_info">
+                        <h2>
+                            Approach
+                        </h2>
+                        <p class="info_main_desc info_main_desc_1">
+                            By using our platform you are able to learn English with pleasure
+                            <br> without the necessity of leaving your home.
+                        </p>
+                        <div class="info_first_items">
+                            <div class="info_item info_item_1">
+                                <div class="logo_image">
+                                    <div class="logo_image">
+                                        <img src="/assets/front/img/logo.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="info_text info_text_1">
+                                    <p class="info_title info_title_1">
+                                        Efficient
+                                    </p>
+                                    <p class="info_desc info_desc_1">
+                                        Use platform visualization tools, practice your reading skills, grammar and memorize new words
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info_item info_item_1">
+                                <div class="logo_image">
+                                    <img src="/assets/front/img/logo.png" alt="">
+                                </div>
+                                <div class="info_text info_text_1">
+                                    <p class="info_title info_title_1">
+                                        Accessible
+                                    </p>
+                                    <p class="info_desc info_desc_1">
+                                        Learn with your favorite videos and songs, read interesting articles and translations, play games and so much more...
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info_item info_item_1">
+                                <div class="logo_image">
+                                    <img src="/assets/front/img/logo.png" alt="">
+                                </div>
+                                <div class="info_text info_text_1">
+                                    <p class="info_title info_title_1">
+                                        Stress free
+                                    </p>
+                                    <p class="info_desc info_desc_1">
+                                        Improve your level everyday by practicing at your own pace, whenever and wherever you want
+                                    </p>
+                                    <a href="#info_second" class="more_about more_about_1 scrolling">
 										Find out more…
 									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-12 col-lg-6">
-					<div class="right_info">
-						<img src="/assets/front/img/skyscraper.jpg" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="info_second">
-		<div class="info_second_left">
-			<!-- <img src="assets/front/img/graph.jpg" alt=""> -->
-			<!-- <video style="width: 100%; height: 100%;" autoplay muted playsinline loop> -->
-			<!-- <video style="width: 100%; height: 70vh;" autoplay muted playsinline loop> -->
-			<!-- <source src="/assets/front/img/trailer.mp4" type="video/mp4"> Your browser does not support the video tag. -->
-			<!-- <source src="https://media.giphy.com/media/61hBU3ADrlLZUbvMVT/giphy.mp4" type="video/mp4"> -->
-			<!-- <source src="https://media.giphy.com/media/W69SmBIi6lyBeQ2yq9/giphy.mp4" type="video/mp4"> -->
-			<!-- </video> -->
-			<img style="width: 45%; margin: 0 auto; box-shadow: 0 5px 20px #CCCCCC; border-radius: 26px;" src="/assets/front/img/preview.gif">
-		</div>
-		<div class="info_second_right_wrap">
-			<div class="info_second_right">
-				<h2>
-					Training
-				</h2>
-				<p class="info_main_desc info_main_desc_2">
-					English for your purposes: traveling, work, study, watching movies, reading books, self-development, relocation to another
-					country
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="right_info">
+                        <img src="/assets/front/img/skyscraper.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="info_second">
+        <div class="info_second_left">
+            <!-- <img src="assets/front/img/graph.jpg" alt=""> -->
+            <!-- <video style="width: 100%; height: 100%;" autoplay muted playsinline loop> -->
+            <!-- <video style="width: 100%; height: 70vh;" autoplay muted playsinline loop> -->
+            <!-- <source src="/assets/front/img/trailer.mp4" type="video/mp4"> Your browser does not support the video tag. -->
+            <!-- <source src="https://media.giphy.com/media/61hBU3ADrlLZUbvMVT/giphy.mp4" type="video/mp4"> -->
+            <!-- <source src="https://media.giphy.com/media/W69SmBIi6lyBeQ2yq9/giphy.mp4" type="video/mp4"> -->
+            <!-- </video> -->
+            <img style="width: 45%; margin: 0 auto; box-shadow: 0 5px 20px #CCCCCC; border-radius: 26px;" src="/assets/front/img/preview.gif">
+        </div>
+        <div class="info_second_right_wrap">
+            <div class="info_second_right">
+                <h2>
+                    Training
+                </h2>
+                <p class="info_main_desc info_main_desc_2">
+                    English for your purposes: traveling, work, study, watching movies, reading books, self-development, relocation to another country
 
-				</p>
-				<div class="info_second_items">
-					<div class="info_item _info_item_2">
-						<div class="logo_image">
-							<img src="/assets/front/img/logo.png" alt="">
-						</div>
-						<div class="info_text info_text_2">
-							<p class="info_title info_title_2">
-								Personalized
-							</p>
-							<p class="info_desc info_desc_2">
-								Our platform is constantly adjusting to your personal interests
-							</p>
-						</div>
-					</div>
-					<div class="info_item info_item_2">
-						<div class="logo_image">
-							<img src="/assets/front/img/logo.png" alt="">
-						</div>
-						<div class="info_text info_text_2">
-							<p class="info_title info_title_2">
-								For all levels
-							</p>
-							<p class="info_desc info_desc_2">
-								It is good for both beginners as well as advanced speakers
-							</p>
-						</div>
-					</div>
-					<div class="info_item info_item_2">
-						<div class="logo_image">
-							<img src="/assets/front/img/logo.png" alt="">
-						</div>
-						<div class="info_text info_text_2">
-							<p class="info_title info_title_2">
-								Helps to break down the wall
-							</p>
-							<p class="info_desc info_desc_2">
-								Develop your language skills by playing games
-							</p>
-							<a href="#info_third" class="more_about more_about_2 scrolling">
+                </p>
+                <div class="info_second_items">
+                    <div class="info_item _info_item_2">
+                        <div class="logo_image">
+                            <img src="/assets/front/img/logo.png" alt="">
+                        </div>
+                        <div class="info_text info_text_2">
+                            <p class="info_title info_title_2">
+                                Personalized
+                            </p>
+                            <p class="info_desc info_desc_2">
+                                Our platform is constantly adjusting to your personal interests
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info_item info_item_2">
+                        <div class="logo_image">
+                            <img src="/assets/front/img/logo.png" alt="">
+                        </div>
+                        <div class="info_text info_text_2">
+                            <p class="info_title info_title_2">
+                                For all levels
+                            </p>
+                            <p class="info_desc info_desc_2">
+                                It is good for both beginners as well as advanced speakers
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info_item info_item_2">
+                        <div class="logo_image">
+                            <img src="/assets/front/img/logo.png" alt="">
+                        </div>
+                        <div class="info_text info_text_2">
+                            <p class="info_title info_title_2">
+                                Helps to break down the wall
+                            </p>
+                            <p class="info_desc info_desc_2">
+                                Develop your language skills by playing games
+                            </p>
+                            <a href="#info_third" class="more_about more_about_2 scrolling">
 								More...
 							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="info_third">
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-lg-6">
-					<div class="info_third_left">
-						<h2>
-							Explicit
-						</h2>
-						<p class="info_main_desc info_main_desc_3">
-							With the help of our platform you are able to learn new sentences with examples, read Wikipedia articles, watch and translate
-							Youtube videos, practice grammar, train yourself using special features and absorb the information that was selected
-							by professional English teachers. Additionally, when you translate something on our platform we automatically add a translated word
-							to the Training section, where you can choose the most convenient way of practicing new words in real situations.
-						</p>
-					</div>
-				</div>
-				<div class="col-12 col-lg-6">
-					<div class="info_third_right">
-						<img src="/assets/front/img/world-map.png" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="info_forth">
-		<div class="container">
-			<h3>
-				Not Just a Lesson
-			</h3>
-			<p class="info_forth_desc">
-				It is time to stop postponing English for later!
-				<br>
-			</p>
-			<div class="row">
-				<div class="col-12 col-sm-4">
-					<div class="info_forth_item">
-						<div class="logo_image">
-							<img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f0b1-512.png" alt="">
-						</div>
-						<h4>
-							Salary
-						</h4>
-						<p>
-							Good English skills can increase your salary by 30%
-							<a class="more_about more_about_4 scrolling" href="#info_fifth">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="info_third">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="info_third_left">
+                        <h2>
+                            Explicit
+                        </h2>
+                        <p class="info_main_desc info_main_desc_3">
+                            With the help of our platform you are able to learn new sentences with examples, read Wikipedia articles, watch and translate Youtube videos, practice grammar, train yourself using special features and absorb the information that was selected by professional
+                            English teachers. Additionally, when you translate something on our platform we automatically add a translated word to the Training section, where you can choose the most convenient way of practicing new words in real situations.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="info_third_right">
+                        <img src="/assets/front/img/world-map.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="info_forth">
+        <div class="container">
+            <h3>
+                Not Just a Lesson
+            </h3>
+            <p class="info_forth_desc">
+                It is time to stop postponing English for later!
+                <br>
+            </p>
+            <div class="row">
+                <div class="col-12 col-sm-4">
+                    <div class="info_forth_item">
+                        <div class="logo_image">
+                            <img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f0b1-512.png" alt="">
+                        </div>
+                        <h4>
+                            Salary
+                        </h4>
+                        <p>
+                            Good English skills can increase your salary by 30%
+                            <a class="more_about more_about_4 scrolling" href="#info_fifth">
 								More
 							</a>
-						</p>
-					</div>
-				</div>
-				<div class="col-12 col-sm-4">
-					<div class="info_forth_item">
-						<div class="logo_image">
-							<img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/graduation-cap-512.png" alt="">
-						</div>
-						<h4>
-							More opportunities
-						</h4>
-						<p>
-							English is the main language in international business
-							<a class="more_about more_about_4 scrolling" href="#info_fifth">
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                    <div class="info_forth_item">
+                        <div class="logo_image">
+                            <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/graduation-cap-512.png" alt="">
+                        </div>
+                        <h4>
+                            More opportunities
+                        </h4>
+                        <p>
+                            English is the main language in international business
+                            <a class="more_about more_about_4 scrolling" href="#info_fifth">
 								More
 							</a>
-						</p>
-					</div>
-				</div>
-				<div class="col-12 col-sm-4">
-					<div class="info_forth_item">
-						<div class="logo_image">
-							<img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/send-512.png" alt="">
-						</div>
-						<h4>
-							Traveling
-						</h4>
-						<p>
-							High English level will give new opportunities during your travels
-							<a class="more_about more_about_4 scrolling" href="#info_fifth">
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                    <div class="info_forth_item">
+                        <div class="logo_image">
+                            <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/send-512.png" alt="">
+                        </div>
+                        <h4>
+                            Traveling
+                        </h4>
+                        <p>
+                            High English level will give new opportunities during your travels
+                            <a class="more_about more_about_4 scrolling" href="#info_fifth">
 								More
 							</a>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="info_fifth">
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-lg-7 order-1 order-lg-0">
-					<div class="element_image">
-						<img src="/assets/front/img/mockup.svg" alt="">
-					</div>
-				</div>
-				<div class="col-12 col-lg-5">
-					<div class="info_fifth_text">
-						<h4>
-							Always
-							<br> near you
-						</h4>
-						<br>
-						Accessible from any PC as well as from mobile devices. <br>Available for
-						<a style="color: #8e8e8e;" href="/app" class="downloadAppLink">IOS</a> and
-						<a style="color: #8e8e8e;" href="/app" class="downloadAppLink">Android</a>.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="pricing">
-		<div class="pricing_wrap">
-			<div class="container style_container">
-				<h2>
-					Prices
-				</h2>
-				<p class="pricing_desc">
-					Choose the plan that suits you the best
-				</p>
-				<div class="row">
-					<div class="col-12 col-sm-6 col-lg-3">
-						<div class="pricing_item pricing_item_1">
-							<h3>
-								1 Month
-							</h3>
-							<span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="info_fifth">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-7 order-1 order-lg-0">
+                    <div class="element_image">
+                        <img src="/assets/front/img/mockup.svg" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-5">
+                    <div class="info_fifth_text">
+                        <h4>
+                            Always
+                            <br> near you
+                        </h4>
+                        <br> Accessible from any PC as well as from mobile devices. <br>Available for
+                        <a style="color: #8e8e8e;" href="/app" class="downloadAppLink">IOS</a> and
+                        <a style="color: #8e8e8e;" href="/app" class="downloadAppLink">Android</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="pricing">
+        <div class="pricing_wrap">
+            <div class="container style_container">
+                <h2>
+                    Prices
+                </h2>
+                <p class="pricing_desc">
+                    Choose the plan that suits you the best
+                </p>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="pricing_item pricing_item_1">
+                            <h3>
+                                1 Month
+                            </h3>
+                            <span>
 								Subscription
 							</span>
-							<hr>
-							<p>
-								Unlimited access to the platform.
-							</p>
-							<p>
-								<!-- Sale! -->
-								Start today!
-								<br>+ 1 month for free!
-							</p>
-							<p>
-								<!-- Sale! -->
-								First month $8
-							</p>
-							<hr>
-							<div class="price">
-								$8/mo.
-							</div>
-							<a href="#" class="get_started" onclick="choosePlan(1)">
+                            <hr>
+                            <p>
+                                Unlimited access to the platform.
+                            </p>
+                            <p>
+                                <!-- Sale! -->
+                                Start today!
+                                <br>+ 1 month for free!
+                            </p>
+                            <p>
+                                <!-- Sale! -->
+                                First month $9
+                            </p>
+                            <hr>
+                            <div class="price">
+                                $9/mo.
+                            </div>
+                            <a href="#" class="get_started" onclick="choosePlan(1)">
 								Choose
 							</a>
-						</div>
-					</div>
-					<div class="col-12 col-sm-6 col-lg-3">
-						<div class="pricing_item pricing_item_2">
-							<h3>
-								3 Month
-							</h3>
-							<span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="pricing_item pricing_item_2">
+                            <h3>
+                                3 Month
+                            </h3>
+                            <span>
 								Subscription
 							</span>
-							<hr>
-							<p>
-								Unlimited access to the platform.
-							</p>
-							<p>
-									Start today!
-								<br>+ 1 month for free!
-							</p>
-							<p>
-								SAVE 12%
-							</p>
-							<hr>
-							<div class="price">
-								$7/mo.
-							</div>
-							<a href="#" class="get_started" onclick="choosePlan(3)">
+                            <hr>
+                            <p>
+                                Unlimited access to the platform.
+                            </p>
+                            <p>
+                                Start today!
+                                <br>+ 1 month for free!
+                            </p>
+                            <p>
+                                SAVE 12%
+                            </p>
+                            <hr>
+                            <div class="price">
+                                $8/mo.
+                            </div>
+                            <a href="#" class="get_started" onclick="choosePlan(3)">
 								Choose
 							</a>
-						</div>
-					</div>
-					<div class="col-12 col-sm-6 col-lg-3">
-						<div class="pricing_item pricing_item_3">
-							<h3>
-								6 Month
-							</h3>
-							<span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="pricing_item pricing_item_3">
+                            <h3>
+                                6 Month
+                            </h3>
+                            <span>
 								Subscription
 							</span>
-							<hr>
-							<p>
-								Unlimited access to the platform.
-							</p>
-							<p>
-									Start today!
-								<br>+ 1 month for free!
-							</p>
-							<p>
-								SAVE 25%
-							</p>
-							<hr>
-							<div class="price">
-								$6/mo.
-							</div>
-							<a href="#" class="get_started" onclick="choosePlan(6)">
+                            <hr>
+                            <p>
+                                Unlimited access to the platform.
+                            </p>
+                            <p>
+                                Start today!
+                                <br>+ 1 month for free!
+                            </p>
+                            <p>
+                                SAVE 25%
+                            </p>
+                            <hr>
+                            <div class="price">
+                                $7/mo.
+                            </div>
+                            <a href="#" class="get_started" onclick="choosePlan(6)">
 								Choose
 							</a>
-						</div>
-					</div>
-					<div class="col-12 col-sm-6 col-lg-3">
-						<div class="pricing_item pricing_item_4">
-							<h3>
-								12 Month
-							</h3>
-							<span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="pricing_item pricing_item_4">
+                            <h3>
+                                12 Month
+                            </h3>
+                            <span>
 								Subscription
 							</span>
-							<hr>
-							<p>
-								Unlimited access to the platform.
-							</p>
-							<p>
-									Start today!
-								<br>+ 1 month for free!
-							</p>
-							<p>
-								SAVE 38%
-							</p>
-							<hr>
-							<div class="price">
-								$5/mo.
-							</div>
-							<a href="#" class="get_started" onclick="choosePlan(12)">
+                            <hr>
+                            <p>
+                                Unlimited access to the platform.
+                            </p>
+                            <p>
+                                Start today!
+                                <br>+ 1 month for free!
+                            </p>
+                            <p>
+                                SAVE 38%
+                            </p>
+                            <hr>
+                            <div class="price">
+                                $6/mo.
+                            </div>
+                            <a href="#" class="get_started" onclick="choosePlan(12)">
 								Choose
 							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="features">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-12 col-sm-6 col-md-4">
-					<div class="features_item">
-						<div class="logo_image">
-							<img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f037-512.png" alt="">
-						</div>
-						<h4>
-							Grammar
-						</h4>
-						<p>
-							Choose correct grammar options based on the context
-						</p>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-md-4">
-					<div class="features_item">
-						<div class="logo_image">
-							<img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/clone-512.png" alt="">
-						</div>
-						<h4>
-							New sentences
-						</h4>
-						<p>
-							Learn new sentences accompanied by audio and video
-						</p>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-md-4">
-					<div class="features_item">
-						<div class="logo_image">
-							<img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f16a-512.png" alt="">
-						</div>
-						<h4>
-							Watch YouTube videos
-						</h4>
-						<p>
-							Play your favorite videos from any moment and also translate subtitles
-						</p>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-md-4">
-					<div class="features_item">
-						<div class="logo_image">
-							<img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/language-512.png" alt="">
-						</div>
-						<h4>
-							Translation
-						</h4>
-						<p>
-							Translate a word by clicking on it and get audio/image assistance
-						</p>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-md-4">
-					<div class="features_item">
-						<div class="logo_image">
-							<img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f11b-512.png" alt="">
-						</div>
-						<h4>
-							Games
-						</h4>
-						<p>
-							Game catalogue for practicing new words and sentences
-						</p>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-md-4">
-					<div class="features_item">
-						<div class="logo_image">
-							<img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f097-512.png" alt="">
-						</div>
-						<h4>
-							Reading
-						</h4>
-						<p>
-							Read and translate texts for beginners, Wikipedia articles, and your own texts
-						</p>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-md-4">
-					<div class="features_item">
-						<div class="logo_image">
-							<img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/pencil-square-o-512.png" alt="">
-						</div>
-						<h4>
-							Notes
-						</h4>
-						<p>
-							Create notes and track your progress with the help of analytics
-						</p>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-md-4">
-					<div class="features_item">
-						<div class="logo_image">
-							<img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/graduation-cap-512.png" alt="">
-						</div>
-						<h4>
-							Lessons
-						</h4>
-						<p>
-							Use our structured lessons created by English teachers
-						</p>
-					</div>
-				</div>
-				<div class="col-12 col-sm-6 col-md-4">
-					<div class="features_item">
-						<div class="logo_image">
-							<img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f0e6-512.png" alt="">
-						</div>
-						<h4>
-							Bots
-						</h4>
-						<p>
-							Practice real conversations with special robots (coming soon)
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<hr class="hr">
-	<section id="examples">
-		<div class="container">
-			<div class="row align-items-center">
-				<div class="col-12 col-lg-6 col-xl-5">
-					<div class="example_text">
-						<h3>
-							<!-- Would you like to try? -->
-							Want to try?
-						</h3>
-						<p>
-							Create a free trial account today!
-						</p>
-					</div>
-				</div>
-				<div class="col-12 offset-lg-1 col-lg-5 offset-xl-3 col-xl-4">
-					<div class="examples_buttons">
-						<a href="#" class="examples_btn get_started">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="features">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="features_item">
+                        <div class="logo_image">
+                            <img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f037-512.png" alt="">
+                        </div>
+                        <h4>
+                            Grammar
+                        </h4>
+                        <p>
+                            Choose correct grammar options based on the context
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="features_item">
+                        <div class="logo_image">
+                            <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/clone-512.png" alt="">
+                        </div>
+                        <h4>
+                            New sentences
+                        </h4>
+                        <p>
+                            Learn new sentences accompanied by audio and video
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="features_item">
+                        <div class="logo_image">
+                            <img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f16a-512.png" alt="">
+                        </div>
+                        <h4>
+                            Watch YouTube videos
+                        </h4>
+                        <p>
+                            Play your favorite videos from any moment and also translate subtitles
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="features_item">
+                        <div class="logo_image">
+                            <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/language-512.png" alt="">
+                        </div>
+                        <h4>
+                            Translation
+                        </h4>
+                        <p>
+                            Translate a word by clicking on it and get audio/image assistance
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="features_item">
+                        <div class="logo_image">
+                            <img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f11b-512.png" alt="">
+                        </div>
+                        <h4>
+                            Games
+                        </h4>
+                        <p>
+                            Game catalogue for practicing new words and sentences
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="features_item">
+                        <div class="logo_image">
+                            <img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f097-512.png" alt="">
+                        </div>
+                        <h4>
+                            Reading
+                        </h4>
+                        <p>
+                            Read and translate texts for beginners, Wikipedia articles, and your own texts
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="features_item">
+                        <div class="logo_image">
+                            <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/pencil-square-o-512.png" alt="">
+                        </div>
+                        <h4>
+                            Notes
+                        </h4>
+                        <p>
+                            Create notes and track your progress with the help of analytics
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="features_item">
+                        <div class="logo_image">
+                            <img src="https://cdn2.iconfinder.com/data/icons/font-awesome/1792/graduation-cap-512.png" alt="">
+                        </div>
+                        <h4>
+                            Lessons
+                        </h4>
+                        <p>
+                            Use our structured lessons created by English teachers
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="features_item">
+                        <div class="logo_image">
+                            <img src="https://cdn4.iconfinder.com/data/icons/font-awesome-2/2048/f0e6-512.png" alt="">
+                        </div>
+                        <h4>
+                            Bots
+                        </h4>
+                        <p>
+                            Practice real conversations with special robots (coming soon)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr class="hr">
+    <section id="examples">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6 col-xl-5">
+                    <div class="example_text">
+                        <h3>
+                            <!-- Would you like to try? -->
+                            Want to try?
+                        </h3>
+                        <p>
+                            Create a free trial account today!
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 offset-lg-1 col-lg-5 offset-xl-3 col-xl-4">
+                    <div class="examples_buttons">
+                        <a href="#" class="examples_btn get_started">
 							Create an account
 							<img src="/assets/front/img/arrow-right.svg" alt="">
 						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<footer id="footer">
-		<div class="container">
-			<div class="row justify-content-between justify-content-md-center">
-				<div class="col-6 col-sm-3 col-md-2">
-					<div class="footer_item">
-						<h4 class="footer_title">
-							Product
-						</h4>
-						<ul class="footer_links">
-							<li>
-								<a href="#info" class="scrolling">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="footer">
+        <div class="container">
+            <div class="row justify-content-between justify-content-md-center">
+                <div class="col-6 col-sm-3 col-md-2">
+                    <div class="footer_item">
+                        <h4 class="footer_title">
+                            Product
+                        </h4>
+                        <ul class="footer_links">
+                            <li>
+                                <a href="#info" class="scrolling">
 									Approach
 								</a>
-							</li>
-							<li>
-								<a href="#info_second" class="scrolling">
+                            </li>
+                            <li>
+                                <a href="#info_second" class="scrolling">
 									Details
 								</a>
-							</li>
-							<li>
-								<a href="#features" class="scrolling">
+                            </li>
+                            <li>
+                                <a href="#features" class="scrolling">
 									Features
 								</a>
-							</li>
-							<li>
-								<a href="/app" class="downloadAppLink">
+                            </li>
+                            <li>
+                                <a href="/app" class="downloadAppLink">
 									Application
 								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-6 col-sm-3 col-md-2">
-					<div class="footer_item">
-						<h4 class="footer_title">
-							Social networks
-						</h4>
-						<ul class="footer_links">
-							<li>
-								<a target="_blank" href="https://www.facebook.com/PaideiaApp/">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-3 col-md-2">
+                    <div class="footer_item">
+                        <h4 class="footer_title">
+                            Social networks
+                        </h4>
+                        <ul class="footer_links">
+                            <li>
+                                <a target="_blank" href="https://www.facebook.com/PaideiaApp/">
 									Facebook
 								</a>
-							</li>
-							<li>
-								<a target="_blank" href="https://www.instagram.com/paideiaapp/">
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.instagram.com/paideiaapp/">
 									Instagram
 								</a>
-							</li>
-							<li>
-								<a target="_blank" href="https://t.me/PaideiaApp">
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://t.me/PaideiaApp">
 									Telegram
 								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-6 col-sm-3 col-md-2">
-					<div class="footer_item">
-						<h4 class="footer_title">
-							Company
-						</h4>
-						<ul class="footer_links">
-							<li>
-								<a target="_blank" href="https://medium.com/paideiaapp">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-3 col-md-2">
+                    <div class="footer_item">
+                        <h4 class="footer_title">
+                            Company
+                        </h4>
+                        <ul class="footer_links">
+                            <li>
+                                <a target="_blank" href="https://medium.com/paideiaapp">
 									Blog
 								</a>
-							</li>
-							<li>
-								<a target="_blank" href="/help/">
+                            </li>
+                            <li>
+                                <a target="_blank" href="/help/">
 									Contacts
 								</a>
-							</li>
-							<li>
-								<a target="_blank" href="/help/press/">
+                            </li>
+                            <li>
+                                <a target="_blank" href="/help/press/">
 									Press Kit
 								</a>
-							</li>
-							<!-- <li>
+                            </li>
+                            <!-- <li>
 								<a target="_blank" href="#">
 									Статус
 								</a>
 							</li> -->
-							<li>
-								<a target="_blank" href="https://github.com/PaideiaApp/paideia/blob/master/CHANGELOG.md">
+                            <li>
+                                <a target="_blank" href="https://github.com/PaideiaApp/paideia/blob/master/CHANGELOG.md">
 									Changelog
 								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="col-6 col-sm-3 col-md-2 order-1">
-					<div class="footer_item">
-						<div class="footer_item">
-							<h4 class="footer_title">
-								Other
-							</h4>
-							<ul class="footer_links">
-								<li>
-									<a target="_blank" href="/help/privacy-policy/">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-3 col-md-2 order-1">
+                    <div class="footer_item">
+                        <div class="footer_item">
+                            <h4 class="footer_title">
+                                Other
+                            </h4>
+                            <ul class="footer_links">
+                                <li>
+                                    <a target="_blank" href="/help/privacy-policy/">
 										Privacy policy
 									</a>
-								</li>
-								<li>
-									<a target="_blank" href="/help/terms/">
+                                </li>
+                                <li>
+                                    <a target="_blank" href="/help/terms/">
 										Terms and conditions
 									</a>
-								</li>
-								<li>
-									<a href="#" onclick="window.location.reload(true)">
+                                </li>
+                                <li>
+                                    <a href="#" onclick="window.location.reload(true)">
 										Refresh cache
 									</a>
-								</li>
-								<li>
-									<a target="_blank" href="/help/">
+                                </li>
+                                <li>
+                                    <a target="_blank" href="/help/">
 										Help
 									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-6 col-sm-3 col-md-2">
-					<div class="footer_item">
-						<div class="footer_item">
-							<h4 class="footer_title">
-								Credits
-							</h4>
-							<ul class="footer_links">
-								<li>
-									<a href="https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL" title="https://www.iconfinder.com/iconsets/font-awesome"
-									 target="_blank">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-3 col-md-2">
+                    <div class="footer_item">
+                        <div class="footer_item">
+                            <h4 class="footer_title">
+                                Credits
+                            </h4>
+                            <ul class="footer_links">
+                                <li>
+                                    <a href="https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL" title="https://www.iconfinder.com/iconsets/font-awesome" target="_blank">
 										Icons Iconfinder (SIL Open Font License)
 									</a>
-								</li>
-								<li>
-									<a href="https://icons8.com" target="_blank">
+                                </li>
+                                <li>
+                                    <a href="https://icons8.com" target="_blank">
 										Icons icons8.com (PWA icon)
 									</a>
-								</li>
-								<li>
-									<a href="https://unsplash.com" target="_blank">
+                                </li>
+                                <li>
+                                    <a href="https://unsplash.com" target="_blank">
 										Images - Unsplash.com
 									</a>
-								</li>
-								<li>
-									<a href="https://ru.wikipedia.org/wiki/Cookie" target="_blank">
+                                </li>
+                                <li>
+                                    <a href="https://ru.wikipedia.org/wiki/Cookie" target="_blank">
 										Our web page might use cookies
 									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row align-items-center">
-				<div class="col-12 col-sm-7 col-md-5 col-lg-4">
-					<p class="copyright">
-						© 2019 "Paideia" LLC
-					</p>
-				</div>
-				<div class="offset-0 col-12 offset-sm-3 offset-md-5 offset-lg-7 col-sm-2 col-md-1">
-					<div class="link_footer">
-						<a href="#">
-							<img src="/assets/pwa/img/icon.png" alt="">
-						</a>
-						<a href="#">
-							<img style="width: 75px;" src="https://picua.org/images/2018/11/11/61921fd3b6ccd7d3fb4d67918133d44a.png">
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-12 col-sm-7 col-md-5 col-lg-4">
+                    <p class="copyright">
+                        © 2019 "Paideia" LLC
+                    </p>
+                </div>
+                <div class="offset-0 col-12 offset-sm-3 offset-md-5 offset-lg-7 col-sm-2 col-md-1">
+                    <div class="link_footer">
+                        <a href="#">
+                            <img src="/assets/pwa/img/icon.png" alt="">
+                        </a>
+                        <a href="#">
+                            <img style="width: 75px;" src="https://picua.org/images/2018/11/11/61921fd3b6ccd7d3fb4d67918133d44a.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-	<div style="display: none;">
-		<div class="box-modal" id="login_modal">
-			<div class="box-modal_close arcticmodal-close">×</div>
-			<div id="message"></div>
-			<div id="auth">
-				<input type="email" name="email" id="email" placeholder="Email" required>
-				<br>
-				<input type="password" name="pass" id="pass" placeholder="Password" required>
-				<br>
-				<button onclick="auth()" class="main center">Log in</button>
-				<br>
-				<br>
-				<br>
-				<span style="font-size: 13px;">Forgot your password?
+    <div style="display: none;">
+        <div class="box-modal" id="login_modal">
+            <div class="box-modal_close arcticmodal-close">×</div>
+            <div id="message"></div>
+            <div id="auth">
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <br>
+                <input type="password" name="pass" id="pass" placeholder="Password" required>
+                <br>
+                <button onclick="auth()" class="main center">Log in</button>
+                <br>
+                <br>
+                <br>
+                <span style="font-size: 13px;">Forgot your password?
 					<a href="/restore/" style="color: #0067ed;">Restore the profile</a>
 				</span>
-				<br>
-			</div>
-		</div>
-	</div>
+                <br>
+            </div>
+        </div>
+    </div>
 
-	<div style="display: none;">
-		<div class="box-modal" id="get_started_modal">
-			<div class="box-modal_close arcticmodal-close">×</div>
-			<div id="message2"></div>
-			<div id="auth">
-				<form id="registration" action="/api/auth/register">
-					Create an account
-					<br>
-					<input type="text" name="name" id="nameR" placeholder="Your full Name" required>
-					<br>
-					<select name="level" required>
+    <div style="display: none;">
+        <div class="box-modal" id="get_started_modal">
+            <div class="box-modal_close arcticmodal-close">×</div>
+            <div id="message2"></div>
+            <div id="auth">
+                <form id="registration" action="/api/auth/register">
+                    Create an account
+                    <br>
+                    <input type="text" name="name" id="nameR" placeholder="Your full Name" required>
+                    <br>
+                    <select name="level" required>
 						<option value="" disabled selected>Choose your English level</option>
 						<option value="0">Beginner</option>
 						<option value="1">Medium and above</option>
 					</select>
-					<br>
-					<select name="country" required>
+                    <br>
+                    <select name="country" required>
 						<option value="" disabled selected>Select your country</option>
 						<option value="AF">Afghanistan</option>
 						<option value="AX">Åland Islands</option>
@@ -1207,90 +1207,89 @@
 						<option value="ZM">Zambia</option>
 						<option value="ZW">Zimbabwe</option>
 					</select>
-					<br>
-					<input type="email" name="email" id="emailR" placeholder="Your Email" required>
-					<br>
-					<input type="password" name="password" id="passR" placeholder="Password" required>
-					<br>
-					<input type="password" id="confirmpassR" placeholder="Repeat the Password" required>
-					<br>
-					<br>
-					<input type="hidden" id="ref" name="ref" value="NULL">
-					<br>
-					<input type="hidden" id="langR" name="lang" value="en">
-					<div id="reCaptcha"></div>
-					<button type="submit" id="createAccount" style="display: none;" class="main center">Create an account</button>
-					<br>
-					<br>
-					<span style="font-size: 12px;">Continuing registration, you automatically agree with our Russian 
+                    <br>
+                    <input type="email" name="email" id="emailR" placeholder="Your Email" required>
+                    <br>
+                    <input type="password" name="password" id="passR" placeholder="Password" required>
+                    <br>
+                    <input type="password" id="confirmpassR" placeholder="Repeat the Password" required>
+                    <br>
+                    <br>
+                    <input type="hidden" id="ref" name="ref" value="NULL">
+                    <br>
+                    <input type="hidden" id="langR" name="lang" value="en">
+                    <div id="reCaptcha"></div>
+                    <button type="submit" id="createAccount" style="display: none;" class="main center">Create an account</button>
+                    <br>
+                    <br>
+                    <span style="font-size: 12px;">Continuing registration, you automatically agree with our Russian 
 						<a href="/help/terms/" target="_blank" style="color: #0067ed; font-size: 13px;">Terms of Use</a> and
 						<a href="/help/privacy-policy/" target="_blank" style="color: #0067ed; font-size: 13px;">Privacy policy</a>
 					</span>
-					<br>
-					<br>
-					<br>
-				</form>
-			</div>
-		</div>
-	</div>
+                    <br>
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
 
-	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
-	<script src="/assets/front/js/preloader.js?v0.0.1"></script>
-	<script src="/assets/front/js/jquery-3.3.1.min.js?v0.0.1"></script>
-	<script src="/assets/front/js/jquery.arcticmodal-0.3.min.js?v0.0.1"></script>
-	<script src="/assets/front/js/main.js?v0.0.1"></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+    <script src="/assets/front/js/preloader.js?v0.0.1"></script>
+    <script src="/assets/front/js/jquery-3.3.1.min.js?v0.0.1"></script>
+    <script src="/assets/front/js/jquery.arcticmodal-0.3.min.js?v0.0.1"></script>
+    <script src="/assets/front/js/main.js?v0.0.1"></script>
 
-	<script src="/assets/front/js/auth.js?v0.0.1"></script>
+    <script src="/assets/front/js/auth.js?v0.0.1"></script>
 
-	<script>
-		function urlParams() {
-			var search = window.location.search.substr(1),
-				result = {};
-			if (search.length) {
-				search.split('&').forEach(function (item) {
-					var buf = item.split('=');
-					if (buf.length == 2)
-						result[buf[0]] = decodeURIComponent(buf[1]);
-				});
-			}
-			return result;
-		}  //url data
-
-
-		const isInStandaloneMode = () =>
-			(window.matchMedia('(display-mode: standalone)').matches) || (window.navigator.standalone);
-		console.log(userData);
-		if (isInStandaloneMode()) {
-			// alert("webapp is installed");
-			if (userData !== null && userData !== undefined) {
-				window.location = "/dashboard";
-			} else {
-				let mobile = urlParams().mobile;
-				if (mobile !== "yes") {
-					window.location = "/auth/?ref=pwa&t=" + new Date().getTime();
-				}
-			}
-		}
+    <script>
+        function urlParams() {
+            var search = window.location.search.substr(1),
+                result = {};
+            if (search.length) {
+                search.split('&').forEach(function(item) {
+                    var buf = item.split('=');
+                    if (buf.length == 2)
+                        result[buf[0]] = decodeURIComponent(buf[1]);
+                });
+            }
+            return result;
+        } //url data
 
 
-		$('#passR, #confirmpassR').on('keyup', function () {
-			if ($('#passR').val() == $('#confirmpassR').val()) {
-				$('#confirmpassR').css("border", "none");
-				$('#createAccount').css('display', 'block');
-			} else
-				$('#confirmpassR').css("border", "1px solid red");
-			// $('#createAccount').css('display', 'none');
-		});
+        const isInStandaloneMode = () =>
+            (window.matchMedia('(display-mode: standalone)').matches) || (window.navigator.standalone);
+        console.log(userData);
+        if (isInStandaloneMode()) {
+            // alert("webapp is installed");
+            if (userData !== null && userData !== undefined) {
+                window.location = "/dashboard";
+            } else {
+                let mobile = urlParams().mobile;
+                if (mobile !== "yes") {
+                    window.location = "/auth/?ref=pwa&t=" + new Date().getTime();
+                }
+            }
+        }
 
 
-		function choosePlan(plan) {
-			console.log(plan);
-			localStorage.setItem("registrationPlan", plan);
-		}
+        $('#passR, #confirmpassR').on('keyup', function() {
+            if ($('#passR').val() == $('#confirmpassR').val()) {
+                $('#confirmpassR').css("border", "none");
+                $('#createAccount').css('display', 'block');
+            } else
+                $('#confirmpassR').css("border", "1px solid red");
+            // $('#createAccount').css('display', 'none');
+        });
 
-	</script>
 
-	<script src="/assets/front/js/referral.js?v0.0.1"></script>
+        function choosePlan(plan) {
+            console.log(plan);
+            localStorage.setItem("registrationPlan", plan);
+        }
+    </script>
+
+    <script src="/assets/front/js/referral.js?v0.0.1"></script>
 </body>
 
 </html>
