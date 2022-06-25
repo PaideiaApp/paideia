@@ -96,12 +96,12 @@ function getUserData(token) {
 
 function runProfile() {
     let userData = JSON.parse(localStorage.getItem('userData'))
-    //     authBlock.style.display = "none";
-    //    registerBlock.style.display = "none";
-    //     authButtons.innerHTML = ` <a href="/dashboard"><button class="auth">Dashboard</button></a>`;
-    //     profile.style.display = "block";
-    //     console.log(userData);
-    //     document.getElementById("userDataBlock").innerHTML = userData["response"][0]["name"];
+        //     authBlock.style.display = "none";
+        //    registerBlock.style.display = "none";
+        //     authButtons.innerHTML = ` <a href="/dashboard"><button class="auth">Dashboard</button></a>`;
+        //     profile.style.display = "block";
+        //     console.log(userData);
+        //     document.getElementById("userDataBlock").innerHTML = userData["response"][0]["name"];
     if (window.location.pathname == "/" || window.location.pathname == "/en/") {
         regButtons.innerHTML = `
         <a href="/dashboard" class="login">
@@ -147,7 +147,7 @@ function register() {
 }
 
 
-$("#registration").submit(function (e) {
+$("#registration").submit(function(e) {
 
     e.preventDefault(); // avoid to execute the actual submit of the form.
 
@@ -161,14 +161,14 @@ $("#registration").submit(function (e) {
         type: "POST",
         url: servingDomain + url,
         data: form.serialize(), // serializes the form's elements.
-        success: function (data) {
+        success: function(data) {
             console.log(data);
             let code = data["code"];
             code = parseInt(code);
 
             if (code == 100) {
                 //  alert("Ваш аккаунт успешно создан! Пожалуйста авторизируйтесь!");
-                Swal.fire({ title: "Ваш аккаунт успешно создан!", text: "Нажмите ок, чтобы продолжить", type: "success" }).then((result) => {
+                Swal.fire({ title: "Your account has been successfully created!", text: "Click OK to continue", type: "success" }).then((result) => {
                     //   window.location.reload();
                     let emailR = document.getElementById("emailR").value;
                     let passR = document.getElementById("passR").value;
@@ -176,11 +176,11 @@ $("#registration").submit(function (e) {
                 });
             } else {
                 Swal.fire({
-                    type: 'error',
-                    title: 'Oops...',
-                    text: data["message"],
-                })
-                // alert(data["message"]);
+                        type: 'error',
+                        title: 'Oops...',
+                        text: data["message"],
+                    })
+                    // alert(data["message"]);
 
                 grecaptcha.reset();
             }

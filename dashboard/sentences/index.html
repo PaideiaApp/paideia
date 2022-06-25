@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate" />
     <title>Sentences</title>
@@ -12,11 +11,11 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link
-        href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square|Montserrat:400,500,600,700,800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square|Montserrat:400,500,600,700,800&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" type="text/css" href="/assets/dashboard/css/dashboard.css" /> -->
-    <script>document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/css/dashboard.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);</script>
+    <script>
+        document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/css/dashboard.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);
+    </script>
     <link rel="stylesheet" type="text/css" href="/assets/dashboard/libs/tour/bootstrap-tour-standalone.min.css" />
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <script src="/assets/dashboard/libs/tour/bootstrap-tour-standalone.min.js"></script>
@@ -27,13 +26,16 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL6GMHQL14"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'G-TL6GMHQL14');
     </script>
     <script type="text/javascript">
-        $(window).load(function () {
+        $(window).load(function() {
             $("#spinner").fadeOut("slow");
         });
     </script>
@@ -56,21 +58,9 @@
             <div class="menu" id="mainMenu"></div>
             <div class="user-profile right" id="user-menu"></div>
         </div>
- 
+
         <div class="page">
-            <div id="sentencesBlock" class="sentences">
-                <br>
-                <div class="info">
-                    <div class="block-overlay">
-                        Учите простые предложения, а затем проходите небольшой тест,
-                        для того чтобы закрепить свои знания...
-                    </div>
-                </div>
-                <!-- <img src="https://media.giphy.com/media/KBx7fQoLxuV7G/giphy.gif"> -->
-                <br>
-                <br>
-                <button class="sentencesButton" onclick="getSentences(showSentences)">Начать</button>
-            </div>
+            <div id="sentencesBlock" class="sentences"></div>
             <div class="exp-info-actions" id="expInfoActions">
                 <div class="logo" onclick="expiredInfo()">Paideia</div>
                 <p onclick="logOut('ru')">Выйти</p>
@@ -89,7 +79,9 @@
     <script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/mainMenu.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
     <script>document.write(`         <script type='text/javascript' src='/assets/dashboard/js/tour.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script> -->
 
-    <script>document.write(`         <script type='text/javascript' src='/dist/dashboard/sentences.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
+    <script>
+        document.write(`         <script type='text/javascript' src='/dist/dashboard/sentences.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);
+    </script>
 </body>
 
 </html>

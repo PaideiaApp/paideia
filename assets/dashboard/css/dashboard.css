@@ -1820,7 +1820,8 @@ span.reqInfo {
     display: grid;
     grid-template-columns: 29% 29% 29%;
     /* grid-gap: 18px; */
-    grid-gap: 6%;
+    /* grid-gap: 6%; */
+    grid-column-gap: 6%;
     /* background-color: #fff; */
     color: #444;
     margin-bottom: 12%;

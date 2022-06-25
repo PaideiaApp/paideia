@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="viewport-fit=cover, width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="google" content="notranslate" />
+    <meta name="google" content="notranslate" />
     <link rel="manifest" href="/manifest.json">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -13,41 +13,48 @@
     <title>Auth</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="/assets/front/css/login.css"> -->
-    <script>document.write(`<link rel="stylesheet" type="text/css" href="/assets/front/css/login.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);</script>
+    <script>
+        document.write(`<link rel="stylesheet" type="text/css" href="/assets/front/css/login.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    	<!-- ReCaptcha -->
-	<script type="text/javascript">
-		var onloadCallback = function() {
-		  grecaptcha.render('reCaptcha', {
-			'sitekey' : '6LcCwa8UAAAAACVO6KalURAStl-BqaBIGSsCU4SX'
-		  });
-		};
-      </script>
-      	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TL6GMHQL14"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+    <!-- ReCaptcha -->
+    <script type="text/javascript">
+        var onloadCallback = function() {
+            grecaptcha.render('reCaptcha', {
+                'sitekey': '6LcCwa8UAAAAACVO6KalURAStl-BqaBIGSsCU4SX'
+            });
+        };
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL6GMHQL14"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-		gtag('config', 'G-TL6GMHQL14');
-	</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-TL6GMHQL14');
+    </script>
 </head>
 
 <body>
-    <div id="pc" style="display: none; text-align: center;"><br><br><h3>Откройте эту страницу с телефона.</h3></div>
+    <div id="pc" style="display: none; text-align: center;"><br><br>
+        <h3>Откройте эту страницу с телефона.</h3>
+    </div>
     <div id="authScreen">
         <div class="info">
-        <h4 class="logo">Paideia</h4>
-        <span>Учите языки по-новому</span>
+            <h4 class="logo">Paideia</h4>
+            <span>Учите языки по-новому</span>
         </div>
         <div class="actions">
-        <button class="login" onclick="showLogIn()">Войти</button>
-        <button class="register" onclick="showRegistration()">Создать аккаунт</button>
-    </div>
+            <button class="login" onclick="showLogIn()">Войти</button>
+            <button class="register" onclick="showRegistration()">Создать аккаунт</button>
+        </div>
     </div>
 
-    <div id="loginScreen" style="display: none;"> 
+    <div id="loginScreen" style="display: none;">
         Авторизация<br><br>
         <div id="message" class="message"></div>
         <div id="auth">
@@ -356,19 +363,24 @@
     </div>
 
     <div id="footer" class="footer">
-        Что такое Paideia? <a href="/?mobile=yes" target="_blank">О нас</a> 
+        Что такое Paideia? <a href="/?mobile=yes" target="_blank">О нас</a>
+        <br/><br/><a href="en/">English</a>
     </div>
 
     <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
-    <script>document.write(`         <script type='text/javascript' src='/assets/front/js/jquery-3.3.1.min.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
-    <script>document.write(`         <script type='text/javascript' src='/assets/front/js/auth.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
+    <script>
+        document.write(`         <script type='text/javascript' src='/assets/front/js/jquery-3.3.1.min.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);
+    </script>
+    <script>
+        document.write(`         <script type='text/javascript' src='/assets/front/js/auth.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);
+    </script>
     <!-- <script src="/assets/front/js/jquery-3.3.1.min.js?v0.0.1"></script>-->
     <script>
-        $('#passR, #confirmpassR').on('keyup', function () {
+        $('#passR, #confirmpassR').on('keyup', function() {
             if ($('#passR').val() == $('#confirmpassR').val()) {
                 $('#confirmpassR').css("border", "none");
                 $('#createAccount').css('display', 'block');
-                $('.footer').css('bottom', "-25%"); 
+                $('.footer').css('bottom', "-25%");
             } else
                 $('#confirmpassR').css("border", "1px solid red");
             // $('#createAccount').css('display', 'none');
@@ -378,36 +390,38 @@
         // document.getElementById("loginScreen").style.display = "none";
         // document.getElementById("registrationScreen").style.display = "none";
 
-        function showLogIn(){
+        function showLogIn() {
             document.getElementById("authScreen").style.display = "none";
             document.getElementById("loginScreen").style.display = "block";
             document.getElementById("footer").innerHTML = `Авторизация - <a onclick="goBack()">На главную</a>`;
-        }      
+        }
 
-        function showRegistration(){
+        function showRegistration() {
             $('.footer').css('bottom', "-22%");
             document.getElementById("authScreen").style.display = "none";
             document.getElementById("registrationScreen").style.display = "block";
             document.getElementById("footer").innerHTML = `Авторизация - <a onclick="goBack()">На главную</a>`;
         }
 
-        function goBack(){
+        function goBack() {
             $('.footer').css('bottom', "5%");
-         document.getElementById("loginScreen").style.display = "none";
-         document.getElementById("registrationScreen").style.display = "none";
-         document.getElementById("authScreen").style.display = "block";
-         document.getElementById("footer").innerHTML = ` Что такое Paideia? <a href="/?mobile=yes" target="_blank">О нас</a> `;
+            document.getElementById("loginScreen").style.display = "none";
+            document.getElementById("registrationScreen").style.display = "none";
+            document.getElementById("authScreen").style.display = "block";
+            document.getElementById("footer").innerHTML = ` Что такое Paideia? <a href="/?mobile=yes" target="_blank">О нас</a> `;
         }
 
         //Already has account
 
-        if(userData !== null && userData !== undefined){
+        if (userData !== null && userData !== undefined) {
             window.location = "/dashboard/?ref=pwa";
         }
     </script>
-    <script>document.write(`         <script type='text/javascript' src='/assets/front/js/referral.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
-        <!-- <script src="/assets/front/js/referral.js"></script> -->
-        
+    <script>
+        document.write(`         <script type='text/javascript' src='/assets/front/js/referral.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);
+    </script>
+    <!-- <script src="/assets/front/js/referral.js"></script> -->
+
 </body>
 
 </html>

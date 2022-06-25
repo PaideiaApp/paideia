@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="google" content="notranslate" />
     <title>Vocabulary</title>
@@ -12,10 +11,10 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link
-        href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square&display=swap"
-        rel="stylesheet">
-    <script>document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/css/dashboard.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);</script>
+    <link href="https://fonts.googleapis.com/css?family=Asap|Open+Sans|Poiret+One|Raleway|Roboto|Lato|Nova+Square&display=swap" rel="stylesheet">
+    <script>
+        document.write(`<link rel="stylesheet" type="text/css" href="/assets/dashboard/css/dashboard.css?v=${new Date().getDate()}${new Date().getHours()}" \/>`);
+    </script>
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -24,13 +23,16 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TL6GMHQL14"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'G-TL6GMHQL14');
     </script>
     <script type="text/javascript">
-        $(window).load(function () {
+        $(window).load(function() {
             $("#spinner").fadeOut("slow");
         });
     </script>
@@ -61,7 +63,7 @@
             <div id="vocabularyCards">
                 <div class="vocabulary-cards-info">Vocabulary</div>
                 <div id="vocabularyCardsList"></div>
-                <div class="vocabulary-cards-close" onclick="closeDictionaryCards()">Закрыть</div>
+                <div id="vocabularyCloseButton" class="vocabulary-cards-close" onclick="closeDictionaryCards()">Закрыть</div>
             </div>
         </div>
 
@@ -71,7 +73,9 @@
 
     <div id="settings" class="overlay"></div>
 
-    <script>document.write(`         <script type='text/javascript' src='/dist/dashboard/vocabulary.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);</script>
+    <script>
+        document.write(`         <script type='text/javascript' src='/dist/dashboard/vocabulary.js?v=${new Date().getDate()}${new Date().getHours()}'><\/script>         `);
+    </script>
 </body>
 
 </html>
