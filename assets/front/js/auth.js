@@ -102,7 +102,7 @@ function runProfile() {
         //     profile.style.display = "block";
         //     console.log(userData);
         //     document.getElementById("userDataBlock").innerHTML = userData["response"][0]["name"];
-    if (window.location.pathname == "/" || window.location.pathname == "/en/") {
+    if (window.location.pathname == "/" || window.location.pathname == "/en/" || window.location.pathname == "/ua/") {
         regButtons.innerHTML = `
         <a href="/dashboard" class="login">
         Dashboard
